@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+      <!-- 
+          [table 태그] <table>
+          1. 역할 : 표 전체를 감싸는 가장 큰 틀 (최상위 태그)
+          2. 특징 : bgcolor, border, width 속성을 통해 시각적인 부분 수정 가능! (CSS 권장)
+          3. 내부에는 반드시 tr(행)이 들어와야 구조가 완성된다!
+
+      -->
+
+      <table align = "center" width = "500px" border="1px solid black">
+
+        <caption>표의 제목</caption>
+          <!-- 시각장애인 브라우저 (SCREEN READER)에서도 제목으로 인식하여 접근성 높음! -->
+
+            <tr>
+                <!-- td와 th의 차이점!
+                    1. td는 실제 데이터가 들어가는 일반 열을 의미!
+                    2. th는 컬럼(열)의 제목을 작성하는 태그
+                -->
+              <th>컬럼의 제목 등을 작성한다</th>
+              <th>컬럼의 제목 등을 작성한다</th>
+            </tr>
+            <tr align="center">
+              <td>20</td>
+              <td>류이수</td>
+            </tr>
+      </table>
+
+
+
+</body>
+</html>

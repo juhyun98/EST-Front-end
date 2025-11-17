@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- 
+      3 x 3 형태의 테이블을 만들기!
+      1번째 줄은 열의 "제목" 작성하기 (이름, 성별, 주소)
+      2번째, 3번째 줄은 실제 데이터 입력하기!
+      줄(행)을 의미하는 태그는 tr
+      열(칸)을 의미하는 태그는 th, td가 있다!
+  -->
+
+    <table align="center" border="1px solid">
+      <!-- 필요한 행의 갯수를 먼저 파악한다. -> 몇 줄이 필요하지? -->
+
+
+      <tr bgcolor="yellow">
+        <th>이름</th>
+        <th>성별</th>
+        <th>주소</th>
+      </tr>
+      <tr>
+        <td>정형</td>
+        <td>남자</td>
+        <td>광주</td>
+      </tr>
+      <tr>
+        <td>오주현</td>
+        <td>남자</td>
+        <td>광주</td>
+      </tr>
+
+    </table>
+
+    <table border="1px">
+        <!-- 꼭 필요한 행의 수를 파악! -->
+        <tr bgcolor = "yellow">
+            <th>이름</th>
+            <!-- 가로 병합 속성 : colspan = "N" n개의 셀을 병합하겠다! -->
+            <th colspan="2">성별, 주소</th>
+            <th>직급</th>
+        </tr>
+        <tr>
+            <td>정형</td>
+            <td>남자</td>
+            <td>광주</td>
+            <!-- colspan : 가로로 병합 / rowspan : 세로로 병합 -->
+            <td rowspan="2">선임</td>
+        </tr>
+        <tr>
+            <td>손지영</td>
+            <td>여성</td>
+            <td>광주</td>
+        </tr>
+    </table>
+      
+</body>
+</html>
