@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+      /* 공통 스타일 */
+      .box {
+          width: 200px;
+          height: 200px;
+      }
+
+      /* 각 box에 개별 디자인 */
+      
+      /* 위치를 조절할 때
+          top
+          left
+          right
+          bottom
+      */
+
+      /* 1. static 
+          - 기본값
+          - 태그가 적혀있는 순서대로 위에서 아래로, 왼쪽에서 오른쪽
+          - 속성을 통해 위치를 이동할 수 없다!
+      */
+      .static {
+          background-color: #60a5fa;
+          position: static;
+          left: 50px;
+      }
+
+      /* 2.relative
+         - 본인 위치를 기준으로 설정한 값만큼 이동이 가능하다!
+      */
+      .relative {
+          background-color: red;
+          position: relative;
+          left: 100px;
+          bottom: 40px; /* 아래에서 위로 올리겠다는 뜻 (위로 40px만큼 이동) */
+      }
+
+      /* 3. absolute
+         - 부모 중 position : relative인 요소를 기준으로 움직인다
+         - 부모 중에 relative가 없다면 body를 기준으로 이동한다
+      */
+      .parent {
+          position: relative;
+          width: 300px;
+          height: 300px;
+          background-color: black;
+      }
+      .absolute {
+          position: absolute;
+          top: 40px;
+          right: 20px;
+          background-color: orange;
+      }
+      .fixed {
+          position: fixed;
+          background-color: yellowgreen;
+          bottom: 40px;
+          left: 50px;
+      }
+
+
+  </style>
+</head>
+<body>
+    <!-- Display와 Positon의 역할
+         Display -> 가구를 결정하는 단계
+         : 긴 책상을 사용할지, 책상을 1인용으로 사용할지
+
+         Position -> 가구를 어떻게 배치할지!
+         : 요소들의 위치를 정하는 작업~
+
+         Position
+         1. static -> 기본값
+         2. relative -> 자기 원래 자리를 기준으로 이동할 수 있는 값 (원래 내 자리는 침범할 수 없다!)
+         3. absolute -> 부모(조상)-> position -> relative 즉 가장 가까운 요소를 기반으로 이동가능한 값
+            : 주변 요소와 독립되어서 흐름에서 빠짐
+         4. fixed -> 원하는 위치에 고정
+
+         [position 언제 어떻게 사용해야할까]
+         1. static -> 아무런 위치 조정이 필요하지 않을 때
+         2. relative -> 1. 요소를 미세하게 움직일 때 원래의 자리를 다른 요소가 침범하지 않아야할 때
+                        2. absolute 요소의 부모 기준점을 만들 때
+         3. absolute -> 1. 말풍선, 뱃지, 작은 요소들을 사용할 때
+                     -> 레이아웃 흐름에서 제외하고, 원하는 곳에 위치 시키고 싶을 때 (정확한 좌표 배치)
+         4. fixed -> 화면에 고정, 스크롤을 하더라도 항상 같은 위치에 있어야 할 때
+         5. sticky -> 특정 시점에 고정되어야 할 때 (static + fixed를 융합한 형태)
+    -->
+
+    <h1>Position 속성 한눈에 보기</h1>
+
+    <div class="box static">static</div>
+    <div class="box relative">relative</div>
+    <div class="parent">
+        <div class="box absolute">absolute</div>
+    </div>
+    <div class="box fixed">fixed</div>
+
+
+</body>
+</html>

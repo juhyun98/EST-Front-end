@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+      /* 텍스트 박스 스타일링 */
+      .box {
+          width: 160px;
+          height: 100px;
+          border: 1px solid;
+          border-radius: 8px;
+          background-color: beige;
+      }
+      .row {
+          /* 자식 요소를 가로 또는 세로로 깔끔하게 정리하는 도구 */
+          display: flex;
+          gap: 16px;
+      }
+      .visible {
+          overflow: visible;
+      }
+      .hidden {
+          overflow: hidden;
+      }
+      .scroll {
+          overflow: scroll;
+      }
+      .auto {
+          overflow: auto;
+      }
+
+  </style>
+</head>
+<body>
+    <!-- Overflow란?
+         content가 즉 텍스트가 박스보다 클 떄 처리 방법
+         - 기본값 visible : 넘쳐도 보이게~
+         - hidden : 넘치면 해당 부분을 잘라내기
+         - scroll : 항상 스크롤이 보이게
+         - auto : 넘칠 때만 스크롤바 -> 사용빈도가 가장 높다!
+         : 박스크기는 (width, height) 이미 정해져 있다!
+         : 때에 따라 텍스트가 너무 많으면 튀어나오는 글자를 처리!
+
+    -->
+
+    <div class="row">
+        <div class="box visible">
+            긴 텍스트가 박스를 넘어가도 그댈 보입니다!긴 텍스트가 박스를 넘어가도 그댈 보입니다!긴 텍스트가 박스를 넘어가도 그댈 보입니다!긴 텍스트가 박스를 넘어가도 그댈 보입니다!긴 텍스트가 박스를 넘어가도 그댈 보입니다!긴 텍스트가 박스를 넘어가도 그댈 보입니다!긴 텍스트가 박스를 넘어가도 그댈 보입니다!
+        </div>
+        <div class="box hidden">
+            긴 텍스트가 박스를 넘으면 잘립니다 긴 텍스트가 박스를 넘으면 잘립니다 긴 텍스트가 박스를 넘으면 잘립니다 긴 텍스트가 박스를 넘으면 잘립니다 긴 텍스트가 박스를 넘으면 잘립니다 긴 텍스트가 박스를 넘으면 잘립니다 긴 텍스트가 박스를 넘으면 잘립니다 긴 텍스트가 박스를 넘으면 잘립니다
+        </div>
+        <div class="box scroll">
+            넘치지 않아도 스크롤이 있습니다.
+        </div>
+        <div class="box auto">
+             넘칠 때만 스크롤바가 생깁니다!
+        </div>
+    </div>
+
+</body>
+</html>
