@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+
+            color: lightgray;
+            font-weight: bold;
+
+            /* 텍스트 중앙 정렬 */
+            text-align: center;
+        }
+
+        /* 
+            1.rgb() / rgba() 함수 : 빨강(r), 초록(g), 파랑(b) 색상을 조합
+            - rgb(빨강, 초록, 파랑)
+            - rgba(빨강, 초록, 파랑, 알파(투명도))
+            - 각 색상값은 0~255 사이의 정수
+            - 알파값은 0(투명) ~ 1(불투명) 사이의 실수
+        */
+        .rgb-box {
+            background-color: rgb(255, 0, 0);
+        }
+        .rgba-box {
+            background-color: rgba(255, 0, 0, 0.5);
+        }
+
+        /* 
+            2. hsl() / hsla() 함수 : 색상(Hue), 채도(Saturation),
+               밝기(Brightness) 값을 가지고 색상의 정의
+               - hsl(색상, 채도, 밝기)
+               - hsla(색상, 채도, 밝기, 알파(투명도))
+               - 색상은 0 ~ 360도 사이의 각도로 지정
+               - 채도와 밝기는 0 ~ 100% 사이의 백분율로 지정
+               - 알파값은 0 ~ 1
+        */
+        .hsl-box {
+            background-color: hsl(140, 70%, 40%);
+        }
+        .hsla-box {
+            background-color: hsla(140, 70%, 40%, 0.5);
+        }
+
+        /* 
+            3. hex(16진수) 색상 : #RRGGBB, #RGB 형식으로 표현
+               - #RRGGBB : RR(빨강), GG(초록), BB(파랑)을 16진수로 표현
+               - rgb함수와 동일하게 작동
+        */
+        .hex-box {
+            background-color: #f80;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS 색상함수</h1>
+    <div class="box rgb-box">rgb</div>
+    <div class="box rgba-box">rgba</div>
+    <div class="box hsl-box">hsl</div>
+    <div class="box hsla-box">hsla</div>
+    <div class="box hex-box">hex</div>
+</body>
+</html>

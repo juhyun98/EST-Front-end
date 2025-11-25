@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    /* 기본 변수 선언 */
+    :root {
+      --bg-color: whitesmoke;
+      --card-radius: 18px;
+      --card-padding: 20px;
+      --card-shadow-x: 5px;
+      --card-shadow-y: 5px;
+      --card-shadow-radius: 5px;
+      --card-shadow-color: gray;
+      --font-size: 24px;
+      --title-color: white;
+      --text-color: rgba(255, 255, 255, 0.8);
+      --border-color: rgba(255, 255, 255, 0.5);
+      --gradient-start: hsl(220, 90%, 65%);
+      --gradient-end: hsl(280, 80%, 60%);
+    }
+
+    /* 
+      1. body 요소
+        - 배경색 설정
+    */
+    body {
+        background-color: var(--bg-color);
+    }
+    
+    /* 
+      2. card 클래스
+        - 가로 너비 500px
+        - padding, border-radius 스타일 적용
+        - 선형 그라데이션 적용
+        - 텍스트 효과 적용
+        - 그림자 효과 적용
+    */
+    .card {
+        width: 500px;
+        padding: var(--card-padding);
+        border-radius: var(--card-radius);
+        background-image: linear-gradient(var(--gradient-start), var(--gradient-end));
+        color: var(--text-color);
+        filter: drop-shadow(var(--card-shadow-x) var(--card-shadow-y)
+                            var(--card-shadow-radius) var(--card-shadow-color));
+        margin: auto;
+    }
+
+    /* 
+      3. card 클래스 내부 h2 요소
+        - 제목 색상 적용
+        - 글자 크기 적용
+    */
+    .card h2 {
+        color: var(--title-color);
+        font-size: var(--font-size);
+    }
+
+    /* 
+      4. card 클래스 hover
+        - 밝기 증가(1.5) 및 블러 효과(1px) 적용
+    */
+
+    /* 
+        ※ filter는 작성한 순서대로 적용된다!
+           filter의 순서가 변경되면 최종 이미지 결과물이 변경된다!
+    */
+    .card:hover {
+        filter:
+        drop-shadow(var(--card-shadow-x) var(--card-shadow-y)
+                    var(--card-shadow-radius) var(--card-shadow-color))
+        brightness(1.5)
+        blur(1px);
+    }
+  </style>
+</head>
+
+<body>
+  <h1 style="text-align: center;">CSS 함수 최종 실습</h1>
+
+  <div class="card">
+    <h2>그라데이션 상자</h2>
+    <p>그라데이션, rgb/hsl 색상함수, CSS 변수를 활용하여 실습</p>
+    <p>hover할 경우, 밝기가 150%로 증가하고 블러 효과 적용</p>
+  </div>
+</body>
+
+</html>
