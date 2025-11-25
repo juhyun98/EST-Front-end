@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            다크모드/라이트모드 실습
+
+            1). 라이트모드
+                기본이 되는 라이트모드 변수 선언(전역변수)
+                :root 가상 선택자 내부에 선언
+            2). 다크모드
+                사용자 정의 속성으로 변경될 수 있는 다크모드 변수 선언(지역변수)
+                [data-theme="dark"] 선택자 내부에 선언
+            3). 기본 레이아웃
+                선언된 변수를 적용하여 스타일 수정
+            4). html의 data-theme 속성값을 변화시키면서 확인
+        */
+        /* 
+            html 사용자 정의 속성
+             - 내가 직접 임의의 속성을 만들 수 있다!
+             - 만든 속성은 관례상 "data-" 로 시작해야 한다.
+             - 사용자 정의 속성은 -으로 문자열을 연결해야 한다. (케밥 케이스)
+        */
+
+        /* 1). 라이트모드 */
+        :root {
+            --color-bg: lavenderblush;
+            --color-font: midnightblue;
+            --card-bg: mintcream;
+            --card-border: 1px solid lightsteelblue;
+            --button-bg: mediumslateblue;
+            --button-font: snow;
+        }
+
+        /* 2). 다크모드 */
+        [data-theme="dark"] {
+            --color-bg: rgb(32, 28, 28);
+            --color-font: white;
+            --card-bg: gray;
+            --card-border: 1px solid lightsteelblue;
+            --button-bg: white;
+            --buton-font: black;
+        }
+
+        /* 3). 기본 레이아웃 */
+
+        body {
+        margin: 0;
+        background-color: var(--color-bg);
+        color: var(--color-font);
+        }
+
+        .container {
+        max-width: 720px;
+        margin: 40px auto;
+        padding: 20px;
+        }
+
+        .card {
+        background-color: var(--card-bg);
+        border: var(--card-border);
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        }
+
+        button {
+        padding: 10px 18px;
+        background: var(--button-bg);
+        color: var(--buton-font);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        }
+    </style>
+</head>
+<body data-theme="dark">
+    <div class="container">
+        <h1>다크모드 실습</h1>
+
+        <div class="card">
+            <h2>카드 타이틀</h2>
+            <p>이곳은 카드 영역입니다.</p>
+        </div>
+
+        <button id="toggleBtn">버튼 영역</button>
+    </div>
+</body>
+</html>

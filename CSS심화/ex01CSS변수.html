@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+      /* 
+          1. CSS 변수(CSS 사용자 정의 속성) 선언
+              1) CSS 변수란?
+                  - 값을 미리 저장해두고, 여러 곳에서 재사용할 수 있도록 하는 기능
+                  - 유지보수, 일관성 있는 스타일 유지, 가독성 향상, 테마 관리 등
+              2) 선언 방법
+                  - :root 가상 선택자 내부에 선언
+                  - "--변수명: 값;" 의 형태로 선언한다
+                  - :root 가상 선택자는 문서의 최상위 요소를 의미하며,
+                    변수를 전역(global)으로 선언할 때 사용
+              3) 지역 변수 선언
+                  - :root선택자가 아닌 특정 선택자 내부에서 선언한 변수는
+                    해당 선택자 및 그 자손 요소에서만 사용할 수 있다.
+                  - 속성 선택자와 함께 사용하면 테마 관리 등의 용도로 유용하게 사용한다!
+                  ※ 속성 선택자 : [data-theme="dark"] { ... }
+              4) 변수 이름 규칙
+                  - 변수명은 반드시 "--"로 시작해야 한다.(ex. --color-bg)
+                  - 변수명은 영어, 숫자, 하이픈(-) 등이 사용 가능
+                  - 다른 프로그래밍언어에 비해 느슨한 이름 규칙을 가진다.(이모지도 가능)
+      */
+      :root {
+          /* 색상 */
+          --color-bg: white;
+          --color-text: blue;
+          --color-card-bg: lightgray;
+          --color-card-text: green;
+
+          /* font 사이즈 */
+          --title-size: 48px;
+
+          /* 간격 / 크기 */
+          --space-large: 32px;
+          --space-middle: 16px;
+          --space-small: 12px;
+      }
+
+      /* 
+          2. 변수 사용
+              1) CSS 변수 사용법
+                 - var(--변수명)의 형태로 사용이 가능
+                 - ex.color: var(--color-text);
+              2) 존재하지 않는 변수를 사용한 경우
+                 - 해당 속성은 무시되고, 선언하지 않는 것과 동일하게 처리
+                 - 이 현상을 방지하기 위해서 fallback(기몬값) 지정 가능
+                 - var(--변수명, fallback)
+      */
+
+      body {
+          background-color: var(--color-bg);
+          color: var(--color-text);
+      }
+
+      h1 {
+          font-size: var(--title-size);
+      }
+
+      .card {
+          width: 200px;
+          height: 300px;
+          background-color: var(--color-card-bg);
+          padding: var(--space-middle);
+      }
+  </style>
+</head>
+<body>
+    <h1>CSS 변수 사용 예제!</h1>
+
+    <div class="card">
+        <h2>카드 div</h2>
+        <p>CSS 변수 활용한 카드 div입니다!</p>
+        <button>Primary 버튼</button>
+    </div>
+</body>
+</html>

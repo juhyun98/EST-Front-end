@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            CSS 크기 단위
+            1. 절대 단위 : 고정된 크기
+               - px(픽셀) : 화면의 물리적인 픽셀이 기준
+               - cm(센티미터), mm(밀리미터) : 현실세계의 물리적 길이 기준
+               - in(인치) : 현실세계의 물리적 길이 기준
+            2. 상대 단위 : 유동적인 크기
+               - %(백분율) : 부모요소의 크기를 기준으로 한 비율
+               - em : 부모 요소의 폰트 크기를 기준으로 한 상대 단위
+               - rem : :root 가상 선택자의 폰트 크기를 기준으로 한 상대 단위
+               - vw, vh(뷰포트 너비/높이) : 뷰포트를 기준으로 한 비율
+        */
+
+        .box {
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 20px;
+        }
+
+        /* 
+            1. calc() 함수 : 화면 크기나, 요소의 크기 등을
+               동적으로 계산한 값을 적용해야 할 때 사용
+               - calc(계산식)
+               - 사칙연산(+, -, *, /)을 지원
+               - 단위 혼합해서 사용 가능(일반적으로 절대 단위와 상대 단위를 혼합해서 사용 가능)
+
+        */
+
+        .calc-box {
+            background-color: skyblue;
+            width: calc(100% - 100px);
+        }
+
+        /* 
+            min() / max() 함수 : 여러 값 중에서 최소값 또는 최대값을 선택
+            - min(값1, 값2, ...)
+            - max(값1, 값2, ...)
+            - 단위 혼합해서 사용 가능
+        */
+
+        .min-box {
+            background-color: tomato;
+            width: min(500px, 80%);
+        }
+        .max-box {
+            background-color: lightgreen;
+            width: max(500px, 80%);
+        }
+
+        /* 
+            3. clamp()함수 : 최소값, 선호값, 최대값을 지정
+               값의 범위를 제한해서 값을 선택할 때 사용
+               - clamp(최소값, 선호값, 최대값)
+               - 단위 혼합해서 사용 가능
+
+            ※ 선호값 : 유동적인 값을 사용하는 게 일반적(뷰포트 단위)
+            ※ 선호값은 최소값과 최대값 사이에 들어갈 수 있는 값으로 선택
+        */
+
+        .clamp-box {
+            background-color: gold;
+            font-size: clamp(24px, 4vw, 40px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box calc-box">
+        calc함수 : calc(100% - 100px)
+    </div>
+
+    <div class="box min-box">
+        min함수 : min(500px, 80%)
+    </div>
+    <div class="box max-box">
+        max함수 : max(500px, 80%)
+    </div>
+    
+    <div class="box clamp-box">
+        clamp함수 : clamp(16px, 4vw, 40px)
+    </div>
+</body>
+</html>
