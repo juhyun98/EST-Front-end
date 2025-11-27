@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* ------------------------------
+       CSS 변수
+    ------------------------------ */
+    :root {
+      --color-bg: #f5f7fa;
+      --color-header: #004aad;
+      --color-header-text: #fff;
+      --color-primary-dark: #003378;
+      --color-card-bg: #fff;
+      --color-card-text: #003378;
+      --color-footer-bg: #002f66;
+      --color-footer-text: #ccc;
+      --color-text: #333;
+      --color-text-light: #666;
+
+      --radius: 16px;
+
+      --space-sm: 12px;
+      --space-md: 20px;
+      --space-lg: 40px;
+
+      /* 
+        실습 : font-size를 반응형으로 만들어보자! 
+        - title : 최소값 24px, 선호값 4vw
+        - logo : 최소값 20px, 선호값 3vw
+        - nav : 최소값 14px, 선호값 2vw
+        - card : 최소값 20px, 선호값 2.5vw
+        - footer : 최소값 12px, 선호값 2vw
+        */
+      --font-title: 40px;
+      --font-logo: 32px;
+      --font-nav: 18px;
+      --font-card: 28px;
+      --font-footer: 16px;
+    }
+
+    /* ------------------------------
+        MAIN
+    ------------------------------ */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text);
+    }
+
+    /* ------------------------------
+        HEADER
+    ------------------------------ */
+    header {
+      background-color: var(--color-header);
+      color: var(--color-header-text);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-md);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+    }
+
+    .logo {
+      font-size: var(--font-logo);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    #nav-toggle {
+      display: none;
+    }
+
+    .nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--color-header-text);
+      font-size: var(--font-nav);
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 32px;
+      cursor: pointer;
+    }
+
+    /* ------------------------------
+        BANNER
+    ------------------------------ */
+    .banner {
+      height: 300px;
+      background: url('https://images.unsplash.com/photo-1522199710521-72d69614c702?q=80&w=1920') center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: var(--font-title);
+      font-weight: 700;
+      color: var(--color-header-text);
+      text-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    /* ------------------------------
+        CARDS
+    ------------------------------ */
+    .cards {
+      width: 90%;
+      max-width: 1100px;
+      margin: var(--space-lg) auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+    }
+
+    .card {
+      background-color: var(--color-card-bg);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      padding: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 12px;
+      height: 200px;
+      transition: 0.25s ease;
+      position: relative;
+    }
+
+    .card .dot {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: var(--color-header);
+      opacity: 0.15;
+      align-self: flex-end;
+    }
+
+    .card strong {
+      font-size: var(--font-card);
+      color: var(--color-primary-dark);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    /* ------------------------------
+        FOOTER
+    ------------------------------ */
+    footer {
+      background-color: var(--color-footer-bg);
+      color: var(--color-footer-text);
+      text-align: center;
+      padding: var(--space-lg);
+      font-size: var(--font-footer);
+      margin-top: var(--space-lg);
+    }
+
+    /* ------------------------------
+        MOBILE MODE
+    ------------------------------ */
+    @media (max-width: 768px) {
+
+      /* 
+        실습 : @media의 조건을 채워서 반응형 웹 페이지를 완성해보자!
+
+        .nav 스타일
+        - 모바일 화면에서는 기본적으로 보이지 않도록 변경
+        - 방향을 세로로 변경
+        - 안쪽 여백을 중간값으로 지정
+
+        .hamburger 스타일
+        - 모바일 화면에서는 보일 수 있도록 변경(데스크탑에선 display:none)
+
+        .card 스타일
+        - grid가 세로로만 등장할 수 있도록 변경
+      */
+      .nav {}
+
+      .hamburger {}
+
+      .cards {}
+
+      #nav-toggle:checked+label+.nav {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">EST Camp</div>
+
+    <input type="checkbox" id="nav-toggle">
+    <label for="nav-toggle" class="hamburger">☰</label>
+
+    <nav class="nav">
+      <a href="#">캠프 소개</a>
+      <a href="#">커리큘럼</a>
+      <a href="#">교육 일정</a>
+      <a href="#">수강 후기</a>
+    </nav>
+  </header>
+
+  <!-- BANNER -->
+  <section class="banner">
+    EST Camp Bootcamp
+  </section>
+
+  <!-- CARDS -->
+  <section class="cards">
+    <div class="card">
+      <div class="dot"></div>
+      <strong>프론트엔드 기초</strong>
+    </div>
+    <div class="card">
+      <div class="dot"></div>
+      <strong>백엔드 입문</strong>
+    </div>
+    <div class="card">
+      <div class="dot"></div>
+      <strong>AI/데이터 실습</strong>
+    </div>
+    <div class="card">
+      <div class="dot"></div>
+      <strong>React 심화</strong>
+    </div>
+    <div class="card">
+      <div class="dot"></div>
+      <strong>Node.js 실전</strong>
+    </div>
+    <div class="card">
+      <div class="dot"></div>
+      <strong>프로젝트 개발</strong>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 EST Camp
+  </footer>
+
+</body>
+
+</html>

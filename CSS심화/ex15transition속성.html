@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: "Noto Sans KR", sans-serif;
+            background: #f7f8fa;
+            padding: 40px;
+        }
+
+        section {
+            background: white;
+            border-radius: 10px;
+            padding: 24px 32px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2 { text-align: center; }
+        .box-area { display: flex; gap: 20px; justify-content: center; margin-top: 20px; }
+
+        /* transition 실습 박스 */
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        .box:active {
+            transform: translateY(-150px);
+            background-color: blue;
+        }
+
+        /* 각각 다른 transition 값 비교 */
+        .duration { transition-duration: 1.5s; }
+        .delay { transition-delay: 1.2s; }
+        .linear { transition-timing-function: linear; }
+        .easeIn { transition-timing-function: ease-in; }
+        .easeOut { transition-timing-function: ease-out; }
+
+    </style>
+</head>
+<body>
+    
+    <section>
+        <h2>기본 transition 속성 알아보기</h2>
+        <!-- Transition 속성 4가지
+            1. property : 어떤 속성을 지정해서 사용할지
+            2. duration : 변화에 걸리는 시간
+            3. timing-function : 속도가 어떻게 변화할지(속도의 곡선)
+            4. delay : 언제 시작할지
+        -->
+        <p>hover시에 박스의 움직임과 색상 변화를 확인하세요!</p>
+
+        <div class="box-area">
+            <div class="box">기본</div>
+            <div class="box duration">Duration 1.5s</div>
+            <div class="box delay">Delay 1.2s</div>
+        </div>
+
+    </section>
+    <section>
+        <h2>Timing-function 비교해보기</h2>
+        <!-- Easing(이징): 애니메이션을 움직이는 속도의 변화 곡선
+             : 시작할 때 빠른지, 느린지, 중간에 빨라지는지 리듬을 결정하는 속성 -->
+        <div class="box-area">
+            <div class="box linear">linear(기본값)</div>
+            <div class="box easeIn">Ease-in(느리게 시작 -> 일정 속도에 다다르면 등속)</div>
+            <div class="box easeOut">Ease-out(등속 시작 -> 점점 느리게)</div>
+            <!-- ease-in-out(출발, 도착을 천천히 / 중간에 속도가 증가)
+                 cubic-bezier : 직접 속도를 커스텀하는 방식 (출발, 중간, 도착) -->
+        </div>
+    </section>
+    <section>
+        <h2>실습</h2>
+    </section>
+
+</body>
+</html>

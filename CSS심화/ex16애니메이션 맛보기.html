@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: "Noto Sans KR", sans-serif;
+            background: #f4f6f8;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .demo-area {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 40px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        /* 공통 박스 스타일 */
+        .box {
+            width: 120px;
+            height: 120px;
+            background: tomato;
+            border-radius: 12px;
+        }
+
+        /* 설명 박스 스타일 */
+        .label {
+            text-align: center;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 애니메이션 부여하기 */
+        .animate {
+            animation: moveUp 2s ease-in-out infinite;
+        }
+
+        /* 키프레임 만들어보기 */
+        @keyframes moveUp {
+            0% { transform: translateY(0); } /* 애니메이션이 시작하는 순간의 상태 */
+            50% { transform: translateY(-200px); z-index: -1; } /* 애니메이션이 절반진행되었을 때의 상태 */
+            100% { transform: translateY(0); } /* 애니메이션이 끝났을 때 상태 */
+        }
+
+        .move {
+            animation: moveSide 2s ease-in-out infinite;
+        }
+        @keyframes moveSide {
+            0% { transform: translateX(-25px); }
+            50% { transform: translateX(25px); }
+            100% { transform: translateX(-25px); }
+        }
+        
+        .size {
+            animation: moveSize 2s ease-in-out infinite;
+        }
+        @keyframes moveSize {
+            0% { scale: 0.5; }
+            50% { scale: 1.5; }
+            100% { scale: 0.5; }
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>Animation vs Static 비교</h1>
+
+    <div class="demo-area">
+        <div class="container">
+            <div class="box"></div>
+            <div class="label">Static Box(움직임 없음)</div>
+        </div>
+
+        <div class="container">
+            <div class="box animate"></div>
+            <div class="label">Animation 적용</div>
+        </div>
+
+        <!-- 1. 컨테이너 -> 좌우로 움직이는 박스 제작하기! -->
+         <div class="container">
+            <div class="box move"></div>
+            <div class="label">좌우로 움직임</div>
+         </div>
+
+        <!-- 2. 컨테이너 -> 박스가 작아졌다 커졌다 반복하는 박스 제작하기! -->
+         <div class="container">
+            <div class="box size"></div>
+            <div class="label">커졌다 작아짐</div>
+         </div>
+    </div>
+
+</body>
+</html>
