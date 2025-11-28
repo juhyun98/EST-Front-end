@@ -82,21 +82,26 @@
     .logo {
         display: flex;
         align-items: center;
+        gap: 10px;
         font-weight: bold;
         font-size: 1.1rem;
     }
     .logo-badge {
-        border: 1px solid black;
-        /* border-radius: ; */
-        background-color: red;
-        padding: 0px;
+        width: 26px;
+        height: 26px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background: radial-gradient(circle, #f97316, #ef4444);
+        font-size: 0.8rem;
     }
 
     .sidebar-nav {
         display: flex;
         flex-direction: column;
         gap: 6px;
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
     .nav-item {
         display: flex;
@@ -154,48 +159,78 @@
   /* TODO: 헤더 CSS 작성 */
     .main-header {
         display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 28px;
+        gap: 16px;
     }
 
     .search-bar {
-        margin-top: 10px;
-        margin-bottom: 20px;
+        max-width: 520px;
         position: relative;
         flex: 1;
     }
     .search-input {
-        width: 40%;
-        padding: 10px 20px;
-        border: 1px solid gray;
-        border-radius: 50px;
-        background-color: rgb(69, 59, 81);
+        width: 100%;
+        padding: 10px 14px 10px 38px;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.5);
+        background: rgba(15, 23, 42, 0.8);
+        color: #e5e7eb;
+        outline: none;
+        font-size: 0.95rem;
     }
     .search-icon {
-        padding: 5px;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 0.9rem;
+        opacity: 0.7;
         position: absolute;
+    }
+    .header-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-size: 0.85rem;
+        color: #9ca3af;
     }
 
     .avatar {
+        width: 28px;
+        height: 28px;
         border-radius: 50%;
+        background: linear-gradient(135deg, #22c55e, #0ea5e9);
+        display: inline-block;
     }
 
     .feel-emotion {
         display: flex;
-        justify-content: flex-start;
-
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 22px;
+        font-size: 0.8rem;
+        
     }
     .feel-span {
-        margin-right: 20px;
-        padding: 7px;
-        border: 1px solid gray;
-        border-radius: 15px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        background: rgba(15, 23, 42, 0.75);
+        color: #e5e7eb;
         cursor: pointer;
+        transition: background 0.2s ease, border-color 0.2s ease;
     }
     .feel-span:hover {
-        background-color: gray;
+      background: rgba(248, 250, 252, 0.1);
+      border-color: rgba(248, 250, 252, 0.8);
     }
     .active {
-        background-color: gray;
+      background: rgba(248, 250, 252, 0.1);
+      border-color: rgba(248, 250, 252, 0.8);
     }
+    
 
   /* ===================================================================
     Q9. [신곡 배너 + 애니메이션]
