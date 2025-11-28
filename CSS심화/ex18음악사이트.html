@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>🎵 Music Dashboard UI 실습</title>
+
+  <style>
+  /* ===================================================================
+    Q1. [전체 공통 설정 – Reset + Body 디자인]
+    📌 목표:
+       - 브라우저 기본 스타일 초기화
+       - 전체 UI에 적용될 기본 폰트, 텍스트 색상, 배경 설정
+    📝 해야 할 일:
+       1) * 선택자로 margin, padding, box-sizing 리셋하기
+       2) body 배경을 그라디언트로 적용
+       3) 전체 글자색과 기본 폰트 지정
+    예상 결과: 화면 전체가 어두운 블루/블랙 그라디언트 배경으로 변경됨
+  =================================================================== */
+  /* TODO: 이 영역에 reset + body 스타일 작성 */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-image: radial-gradient(circle at top left, #282828 0, #020861 55%);
+        color: rgb(230, 233, 235);
+        font-family: "Noto Sans KR", sans-serif;
+        min-height: 100vh; /* 브라우저 전체 높이 100% -> 콘텐츠 양이 적더라도 배경영역이 전체를 채우도록 */
+    }
+
+
+  /* ===================================================================
+    Q3. [전체 레이아웃 구성 – .app / .sidebar / .main]
+    📌 목표:
+       - 화면을 좌측 사이드바와 오른쪽 메인 콘텐츠로 분리
+    📝 해야 할 일:
+       1) .app 에 flex 레이아웃 적용 (가로 배치)
+       2) .sidebar 너비 고정 (예: 240px)
+       3) .main 은 남은 영역 차지 (flex: 1)
+    예상 결과: 좌측은 메뉴, 오른쪽은 콘텐츠 공간
+  =================================================================== */
+  /* TODO: 레이아웃 스타일 작성 */
+    .app {
+        display: flex;
+        min-height: 100vh;
+    }
+    
+    .sidebar {
+        display: flex;
+        width: 240px;
+        padding: 20px 18px;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .main {
+        /* 부모요소가 flex일 때 사용 가능하다(남은 공간은 전부 차지하겠다~ / 공간이 부족하다면 줄어들 수 있다) */
+        flex: 1;
+        padding: 26px 32px 40px;
+        overflow-x: hidden;
+        /* 컨텐츠가 넘치는 경우 잘라낸다 가로 스크롤바를 숨겨서 -> 레이아웃이 흔들리는 것을 방지 */
+        overflow-y: auto;
+    }
+
+
+
+  /* ===================================================================
+    Q5. [사이드바 스타일링]
+    📌 목표:
+       - 사이드바 내부의 로고, 메뉴, 하단 버튼 스타일링
+       - nav-item hover 시 배경 반응 효과 추가
+    📝 해야 할 일:
+       1) 사이드바를 column 방향 flex로 배치
+       2) 메뉴 .nav-item 스타일 정의 + hover 효과 추가
+       3) .btn-outline 버튼 스타일링 및 hover 반응 추가
+    예상 결과: 사이드바가 완성된 앱 UI처럼 보임
+  =================================================================== */
+  /* TODO: 사이드바 CSS 작성 */
+
+    .logo {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+    .logo-badge {
+        border: 1px solid black;
+        /* border-radius: ; */
+        background-color: red;
+        padding: 0px;
+    }
+
+    .sidebar-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-size: 0.9rem;
+    }
+    .nav-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    /* hover 마우스가 올라갔을 때 배경색상이 조금 어두워 질 수 있도록 설정하기!*/
+    .nav-item:hover,
+    .nav-item--active {
+        background-color: rgb(67, 63, 77);
+    }
+    .sidebar-footer {
+        font-size: 0.8rem;
+        margin-top: auto;
+        color: rgb(202, 201, 201);
+    }
+    .btn-outline {
+        /* 색상 관련 속성 */
+        background: transparent;
+        color: white;
+
+        margin-top: 15px;
+        width: 100%;
+        border-radius: 50px;
+        border: 1px solid rgba(148, 163, 180, 0.4);
+        font-size: 0.85rem;
+        padding: 8px 10px;
+        cursor: pointer;
+
+        transition: background-color 0.2s ease;
+    }
+
+    /* 버튼에 hover 선택자 활용해서 클릭하는 효과 주기 */
+    .btn-outline:hover {
+        background-color: rgba(148, 162, 180, 0.2);
+    }
+
+
+  /* ===================================================================
+    Q7. [메인 헤더 스타일링]
+    📌 목표:
+       - 검색창 및 아바타 정렬
+       - 검색 input 내부에 아이콘 위치시키기
+    📝 해야 할 일:
+       1) .main-header 를 flex로 좌우 배치
+       2) .search-bar 를 relative 로 설정하고 .search-icon absolute 배치
+       3) .avatar 원형 스타일 지정
+    예상 결과: 상단 헤더 완성
+  =================================================================== */
+  /* TODO: 헤더 CSS 작성 */
+    .main-header {
+        display: flex;
+    }
+
+    .search-bar {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        position: relative;
+        flex: 1;
+    }
+    .search-input {
+        width: 40%;
+        padding: 10px 20px;
+        border: 1px solid gray;
+        border-radius: 50px;
+        background-color: rgb(69, 59, 81);
+    }
+    .search-icon {
+        padding: 5px;
+        position: absolute;
+    }
+
+    .avatar {
+        border-radius: 50%;
+    }
+
+    .feel-emotion {
+        display: flex;
+        justify-content: flex-start;
+
+    }
+    .feel-span {
+        margin-right: 20px;
+        padding: 7px;
+        border: 1px solid gray;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+    .feel-span:hover {
+        background-color: gray;
+    }
+    .active {
+        background-color: gray;
+    }
+
+  /* ===================================================================
+    Q9. [신곡 배너 + 애니메이션]
+    📌 목표:
+       - 새로운 곡 소개하는 영역 생성
+       - 배경 그라디언트가 천천히 움직이는 애니메이션 적용
+       - NEW 뱃지가 두근두근하는 pulse animation 적용
+    📝 해야 할 일:
+       1) .new-release-banner 영역 CSS 적용
+       2) @keyframes gradientMove / pulse 작성
+    예상 결과: 시각적으로 가장 눈에 띄는 영역 생성
+  =================================================================== */
+  /* TODO: 배너 + 애니메이션 작성 */
+    .new-release-banner {
+        margin-bottom: 18px;
+        padding: 12px 16px;
+        display: flex;
+        border-radius: 18px;
+        background: linear-gradient(120deg, #85bded, rgba(211, 233, 255, 0.067), #cc7474);
+        gap: 12px;
+        animation: horizon 3s ease-in-out infinite;
+        align-items: center;
+    }
+    @keyframes horizon {
+        0% {background-color: #85bded;}
+        33% {background-color: rgba(211, 233, 255, 0.067);}
+        66% {background-color: #cc7474;}
+        100% {background-color: #85bded;}
+    }
+
+    .new-badge {
+        font-size: 0.7rem;
+        font-weight: 700;
+        padding: 4px 10px;
+        border: 1px solid black;
+        border-radius: 8px;
+        background-color: rgba(15, 23, 42, 0.85);
+
+        animation: pulse 1.3s ease-in-out infinite;
+    }
+    @keyframes pulse {
+        0% {scale: 1; box-shadow: 0 0 0 0 rgba(15, 23, 42, 0.0);}
+        50% {scale: 0.93; box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.4);}
+        100% {scale: 1; box-shadow: 0 0 0 0 rgba(15, 23, 42, 0.0);}
+    }
+    .new-text-main {
+        flex: 1;
+    }
+    .new-text-main .title {
+        font-size: 0.9rem;
+        font-weight: 700;
+    }
+    .new-text-main .meta {
+        font-size: 0.8rem;
+        opacity: 0.9;
+    }
+
+    .banner-play {
+        border: none;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        padding: 6px 14px;
+        cursor: pointer;
+        color: white;
+        background-color: black;
+
+        transition: translateY 2s ease;
+    }
+    .banner-play:hover {
+        transform: translateY(-1px);
+    }
+
+  /* ===================================================================
+    Q11. [Hero 추천 카드 영역 CSS]
+    📌 목표:
+       - 그리드 카드 레이아웃 만들기
+       - hover 시 카드가 위로 떠보이도록 transition 적용
+    📝 해야 할 일:
+       1) .hero-grid → display: grid / repeat / gap
+       2) .card-horizontal → flex 구성 + hover motion 적용
+    예상 결과: 추천 카드가 UI처럼 보이고 호버 시 애니메이션 발생
+  =================================================================== */
+  /* TODO: hero 스타일 작성 */
+
+    .hero {
+        margin-bottom: 32px;
+    }
+
+    .hero-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+    }
+    .hero-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 16px;
+    }
+
+    .card-horizontal {
+        display: flex;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(148, 163, 180, 0.4);
+        gap: 10px;
+        cursor: pointer;
+    }
+    .thumb {
+        width: 50px;
+        height: 50px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        background-image: linear-gradient(120deg, rgb(255, 75, 75), rgb(255, 113, 113), rgb(255, 146, 146));
+    }
+
+    /* card 내부 폰트 조정 */
+    .card-text-main {
+        font-size: 0.9rem;
+    }
+    .card-text-main .title{
+        font-weight: 600;
+        margin-bottom: 4px;
+    }
+    .card-text-main .meta {
+        font-size: 0.75rem;
+        color: #cdcdcd;
+    }
+
+    /* ===================================================================
+    Q13. [인기곡 리스트 스타일링]
+    📌 목표:
+        - 음악 리스트가 표(Table)처럼 정렬되어 보이도록 구성
+        - hover 시 강조 효과 추가
+    📝 해야 할 일:
+        1) .section-header 정렬 (좌:제목 / 우:더보기)
+        2) .track-list 배경, 테두리, radius 적용
+        3) .track-row grid layout 구성 (4개의 column)
+        4) .track-row:hover 시 배경색 강조 효과 넣기
+    예상 결과: 음원 서비스 UI 같은 재생목록 레이아웃 완성
+    =================================================================== */
+    /* TODO: track-list / track-row / hover 스타일 작성 */
+    
+    .section {
+        /* 각 섹션 별로 영역을 구분 지을 때 해당 요소에 마진을 부여하는 것이 좋다~ */
+        margin-bottom: 32px;
+    }
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+    .section-title {
+        font-size: 1.3rem;
+    }
+    .section-more {
+        font-size: 0.8rem;
+        color: gray;
+        cursor: pointer;
+    }
+
+    .track-list {
+        border-radius: 12px;
+        background: rgba(15, 23, 42, 0.4);
+        border: 1px solid rgba(15, 23, 42, 0.85);
+    }
+    .track-row {
+        display: grid;
+        grid-template-columns: 32px 1.4fr 1fr 80px;
+        gap: 12px;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+    .track-index {
+        text-align: center;
+        font-size: 0.8rem;
+    }
+    .track-tilte {
+        font-weight: 500;
+    }
+    .track-artist {
+        font-size: 0.7rem;
+    }
+    .track-view {
+        text-align: right;
+    }
+    .track-menu {
+        text-align: center;
+        opacity: 0.7;
+    }
+
+
+  /* ===================================================================
+    Q14. [반응형 처리 – 심화 선택]
+    📌 목표:
+       - 화면 폭이 줄어들면 sidebar 숨기기
+    📝 해야 할 일:
+       1) @media (max-width:900px) 처리
+    예상 결과: 작은 화면에서 모바일 UI처럼 보임
+  =================================================================== */
+  @media (max-width: 900px) {
+    /* TODO: sidebar 숨기기 / main padding 조정 */
+  }
+
+  </style>
+</head>
+
+<body>
+<!-- ===================================================================
+  Q2. [전체 레이아웃 HTML 뼈대]
+  📌 목표:
+    - 최상위 레이아웃 컨테이너 .app
+    - 왼쪽 .sidebar, 오른쪽 .main 영역 생성
+=================================================================== -->
+<div class="app">
+
+  <!-- ================================================================
+    Q4. [사이드바 HTML 구조]
+    📌 목표:
+      - 로고 / 메뉴 / 하단 안내 영역 분리
+    📝 해야 할 요소:
+      - .logo           : 상단 로고 영역
+        - .logo-badge   : 둥근 배지 (아이콘/글자)
+      - .sidebar-nav    : 메뉴 리스트 전체
+        - .nav-item     : 각 메뉴 항목 (홈, 둘러보기, 보관함)
+        - .nav-item--active : 현재 선택된 메뉴
+        - .icon         : 이모지 아이콘 영역
+      - .sidebar-footer : 하단 안내 문구 + 버튼
+        - .btn-outline  : “+ 새 재생목록” 버튼
+  ================================================================ -->
+  <aside class="sidebar">
+    <!-- TODO(Q4):
+      1) .logo 안에 .logo-badge 와 텍스트 "Music" 배치
+      2) .sidebar-nav 안에 3개의 .nav-item (🏠 홈 / 🎧 둘러보기 / 📁 보관함)
+      3) .sidebar-footer 안에 안내 문장 + .btn-outline 버튼 추가
+    -->
+      <div class="logo">
+            <div class="logo-badge">M</div>
+            <span>Music</span>
+      </div>
+
+      <nav class="sidebar-nav">
+            <div class="nav-item nav-item--active">
+                <span class="icon">🏠</span>
+                <span>홈</span>
+            </div>
+            <div class="nav-item">
+                <span class="icon">🎧</span>
+                <span>둘러보기</span>
+            </div>
+            <div class="nav-item">
+                <span class="icon">📁</span>
+                <span>보관함</span>
+            </div>
+      </nav>
+
+      <div class="sidebar-footer">
+            <div>나만의 플레이리스트를 <br> 직접 만들어 보세요</div>
+            <button class="btn-outline"> + 새 재생목록</button>
+      </div>
+
+  </aside>
+
+  <!-- ================================================================
+    메인 영역 (.main)
+  ================================================================ -->
+  <main class="main">
+
+    <!-- ============================================================
+      Q6. [메인 헤더 HTML]
+      📌 목표:
+        - 왼쪽: 검색바
+        - 오른쪽: 프로필 아바타
+      📝 해야 할 요소:
+        - .main-header     : 헤더 전체
+        - .search-bar      : input을 감싸는 div
+          - input[type="text"]
+          - .search-icon   : 돋보기 이모지/아이콘
+        - .header-right    : 오른쪽 정렬 영역
+          - .avatar        : 동그란 프로필
+    ============================================================ -->
+    <header class="main-header">
+      <!-- TODO(Q6):
+        1) <div class="search-bar"> 안에
+           - <span class="search-icon">🔍</span>
+           - <input type="text" placeholder="노래, 앨범, 아티스트, 플레이리스트 검색" />
+        2) <div class="header-right"> 안에
+           - 사용자 이름(span)
+           - <span class="avatar"></span> 추가
+      -->
+
+            <div class="search-bar">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-input" placeholder="노래, 앨범, 아티스트, 플레이리스트 검색">
+            </div>
+            <div class="header-right">
+                <span>주현</span>
+                <span class="avatar">J</span>
+            </div>
+    </header>
+
+    <!-- ============================================================
+      Q8. [신곡 배너 HTML]
+      📌 목표:
+        - 상단에 강조되는 "오늘 발매된 신곡" 영역 만들기
+      📝 해야 할 요소:
+        - .new-release-banner : 전체 배너 컨테이너
+          - .new-badge        : "NEW" 텍스트
+          - .new-text-main    : 텍스트 묶음
+            - .title          : 신곡 제목 문장
+            - .meta           : 아티스트 + 짧은 설명
+          - .banner-play      : ▶ 재생 버튼
+    ============================================================ -->
+    <section class="new-release-banner">
+      <!-- TODO(Q8): -->
+         <span class="new-badge">NEW</span>
+         <div class="new-text-main">
+             <div class="title">오늘 발매된 신곡 · IRIS OUT</div>
+             <div class="meta">Kenshi Yonezu · 지금 바로 들어보세요</div>
+         </div>
+         <button class="banner-play">▶ 재생</button>
+    </section>
+
+
+    <!-- 기분 표시 -->
+    <section class="feel-emotion">
+        <span class="feel-span active">듣기 좋은 노래</span>
+        <span class="feel-span">집중할 때</span>
+        <span class="feel-span">운동</span>
+        <span class="feel-span">기분 전환</span>
+        <span class="feel-span">휴식</span>
+        <span class="feel-span">에너지 업</span>
+    </section>
+
+    <!-- ============================================================
+      Q10. [Hero 추천 카드 HTML]
+      📌 목표:
+        - "이수님, 환영합니다." 제목
+        - 아래에 추천 카드 여러 개 그리드로 배치
+      📝 해야 할 요소:
+        - .hero           : Hero 섹션 래퍼
+          - .hero-title   : 큰 제목 텍스트
+          - .hero-grid    : 카드들을 담는 grid 컨테이너
+            - .card-horizontal 여러 개:
+              - .thumb         : 썸네일 박스
+              - .card-text-main :
+                  - .title      : 곡/플레이리스트 제목
+                  - .meta       : 아티스트/설명
+    ============================================================ -->
+    <section class="hero">
+      <!-- TODO(Q10): -->
+       <div class="hero-title">주현님, 환영합니다</div>
+
+       <div class="hero-grid">
+        <!-- 각 노래 한곡 당 하나의 카드를 만들어보자! -->
+         <article class="card-horizontal">
+            <!-- 1. 이미지 혹은 색상 카드가 들어가는 div -->
+             <div class="thumb"></div>
+             <!-- 2. 메인 텍스트 영역 : 노래 제목, 메타 데이터 -->
+                <div class="card-text-main">
+                    <div class="title">IRIS-OUT</div>
+                    <div class="meta">Kenshi Yonezu / JPOP / 2,000회 재생</div>
+                </div>
+         </article>
+         <article class="card-horizontal">
+            <!-- 1. 이미지 혹은 색상 카드가 들어가는 div -->
+             <div class="thumb"></div>
+             <!-- 2. 메인 텍스트 영역 : 노래 제목, 메타 데이터 -->
+                <div class="card-text-main">
+                    <div class="title">내이름맑음</div>
+                    <div class="meta">QWER / KPOP / 20,000회 재생</div>
+                </div>
+         </article>
+         <article class="card-horizontal">
+            <!-- 1. 이미지 혹은 색상 카드가 들어가는 div -->
+             <div class="thumb"></div>
+             <!-- 2. 메인 텍스트 영역 : 노래 제목, 메타 데이터 -->
+                <div class="card-text-main">
+                    <div class="title">Ballerino</div>
+                    <div class="meta">LEESSANG / KPOP / 200,000회 재생</div>
+                </div>
+         </article>
+         <article class="card-horizontal">
+            <!-- 1. 이미지 혹은 색상 카드가 들어가는 div -->
+             <div class="thumb"></div>
+             <!-- 2. 메인 텍스트 영역 : 노래 제목, 메타 데이터 -->
+                <div class="card-text-main">
+                    <div class="title">Ai wo Tsutaetaidatoka</div>
+                    <div class="meta">Aimyon / JPOP / 2,000,000회 재생</div>
+                </div>
+         </article>
+       </div>
+    </section>
+
+    <!-- ============================================================
+      Q12. [인기곡 리스트 HTML – 섹션 1]
+      📌 목표:
+        - "인기곡" 섹션 + 테이블 형태의 곡 리스트 구성
+      📝 해야 할 요소:
+        - .section               : 섹션 래퍼
+          - .section-header      : 상단 제목 줄
+            - .section-title     : "인기곡"
+            - .section-more      : "더보기" 텍스트
+          - .track-list          : 곡 리스트 전체
+            - .track-row (반복)  :
+              - .track-index     : 번호
+              - (제목+아티스트 묶음)
+                - .track-title
+                - .track-artist
+              - .track-view      : 재생 수
+              - .track-menu      : ⋯ 메뉴 아이콘
+    ============================================================ -->
+    <section class="section">
+      <!-- TODO(Q12-1):
+        1) <div class="section-header">
+             <h2 class="section-title">인기곡</h2>
+             <span class="section-more">더보기</span>
+           </div>
+        2) <div class="track-list"> 안에
+           - <div class="track-row"> 구조를 3~4개 이상 작성
+      -->
+
+            <div class="section-header">
+                <h2 class="section-title">인기곡</h2>
+                <span class="section-more">더보기</span>
+            </div>
+            <div class="track-list">
+                <div class="track-row">
+                    <div class="track-index">1</div>
+                    <div>
+                        <div class="track-title">눈물참기</div>
+                        <div class="track-artist">QWER</div>
+                    </div>
+                    <div class="track-view">재생 133,000회</div>
+                    <div class="track-menu">...</div>
+                </div>
+                <div class="track-row">
+                    <div class="track-index">2</div>
+                    <div>
+                        <div class="track-title">그리워 그리워</div>
+                        <div class="track-artist">노을</div>
+                    </div>
+                    <div class="track-view">재생 13,000회</div>
+                    <div class="track-menu">...</div>
+                </div>
+                <div class="track-row">
+                    <div class="track-index">3</div>
+                    <div>
+                        <div class="track-title">Lemon</div>
+                        <div class="track-artist">Kenshi Yonezu</div>
+                    </div>
+                    <div class="track-view">재생 9,000회</div>
+                    <div class="track-menu">...</div>
+                </div>
+                <div class="track-row">
+                    <div class="track-index">4</div>
+                    <div>
+                        <div class="track-title">어른</div>
+                        <div class="track-artist">Sondia</div>
+                    </div>
+                    <div class="track-view">재생 6,000회</div>
+                    <div class="track-menu">...</div>
+                </div>
+            </div>
+    </section>
+
+    <!-- ============================================================
+      Q12-2. [Shorts에서 들은 음악 리스트 HTML – 섹션 2]
+      📌 목표:
+        - 첫 번째 섹션과 같은 구조를 다른 데이터로 한 번 더 작성
+      📝 해야 할 요소:
+        - .section
+          - .section-header
+            - .section-title : "Shorts에서 들은 음악"
+            - .section-more  : "모두 재생" 등
+          - .track-list 안에 .track-row 반복
+    ============================================================ -->
+    <section class="section">
+      <!-- TODO(Q12-2):
+        1) 제목을 "Shorts에서 들은 음악"으로 변경
+        2) .track-row 안 text를 다른 곡 정보로 구성
+      -->
+    </section>
+
+  </main>
+</div>
+
+</body>
+</html>

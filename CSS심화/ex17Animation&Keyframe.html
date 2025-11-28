@@ -199,5 +199,39 @@
         </div>
     </section>
 
+    <!-- 애니메이션 속성 정리 -->
+     <!-- 
+        1. animation-duration : 애니메이션이 한 사이클을 수행하는데 걸리는 시간을 지정한다!
+            -> 시간 값은 양수 또는 0이어야 하며, "단위(s,ms)"는 필수다!!
+            -> 기본값이 0인 애니메이션은 작동하지 않아야 함을 나타낸다!
+
+        2. animation-delay : 애니메이션이 시작할 지점을 지정한다!
+            -> 양수 값을 넣는 경우 : 지정된 시간이 경과한 이후 시작된다
+            -> 음수 값을 넣는 경우 : 바로 시작이 되지만, 애니메이션 주기의 중간부터 시작된다
+                ex) delay: -1s : 애니메이션 1초 이후 시점에서부터 시작한다!
+        
+        3. animation-timing-function : 애니메이션 진행 방식을 지정한다 (ease / ease-in)
+            기본값은 ease
+
+        4. animation-interation-count : 애니메이션의 사이클 반복 횟수를 지정한다
+            -> 기본값이 1이다!
+            -> infinite 값을 통해 무한하게 반복 할 수 있다!
+        
+        5. animation-direction : 애니메이션이 정방향, 역방향, 또는 앞뒤로 번갈아 재생되는지 여부를 지정한다
+            1) normal : 정방향 재생
+            2) reverse : 역재생 -> 애니메이션 반대로
+            3) alternate : 정방향, 역방향을 반복 재생한다
+
+        6. animation-play-state : 애니메이션의 동작 상태 여부를 지정한다!
+            - running : 현재 재생중임을 나타낸다 (기본값)
+            - paused : 현재 일시중지임을 나타낸다
+
+        7. animation-fill-mode : 애니메이션 실행 전/후에 요소에 스타일을 적용하는 방법을 지정한다!
+            - none : 요소에 (애니메이션 시작 전) 적용된 스타일을 그대로 유지한다 (기본값)
+            - forward : 실행된 애니메이션의 마지막 "keyframe"에 의해서 설정된 스타일 값을 유지한다!
+            - backward : "delay"가 일어나는 동안 keyframe에 의해 설정된 스타일 값을 적용시킨다!
+            - both : forward, backward 둘다 적용
+     -->
+
 </body>
 </html>
