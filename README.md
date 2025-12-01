@@ -22,19 +22,19 @@ Command Line Interface의 약자
 VScode에서 사용하기 위해 node.js를 우선 설치해둔다.
 <br><br>
 
-**터미널 (ctrl + ~)**
+### 1. **터미널 (ctrl + ~)**
 <br>
 `npm install tailwindcss @tailwindcss/cli`
 
 <br><br>
 
-**css파일** (파일명은 styles.css 로 만들었다)
+### 2. **css파일** (파일명은 styles.css 로 만들었다)
 <br>
 `@import "tailwindcss";`
 
 <br><br>
 
-**터미널**
+### 3. **터미널**
 <br>
 `npx @tailwindcss/cli -i ./styles.css -o ./output.css --watch`
 <br>　　　　　　　　　　　　　파일명　　　　　생성되는 파일
@@ -42,9 +42,9 @@ VScode에서 사용하기 위해 node.js를 우선 설치해둔다.
 <br><br>
 
 여기까지 진행하면 output.css라는 파일이 만들어지고 자동완성 기능만 추가해주면 끝이다.
-<br><br><br>
+<br><br><br><br>
 
-자동완성 기능은
+## 자동완성 기능
 tailwind.config.js 파일 생성
 
 ```
