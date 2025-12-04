@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="output.css">
     <style>
         @media all and (min-width: 1024px) {
-            #EnjoyYutubeMusic {
+            #EnjoyYoutubeMusic {
                 max-width: 1440px;
                 padding: 60px 80px;
                 font-size: 4rem;
@@ -15,7 +15,7 @@
             }
         }
         @media screen and (max-width: 1024px) {
-            #EnjoyYutubeMusic {
+            #EnjoyYoutubeMusic {
                 max-width: 1440px;
                 padding: 60px 80px;
                 font-size: 2.5rem;
@@ -24,7 +24,7 @@
         }
 
         @media screen and (max-width: 527.9px) {
-            #EnjoyYutubeMusic {
+            #EnjoyYoutubeMusic {
                 max-width: 360px;
                 padding: 50px 16px;
                 font-size: 1.7rem;
@@ -32,19 +32,55 @@
             }
         }
 
+        @media screen and (max-width: 527.9px) {
+            #EnjoyColumn {
+                flex-direction: column;
+                max-width: 360px;
+                margin: 66px auto;
+            }
+        }
+        @media screen and (max-width: 527.9px) {
+            #EnjoyFirstImg {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                align-content: center;
+                justify-content: center;
+                background-size: cover;
+            }
+        }
+        @media screen and (max-width: 527.9px) {
+            #EnjoyFirstText {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                align-content: center;
+                justify-content: center;
+                background-size: cover;
+                margin: 0;
+                padding: 16px;
+            }
+        }
+        @media screen and (max-width: 527.9px) {
+            #MyRythm {
+                font-size: 2rem;
+            }
+        }
+
+
     </style>
 </head>
 <body class="bg-black text-white">
     <div class="row mx-32">
-        <div class="flex justify-center m-auto py-15 px-20" id="EnjoyYutubeMusic">
+        <div class="flex justify-center m-auto py-15 px-20" id="EnjoyYoutubeMusic">
             <span class="font-bold">마음대로 즐기는 YouTube Music</span>
         </div>
         <div class="flex flex-row-reverse mx-20 my-15" id="">
-            <div class="inline-block"><img src="https://www.gstatic.com/youtube/img/promos/growth/music_premium_lp2_large_feature_move_to_rhythm_dark_640x200.webp" alt=""></div>
-            <div class="flex-1">
+            <div class="inline-block" id="EnjoyFirstImg"><img src="https://www.gstatic.com/youtube/img/promos/growth/music_premium_lp2_large_feature_move_to_rhythm_dark_640x200.webp" alt=""></div>
+            <div class="flex-1" id="EnjoyColumn">
                 <div class="mx-12">
-                    <div class="mt-4">
-                        <span class="font-bold text-5xl">나만의 리듬에 맞춰 즐기기</span>
+                    <div class="mt-4" id="EnjoyFirstText">
+                        <span class="font-bold text-5xl" id="MyRythm">나만의 리듬에 맞춰 즐기기</span>
                     </div>
                     <div class="mt-4">
                         <span class="text-[#AAAAAA]">내가 좋아하는 음악을 기준으로 생성된 믹스를 듣고 분위기나 상황에 맞게 선별된 수천 개의 재생목록을 탐색해 보세요.</span>

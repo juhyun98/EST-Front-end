@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive YouTube Music</title>
+    <link rel="stylesheet" href="output.css">
+    <style>
+        /* Desktop */
+        @media (min-width: 1024px) {
+            #EnjoyYoutubeMusic {
+                max-width: 1440px;
+                padding: 60px 80px;
+                font-size: 4rem;
+                text-align: center;
+            }
+        }
+
+        /* Tablet */
+        @media (max-width: 1024px) and (min-width: 528px) {
+            #EnjoyYoutubeMusic {
+                max-width: 100%;
+                padding: 50px 48px;
+                font-size: 3rem;
+                text-align: center;
+            }
+
+            #EnjoyColumn {
+                flex-direction: column;
+                margin: 40px auto;
+                max-width: 768px;
+            }
+
+            #EnjoyFirstImg img {
+                width: 100%;
+                height: auto;
+            }
+
+            #EnjoyFirstText {
+                padding: 20px 0;
+            }
+
+            #MyRythm {
+                font-size: 2.6rem;
+            }
+
+            .tablet-flex-wrap {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 527.9px) {
+            #EnjoyYoutubeMusic {
+                max-width: 360px;
+                padding: 50px 16px;
+                font-size: 1.7rem;
+                text-align: center;
+                margin: auto;
+            }
+
+            #EnjoyColumn {
+                flex-direction: column;
+                max-width: 360px;
+                margin: 40px auto;
+            }
+
+            #EnjoyFirstImg {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            #EnjoyFirstImg img {
+                width: 100%;
+                height: auto;
+            }
+
+            #EnjoyFirstText {
+                padding: 16px;
+                margin: 0;
+            }
+
+            #MyRythm {
+                font-size: 2rem;
+            }
+        }
+
+    </style>
+</head>
+<body class="bg-black text-white">
+    <div class="mx-auto px-6">
+
+        <!-- Section Title -->
+        <div class="flex justify-center py-14" id="EnjoyYoutubeMusic">
+            <span class="font-bold">마음대로 즐기는 YouTube Music</span>
+        </div>
+
+        <!-- First Row -->
+        <div class="flex flex-row-reverse gap-10 my-16 flex-wrap md:flex-nowrap">
+            <div class="inline-block w-full md:w-auto" id="EnjoyFirstImg">
+                <img class="w-full max-w-[640px]" src="https://www.gstatic.com/youtube/img/promos/growth/music_premium_lp2_large_feature_move_to_rhythm_dark_640x200.webp" alt="">
+            </div>
+
+            <div class="flex-1" id="EnjoyColumn">
+                <div class="mx-4 md:mx-12">
+                    <div class="mt-4" id="EnjoyFirstText">
+                        <span class="font-bold text-4xl md:text-5xl" id="MyRythm">나만의 리듬에 맞춰 즐기기</span>
+                    </div>
+                    <div class="mt-4">
+                        <span class="text-[#AAAAAA] leading-relaxed">내가 좋아하는 음악을 기준으로 생성된 믹스를 듣고 분위기나 상황에 맞게 선별된 수천 개의 재생목록을 탐색해 보세요.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Row -->
+        <div class="flex flex-row gap-10 my-16 flex-wrap md:flex-nowrap">
+            <div class="inline-block w-full md:w-auto">
+                <img class="w-full max-w-[640px]" src="https://www.gstatic.com/youtube/img/promos/growth/music_premium_lp2_large_feature_custom_listening_dark_640x592.webp" alt="">
+            </div>
+
+            <div class="flex flex-col flex-1 justify-center">
+                <div class="mx-4 md:mx-12">
+                    <div class="mt-4">
+                        <span class="font-bold text-4xl md:text-5xl">나만을 위한 감상 환경 맞춤설정</span>
+                    </div>
+                    <div class="mt-4">
+                        <span class="text-[#AAAAAA] leading-relaxed">좋아하는 아티스트를 조합하여 내게 꼭 맞는 음악 감상 환경을 만드세요.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
