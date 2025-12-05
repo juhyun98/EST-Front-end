@@ -1,2 +1,7 @@
 @import "tailwindcss";
 
+@layer components {
+    .box-style {
+        @apply shadow-xl hover:shadow-2x1 cursor-pointer;
+    }
+}
