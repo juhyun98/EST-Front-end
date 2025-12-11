@@ -77,9 +77,9 @@
                     <span class="flex items-center">
                         <span class="flex flex-row w-full overflow-hidden">
                             <span class="font-normal text-[rgba(255,255,255,0.7)]">
-                                <a href="#" class="">Kenshi Yonezu</a>
+                                <a href="#" class="hover:underline">Kenshi Yonezu</a>
                                 <span>•</span>
-                                <a href="#">IRIS OUT</a>
+                                <a href="#" class="hover:underline">IRIS OUT</a>
                                 <span>•</span>
                                 <span>2025년</span>
                             </span>
@@ -128,7 +128,7 @@
             </div>
             <div class="w-[280px] flex items-center relative mr-1 justify-end justify-self-end">
                 <div class="flex items-center relative group">
-                    <div class="flex justify-center items-center align-middle pr-4 pt-1 opacity-0 pointer-events-none transition-all duration-200 group-hover:opacity-100 group-hover:pointer-events-auto" id="Range-bar">
+                    <div class="flex justify-center items-center align-middle pr-4 pt-1 opacity-0 pointer-events-none transition-all duration-200 ease-[ease] group-hover:opacity-100 group-hover:pointer-events-auto" id="Range-bar">
                         <input type="range" value="100" class="w-28">
                     </div>
                     <div class="mr-2 ml-1 mt-1 mb-1 w-9 h-9 hover:bg-[rgba(144,144,144,0.4)] rounded-full">
@@ -141,28 +141,34 @@
                         </button>
                     </div>
                 </div>
-                <div class="flex items-center grow-0 shrink-0 basis-auto">
-                    <div class="mr-2 ml-1 mt-1 mb-1 w-9 h-9 hover:bg-[rgba(144,144,144,0.4)] rounded-full">
-                        <button class="text-[#909090] w-full h-full cursor-pointer">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="#909090" height="24" viewBox="0 0 24 24" width="24">
-                                <path d="M17.293 1.293a1 1 0 000 1.415L18.586 4H7a5 5 0 00-5 5v4a1 1 0 102 0V9a3 3 0 013-3h11.586l-1.293 1.293a1 1 0 001.414 1.415L22.414 5l-3.707-3.707a1 1 0 00-1.414 0ZM21 10a1 1 0 00-1 1v4a3 3 0 01-3 3H5.414l1.293-1.292a1.001 1.001 0 00-1.414-1.415L1.586 19l3.707 3.707a1 1 0 101.414-1.413L5.414 20H17a5 5 0 005-5v-4a1 1 0 00-1-1Z"/>
-                            </svg>
-                        </button>
+                <div class="flex items-center justify-center align-middle grow-0 shrink-0 basis-auto">
+                    <div class="flex items-center justify-center align-middle mr-2 ml-1 mt-1 mb-1 w-9 h-9 hover:bg-[rgba(144,144,144,0.4)] rounded-full">
+                        <div class="flex items-center justify-center align-middle">
+                            <button class="text-[#909090] w-full h-full cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="#909090" height="24" viewBox="0 0 24 24" width="24">
+                                    <path d="M17.293 1.293a1 1 0 000 1.415L18.586 4H7a5 5 0 00-5 5v4a1 1 0 102 0V9a3 3 0 013-3h11.586l-1.293 1.293a1 1 0 001.414 1.415L22.414 5l-3.707-3.707a1 1 0 00-1.414 0ZM21 10a1 1 0 00-1 1v4a3 3 0 01-3 3H5.414l1.293-1.292a1.001 1.001 0 00-1.414-1.415L1.586 19l3.707 3.707a1 1 0 101.414-1.413L5.414 20H17a5 5 0 005-5v-4a1 1 0 00-1-1Z"/>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
-                    <div class="mr-2 ml-1 mt-1 mb-1 w-9 h-9 hover:bg-[rgba(144,144,144,0.4)] rounded-full">
-                        <button class="text-[#909090] w-full h-full cursor-pointer">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="#909090" height="24" viewBox="0 0 24 24" width="24">
-                                <path d="M16.293 1.293a1 1 0 00-.001 1.415L18.585 5H17.21a7 7 0 00-5.823 3.118L6.95 14.774A5 5 0 012.79 17H2a1 1 0 000 2h.79a7 7 0 005.822-3.117l4.438-6.656A5 5 0 0117.21 7h1.376l-2.293 2.293a1 1 0 001.414 1.414L22.414 6l-4.707-4.707a1 1 0 00-1.414 0ZM2.789 5H2a1 1 0 000 2h.79a5 5 0 014.159 2.227l.647.97 1.202-1.802-.185-.277A7 7 0 002.789 5Zm13.504 8.293a1 1 0 00-.001 1.414L18.585 17H17.21a5 5 0 01-4.16-2.226l-.648-.972-1.202 1.803.186.278A7 7 0 0017.21 19h1.376l-2.293 2.294-.068.076a1 1 0 001.406 1.406l.076-.07L22.414 18l-4.707-4.707a1 1 0 00-1.414 0Z"/>
-                            </svg>
-                        </button>
+                    <div class="flex items-center justify-center align-middle mr-2 ml-1 mt-1 mb-1 w-9 h-9 hover:bg-[rgba(144,144,144,0.4)] rounded-full">
+                        <div class="flex items-center justify-center align-middle">
+                            <button class="text-[#909090] w-full h-full cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="#909090" height="24" viewBox="0 0 24 24" width="24">
+                                    <path d="M16.293 1.293a1 1 0 00-.001 1.415L18.585 5H17.21a7 7 0 00-5.823 3.118L6.95 14.774A5 5 0 012.79 17H2a1 1 0 000 2h.79a7 7 0 005.822-3.117l4.438-6.656A5 5 0 0117.21 7h1.376l-2.293 2.293a1 1 0 001.414 1.414L22.414 6l-4.707-4.707a1 1 0 00-1.414 0ZM2.789 5H2a1 1 0 000 2h.79a5 5 0 014.159 2.227l.647.97 1.202-1.802-.185-.277A7 7 0 002.789 5Zm13.504 8.293a1 1 0 00-.001 1.414L18.585 17H17.21a5 5 0 01-4.16-2.226l-.648-.972-1.202 1.803.186.278A7 7 0 0017.21 19h1.376l-2.293 2.294-.068.076a1 1 0 001.406 1.406l.076-.07L22.414 18l-4.707-4.707a1 1 0 00-1.414 0Z"/>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class="p-1 w-9 h-9 hover:bg-[rgba(144,144,144,0.4)] rounded-full">
-                    <button class="text-[#909090] w-full h-full cursor-pointer">
-                        <svg style="transform: rotate(180deg);" xmlns="http://www.w3.org/2000/svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24">
-                            <path d="M4.135 7a1 1 0 00-.768 1.64L12 19l8.633-10.36A1 1 0 0019.865 7H4.135Z"/>
-                        </svg>
-                    </button>
+                <div class="flex items-center justify-center align-middle p-1 w-9 h-9 hover:bg-[rgba(144,144,144,0.4)] rounded-full">
+                    <div class="flex items-center justify-center align-middle">
+                        <button class="text-[#909090] w-full h-full cursor-pointer">
+                            <svg style="transform: rotate(180deg);" xmlns="http://www.w3.org/2000/svg" fill="#fff" height="24" viewBox="0 0 24 24" width="24">
+                                <path d="M4.135 7a1 1 0 00-.768 1.64L12 19l8.633-10.36A1 1 0 0019.865 7H4.135Z"/>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
