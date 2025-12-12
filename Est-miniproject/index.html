@@ -59,6 +59,22 @@
             text-overflow: ellipsis;
             overflow: hidden;
         }
+               .musicvedio{
+                width: 1468px;
+                height: 350px;
+                display:grid;
+                grid-template-columns: repeat(8, 1fr);
+                grid-template-rows: repeat(1, 1fr);
+                gap: 20px;
+                overflow-x: scroll;
+                overflow-y: hidden;
+                padding-bottom: 15px;
+
+          }
+          .musiccard{
+            width: 400px;
+            height: 306px;
+          }
 
         .box:hover {
             overflow-x: scroll;
@@ -261,17 +277,13 @@
         }
 
         /* 뮤비 카드 */
-        .card-1 {
-            width: 500px;
-            height: 280px;
-        }
+        
 
         /* 스크롤 시작 */
         .as {
             overflow-x: scroll;
-            overflow-y: hidden;
+            
             scrollbar-color: #555 black;
-            height: 400px;
         }
 
 
@@ -298,6 +310,10 @@
         .as:hover {
             scrollbar-width: thin;
         }
+
+        .menu-scrollbar {
+            scrollbar-color: lightgray gray;
+          }
     </style>
 </head>
 
@@ -652,9 +668,9 @@
 
     <!-- 메인 콘텐츠 영역 -->
 
-    <main class="mt-15 ms-60">
-    <div class="w-full h-24">
-        <div class="text-white flex gap-5 items-end justify-start">
+    <main class="mt-15 ms-60 mb-18 px-25">
+    <div class="w-full h-24 flex items-end justify-start">
+        <div class="text-white flex gap-4 h-9">
             <div class="rounded-lg p-2 hover:cursor-pointer hover:bg-[#494b52] bg-[#141720]">
                 <a href="#">팟캐스트</a>
             </div>
@@ -689,10 +705,846 @@
                 <a href="#">잠잘 때</a>
             </div>
         </div>
+    </div>
+    
+    
+    <!-- ---------------------------------뮤직 비디오 --------------------------------------- -->
+            
+                <p class="text-5xl text-white font-bold pt-15">맞춤 추천 뮤직비디오</p>
+
+                <!-- 오른쪽 버튼 영역 -->
+                <div class="flex justify-end mr-5 space-x-2">
+                    <button class="border border-gray-500 text-white px-4 py-1 rounded-full text-sm hover:bg-gray-700">
+                        모두 재생
+                    </button>
+                    <button
+                        class="border border-gray-500 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-gray-700">
+                        &lt
+                    </button>
+                    <button
+                        class="border border-gray-500 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-gray-700">
+                        >
+                    </button>
+                </div>
+
+                <div class="musicvedio">
+
+    <!-- 카드 1 -->
+    <div class="musiccard  rounded-xl relative group">
+        <div class="w-full rounded-lg relative hover:brightness-90 cursor-pointer">
+        <img id="img" alt="" src="https://i.ytimg.com/vi/HYsz1hP0BFo/sddefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCghqEJQEGHgg6AJIWg&rs=AMzJL3mhPOIBj7GgQZA391h8MOLI4LLd_g">
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="flex items-center justify-center ml-1 
+                w-0 h-0 
+                border-t-[12px] border-t-transparent
+                border-b-[12px] border-b-transparent
+                border-l-[20px] border-l-white/80">
+            </div>
         </div>
+    </div>
+
+    <!-- 텍스트 -->
+    <div class="text-white mt-3">
+        <p class="font-semibold">Lil Nas X - STAR WALKIN' (League of Legends Worlds Anthem)</p>
+        <p class="text-gray-400 text-sm">릴 나스 엑스 • 조회수 1억회</p>
+    </div>
+
+    <!-- 점 3개 메뉴 -->
+    <details class="absolute top-3 right-3">
+        <summary class="w-9 h-9 bg-black/40 cursor-pointer rounded-full
+                flex items-center justify-center
+                opacity-0 group-hover:opacity-100 transition list-none">
+            <div class="flex flex-col gap-1">
+                <span class="w-1 h-1 bg-white rounded-full"></span>
+                <span class="w-1 h-1 bg-white rounded-full"></span>
+                <span class="w-1 h-1 bg-white rounded-full"></span>
+            </div>
+        </summary>
+
+        <div class="absolute mt-2 w-56 py-2 rounded-lg bg-gray-800 text-white 
+                    max-h-96 overflow-y-auto menu-scrollbar">
+            <!-- 메뉴 항목들 -->
+             <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M12.22.97a.75.75 0 000 1.06l1.72 1.72h-1.032A5.25 5.25 0 008.54 6.088L5.212 11.08a3.75 3.75 0 01-3.12 1.67H1.5a.75.75 0 100 1.5h.592a5.251 5.251 0 004.368-2.338L9.788 6.92a3.75 3.75 0 013.12-1.67h1.032l-1.72 1.72a.75.75 0 001.06 1.06l3.53-3.53L13.28.97a.75.75 0 00-1.06 0ZM2.092 3.75H1.5a.75.75 0 000 1.5h.592a3.75 3.75 0 013.12 1.67l.485.727.902-1.351-.139-.208A5.25 5.25 0 002.092 3.75ZM12.22 9.97a.75.75 0 000 1.06l1.72 1.72h-1.032a3.75 3.75 0 01-3.12-1.67l-.486-.729-.902 1.352.14.209a5.25 5.25 0 004.368 2.338h1.032l-1.72 1.72a.75.75 0 001.06 1.06l3.53-3.53-3.53-3.53a.75.75 0 00-1.06 0Z"></path></svg>
+        </span>
+        셔플 재생
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M3.166 3.161a.75.75 0 011.06 1.06 6.753 6.753 0 000 9.548.75.75 0 01-1.06 1.06 8.253 8.253 0 010-11.668Zm10.607 0a.75.75 0 011.061 0 8.251 8.251 0 010 11.668.75.75 0 01-1.06-1.06 6.752 6.752 0 000-9.547.75.75 0 010-1.06Zm-2.122 2.126a.75.75 0 011.06 0 5.25 5.25 0 010 7.424.75.75 0 01-1.06-1.06 3.75 3.75 0 000-5.303.75.75 0 010-1.06Zm-6.363-.004a.75.75 0 111.06 1.06 3.751 3.751 0 00-.813 4.088c.189.454.466.867.814 1.216a.75.75 0 01-1.06 1.06A5.253 5.253 0 013.75 8.995a5.252 5.252 0 011.538-3.712Zm5.962 3.712-3.75 2.25v-4.5l3.75 2.25Z"></path></svg>
+        </span>
+        뮤직 스테이션 시작
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M6 2.86V5H3a1 1 0 00-1 1v12a1 1 0 102 0V7h2v2.137a.5.5 0 00.748.434L13 5.998 6.748 2.426A.5.5 0 006 2.86ZM21 5h-5a1 1 0 100 2h5a1 1 0 100-2Zm0 6H9a1 1 0 000 2h12a1 1 0 000-2Zm0 6H9a1 1 0 000 2h12a1 1 0 000-2Z"></path></svg>
+        </span>
+        다음에 재생
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M21 6.998a1 1 0 100-2H9a1 1 0 000 2h12ZM6 21.138a.5.5 0 00.748.434L13 18l-6.252-3.573A.5.5 0 006 14.86V17H4V6a1 1 0 00-2 0v12a1 1 0 001 1h3v2.138Zm15-8.14a1 1 0 000-2H9a1 1 0 000 2h12Zm0 6a1 1 0 000-2h-5a1 1 0 000 2h5Z"></path></svg>
+        </span>
+        현재 재생목록에 추가
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M14.25 1.5H3.75A1.5 1.5 0 002.25 3v12.665c0 .95 1.037 1.538 1.852 1.049L9 13.774l4.898 2.94a1.223 1.223 0 001.852-1.049V3a1.5 1.5 0 00-1.5-1.5ZM3.75 15.175V3h10.5v12.175l-4.864-2.918L9 12.025l-.386.232-4.864 2.918Z"></path></svg>
+        </span>
+        보관함에 재생목록 저장
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M12 2a1 1 0 00-1 1v11.586l-4.293-4.293a1 1 0 10-1.414 1.414L12 18.414l6.707-6.707a1 1 0 10-1.414-1.414L13 14.586V3a1 1 0 00-1-1Zm7 18H5a1 1 0 000 2h14a1 1 0 000-2Z"></path></svg>
+        </span>
+        오프라인 저장
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+            <path d="M14.25 11.25A.75.75 0 0115 12v1.5h1.5a.75.75 0 010 1.5H15v1.5a.75.75 0 01-1.5 0V15H12a.75.75 0 010-1.5h1.5V12a.75.75 0 01.75-.75Zm-4.5 3H3a.75.75 0 010-1.5h6.75v1.5Zm5.25-6a.75.75 0 010 1.5H3a.75.75 0 010-1.5h12Zm0-4.5a.75.75 0 010 1.5H3a.75.75 0 010-1.5h12Z">   
+            </path>
+          </svg>
+        </span>
+        재생목록에 저장
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M7.5 2.369v3.263c-4.394.18-6.529 3.25-6.733 9.795-.011.354.433.513.659.24 2.347-2.838 3.262-3.258 6.074-3.291v3.259a.75.75 0 001.235.572l8.515-7.205-8.515-7.205a.75.75 0 00-1.235.572ZM9 7.07V3.986l5.928 5.016L9 14.017v-3.159l-1.517.018c-1.452.017-2.69.127-3.898.768-.35.186-.683.41-1.01.67.266-1.46.687-2.543 1.222-3.32.797-1.156 1.956-1.789 3.765-1.863L9 7.07Z"></path></svg>
+        </span>
+        공유
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M15.755 4.724 8.775.694 8.655.64a.637.637 0 00-.623 1.08l.105.075.55.318-2.545 4.409-1.289.345a1.13 1.13 0 00-.683.525l-.758 1.313a.563.563 0 00.206.769l7.108 4.104c.27.155.613.063.77-.206l.757-1.313c.15-.259.19-.566.113-.854l-.345-1.289 2.545-4.409.551.319.118.053c.24.08.508.008.676-.182l.075-.104a.64.64 0 00-.128-.794l-.103-.075ZM7.442 7.272 9.874 3.06l3.28 1.894-2.43 4.212a1.5 1.5 0 00-.15 1.138l.304 1.138-.213.368-5.484-3.166.212-.368 1.138-.305a1.5 1.5 0 00.911-.699Zm-2.079 9.09 2.545-4.41-1.47-.848-2.545 4.409-.113 1.893 1.583-1.044Z"></path></svg>
+        </span>
+        다시 듣기에 고정
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><g clip-path="url(#a_yt1732)"><path d="M9 .75a8.25 8.25 0 100 16.5A8.25 8.25 0 009 .75Zm0 1.5a6.75 6.75 0 016.185 9.453L3.565 4.995A6.74 6.74 0 019 2.25ZM2.815 6.295l11.619 6.708A6.75 6.75 0 012.815 6.295Z"></path></g><defs><clipPath id="a_yt1732"><path d="M0 0h18v18H0z"></path></clipPath></defs></svg>
+        </span>
+        관심 없음
+      </button>
+        </div>
+    </details>
+    </div>
+    <!-- 카드 1 -->
+    <div class="musiccard  rounded-xl relative group">
+        <div class="w-full rounded-lg relative hover:brightness-90 cursor-pointer">
+        <img id="img" alt="" src="https://i.ytimg.com/vi/HYsz1hP0BFo/sddefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCghqEJQEGHgg6AJIWg&rs=AMzJL3mhPOIBj7GgQZA391h8MOLI4LLd_g">
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="flex items-center justify-center ml-1 
+                w-0 h-0 
+                border-t-[12px] border-t-transparent
+                border-b-[12px] border-b-transparent
+                border-l-[20px] border-l-white/80">
+            </div>
+        </div>
+    </div>
+
+    <!-- 텍스트 -->
+    <div class="text-white mt-3">
+        <p class="font-semibold">Lil Nas X - STAR WALKIN' (League of Legends Worlds Anthem)</p>
+        <p class="text-gray-400 text-sm">릴 나스 엑스 • 조회수 1억회</p>
+    </div>
+
+    <!-- 점 3개 메뉴 -->
+    <details class="absolute top-3 right-3">
+        <summary class="w-9 h-9 bg-black/40 cursor-pointer rounded-full
+                flex items-center justify-center
+                opacity-0 group-hover:opacity-100 transition list-none">
+            <div class="flex flex-col gap-1">
+                <span class="w-1 h-1 bg-white rounded-full"></span>
+                <span class="w-1 h-1 bg-white rounded-full"></span>
+                <span class="w-1 h-1 bg-white rounded-full"></span>
+            </div>
+        </summary>
+
+        <div class="absolute mt-2 w-56 py-2 rounded-lg bg-gray-800 text-white 
+                    max-h-96 overflow-y-auto menu-scrollbar">
+            <!-- 메뉴 항목들 -->
+             <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M12.22.97a.75.75 0 000 1.06l1.72 1.72h-1.032A5.25 5.25 0 008.54 6.088L5.212 11.08a3.75 3.75 0 01-3.12 1.67H1.5a.75.75 0 100 1.5h.592a5.251 5.251 0 004.368-2.338L9.788 6.92a3.75 3.75 0 013.12-1.67h1.032l-1.72 1.72a.75.75 0 001.06 1.06l3.53-3.53L13.28.97a.75.75 0 00-1.06 0ZM2.092 3.75H1.5a.75.75 0 000 1.5h.592a3.75 3.75 0 013.12 1.67l.485.727.902-1.351-.139-.208A5.25 5.25 0 002.092 3.75ZM12.22 9.97a.75.75 0 000 1.06l1.72 1.72h-1.032a3.75 3.75 0 01-3.12-1.67l-.486-.729-.902 1.352.14.209a5.25 5.25 0 004.368 2.338h1.032l-1.72 1.72a.75.75 0 001.06 1.06l3.53-3.53-3.53-3.53a.75.75 0 00-1.06 0Z"></path></svg>
+        </span>
+        셔플 재생
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M3.166 3.161a.75.75 0 011.06 1.06 6.753 6.753 0 000 9.548.75.75 0 01-1.06 1.06 8.253 8.253 0 010-11.668Zm10.607 0a.75.75 0 011.061 0 8.251 8.251 0 010 11.668.75.75 0 01-1.06-1.06 6.752 6.752 0 000-9.547.75.75 0 010-1.06Zm-2.122 2.126a.75.75 0 011.06 0 5.25 5.25 0 010 7.424.75.75 0 01-1.06-1.06 3.75 3.75 0 000-5.303.75.75 0 010-1.06Zm-6.363-.004a.75.75 0 111.06 1.06 3.751 3.751 0 00-.813 4.088c.189.454.466.867.814 1.216a.75.75 0 01-1.06 1.06A5.253 5.253 0 013.75 8.995a5.252 5.252 0 011.538-3.712Zm5.962 3.712-3.75 2.25v-4.5l3.75 2.25Z"></path></svg>
+        </span>
+        뮤직 스테이션 시작
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M6 2.86V5H3a1 1 0 00-1 1v12a1 1 0 102 0V7h2v2.137a.5.5 0 00.748.434L13 5.998 6.748 2.426A.5.5 0 006 2.86ZM21 5h-5a1 1 0 100 2h5a1 1 0 100-2Zm0 6H9a1 1 0 000 2h12a1 1 0 000-2Zm0 6H9a1 1 0 000 2h12a1 1 0 000-2Z"></path></svg>
+        </span>
+        다음에 재생
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M21 6.998a1 1 0 100-2H9a1 1 0 000 2h12ZM6 21.138a.5.5 0 00.748.434L13 18l-6.252-3.573A.5.5 0 006 14.86V17H4V6a1 1 0 00-2 0v12a1 1 0 001 1h3v2.138Zm15-8.14a1 1 0 000-2H9a1 1 0 000 2h12Zm0 6a1 1 0 000-2h-5a1 1 0 000 2h5Z"></path></svg>
+        </span>
+        현재 재생목록에 추가
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M14.25 1.5H3.75A1.5 1.5 0 002.25 3v12.665c0 .95 1.037 1.538 1.852 1.049L9 13.774l4.898 2.94a1.223 1.223 0 001.852-1.049V3a1.5 1.5 0 00-1.5-1.5ZM3.75 15.175V3h10.5v12.175l-4.864-2.918L9 12.025l-.386.232-4.864 2.918Z"></path></svg>
+        </span>
+        보관함에 재생목록 저장
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M12 2a1 1 0 00-1 1v11.586l-4.293-4.293a1 1 0 10-1.414 1.414L12 18.414l6.707-6.707a1 1 0 10-1.414-1.414L13 14.586V3a1 1 0 00-1-1Zm7 18H5a1 1 0 000 2h14a1 1 0 000-2Z"></path></svg>
+        </span>
+        오프라인 저장
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+            <path d="M14.25 11.25A.75.75 0 0115 12v1.5h1.5a.75.75 0 010 1.5H15v1.5a.75.75 0 01-1.5 0V15H12a.75.75 0 010-1.5h1.5V12a.75.75 0 01.75-.75Zm-4.5 3H3a.75.75 0 010-1.5h6.75v1.5Zm5.25-6a.75.75 0 010 1.5H3a.75.75 0 010-1.5h12Zm0-4.5a.75.75 0 010 1.5H3a.75.75 0 010-1.5h12Z">   
+            </path>
+          </svg>
+        </span>
+        재생목록에 저장
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M7.5 2.369v3.263c-4.394.18-6.529 3.25-6.733 9.795-.011.354.433.513.659.24 2.347-2.838 3.262-3.258 6.074-3.291v3.259a.75.75 0 001.235.572l8.515-7.205-8.515-7.205a.75.75 0 00-1.235.572ZM9 7.07V3.986l5.928 5.016L9 14.017v-3.159l-1.517.018c-1.452.017-2.69.127-3.898.768-.35.186-.683.41-1.01.67.266-1.46.687-2.543 1.222-3.32.797-1.156 1.956-1.789 3.765-1.863L9 7.07Z"></path></svg>
+        </span>
+        공유
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M15.755 4.724 8.775.694 8.655.64a.637.637 0 00-.623 1.08l.105.075.55.318-2.545 4.409-1.289.345a1.13 1.13 0 00-.683.525l-.758 1.313a.563.563 0 00.206.769l7.108 4.104c.27.155.613.063.77-.206l.757-1.313c.15-.259.19-.566.113-.854l-.345-1.289 2.545-4.409.551.319.118.053c.24.08.508.008.676-.182l.075-.104a.64.64 0 00-.128-.794l-.103-.075ZM7.442 7.272 9.874 3.06l3.28 1.894-2.43 4.212a1.5 1.5 0 00-.15 1.138l.304 1.138-.213.368-5.484-3.166.212-.368 1.138-.305a1.5 1.5 0 00.911-.699Zm-2.079 9.09 2.545-4.41-1.47-.848-2.545 4.409-.113 1.893 1.583-1.044Z"></path></svg>
+        </span>
+        다시 듣기에 고정
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><g clip-path="url(#a_yt1732)"><path d="M9 .75a8.25 8.25 0 100 16.5A8.25 8.25 0 009 .75Zm0 1.5a6.75 6.75 0 016.185 9.453L3.565 4.995A6.74 6.74 0 019 2.25ZM2.815 6.295l11.619 6.708A6.75 6.75 0 012.815 6.295Z"></path></g><defs><clipPath id="a_yt1732"><path d="M0 0h18v18H0z"></path></clipPath></defs></svg>
+        </span>
+        관심 없음
+      </button>
+        </div>
+    </details>
+    </div>
+    <!-- 카드 1 -->
+    <div class="musiccard  rounded-xl relative group">
+        <div class="w-full rounded-lg relative hover:brightness-90 cursor-pointer">
+        <img id="img" alt="" src="https://i.ytimg.com/vi/HYsz1hP0BFo/sddefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCghqEJQEGHgg6AJIWg&rs=AMzJL3mhPOIBj7GgQZA391h8MOLI4LLd_g">
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="flex items-center justify-center ml-1 
+                w-0 h-0 
+                border-t-[12px] border-t-transparent
+                border-b-[12px] border-b-transparent
+                border-l-[20px] border-l-white/80">
+            </div>
+        </div>
+    </div>
+
+    <!-- 텍스트 -->
+    <div class="text-white mt-3">
+        <p class="font-semibold">Lil Nas X - STAR WALKIN' (League of Legends Worlds Anthem)</p>
+        <p class="text-gray-400 text-sm">릴 나스 엑스 • 조회수 1억회</p>
+    </div>
+
+    <!-- 점 3개 메뉴 -->
+    <details class="absolute top-3 right-3">
+        <summary class="w-9 h-9 bg-black/40 cursor-pointer rounded-full
+                flex items-center justify-center
+                opacity-0 group-hover:opacity-100 transition list-none">
+            <div class="flex flex-col gap-1">
+                <span class="w-1 h-1 bg-white rounded-full"></span>
+                <span class="w-1 h-1 bg-white rounded-full"></span>
+                <span class="w-1 h-1 bg-white rounded-full"></span>
+            </div>
+        </summary>
+
+        <div class="absolute mt-2 w-56 py-2 rounded-lg bg-gray-800 text-white 
+                    max-h-96 overflow-y-auto menu-scrollbar">
+            <!-- 메뉴 항목들 -->
+             <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M12.22.97a.75.75 0 000 1.06l1.72 1.72h-1.032A5.25 5.25 0 008.54 6.088L5.212 11.08a3.75 3.75 0 01-3.12 1.67H1.5a.75.75 0 100 1.5h.592a5.251 5.251 0 004.368-2.338L9.788 6.92a3.75 3.75 0 013.12-1.67h1.032l-1.72 1.72a.75.75 0 001.06 1.06l3.53-3.53L13.28.97a.75.75 0 00-1.06 0ZM2.092 3.75H1.5a.75.75 0 000 1.5h.592a3.75 3.75 0 013.12 1.67l.485.727.902-1.351-.139-.208A5.25 5.25 0 002.092 3.75ZM12.22 9.97a.75.75 0 000 1.06l1.72 1.72h-1.032a3.75 3.75 0 01-3.12-1.67l-.486-.729-.902 1.352.14.209a5.25 5.25 0 004.368 2.338h1.032l-1.72 1.72a.75.75 0 001.06 1.06l3.53-3.53-3.53-3.53a.75.75 0 00-1.06 0Z"></path></svg>
+        </span>
+        셔플 재생
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M3.166 3.161a.75.75 0 011.06 1.06 6.753 6.753 0 000 9.548.75.75 0 01-1.06 1.06 8.253 8.253 0 010-11.668Zm10.607 0a.75.75 0 011.061 0 8.251 8.251 0 010 11.668.75.75 0 01-1.06-1.06 6.752 6.752 0 000-9.547.75.75 0 010-1.06Zm-2.122 2.126a.75.75 0 011.06 0 5.25 5.25 0 010 7.424.75.75 0 01-1.06-1.06 3.75 3.75 0 000-5.303.75.75 0 010-1.06Zm-6.363-.004a.75.75 0 111.06 1.06 3.751 3.751 0 00-.813 4.088c.189.454.466.867.814 1.216a.75.75 0 01-1.06 1.06A5.253 5.253 0 013.75 8.995a5.252 5.252 0 011.538-3.712Zm5.962 3.712-3.75 2.25v-4.5l3.75 2.25Z"></path></svg>
+        </span>
+        뮤직 스테이션 시작
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M6 2.86V5H3a1 1 0 00-1 1v12a1 1 0 102 0V7h2v2.137a.5.5 0 00.748.434L13 5.998 6.748 2.426A.5.5 0 006 2.86ZM21 5h-5a1 1 0 100 2h5a1 1 0 100-2Zm0 6H9a1 1 0 000 2h12a1 1 0 000-2Zm0 6H9a1 1 0 000 2h12a1 1 0 000-2Z"></path></svg>
+        </span>
+        다음에 재생
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M21 6.998a1 1 0 100-2H9a1 1 0 000 2h12ZM6 21.138a.5.5 0 00.748.434L13 18l-6.252-3.573A.5.5 0 006 14.86V17H4V6a1 1 0 00-2 0v12a1 1 0 001 1h3v2.138Zm15-8.14a1 1 0 000-2H9a1 1 0 000 2h12Zm0 6a1 1 0 000-2h-5a1 1 0 000 2h5Z"></path></svg>
+        </span>
+        현재 재생목록에 추가
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M14.25 1.5H3.75A1.5 1.5 0 002.25 3v12.665c0 .95 1.037 1.538 1.852 1.049L9 13.774l4.898 2.94a1.223 1.223 0 001.852-1.049V3a1.5 1.5 0 00-1.5-1.5ZM3.75 15.175V3h10.5v12.175l-4.864-2.918L9 12.025l-.386.232-4.864 2.918Z"></path></svg>
+        </span>
+        보관함에 재생목록 저장
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M12 2a1 1 0 00-1 1v11.586l-4.293-4.293a1 1 0 10-1.414 1.414L12 18.414l6.707-6.707a1 1 0 10-1.414-1.414L13 14.586V3a1 1 0 00-1-1Zm7 18H5a1 1 0 000 2h14a1 1 0 000-2Z"></path></svg>
+        </span>
+        오프라인 저장
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+            <path d="M14.25 11.25A.75.75 0 0115 12v1.5h1.5a.75.75 0 010 1.5H15v1.5a.75.75 0 01-1.5 0V15H12a.75.75 0 010-1.5h1.5V12a.75.75 0 01.75-.75Zm-4.5 3H3a.75.75 0 010-1.5h6.75v1.5Zm5.25-6a.75.75 0 010 1.5H3a.75.75 0 010-1.5h12Zm0-4.5a.75.75 0 010 1.5H3a.75.75 0 010-1.5h12Z">   
+            </path>
+          </svg>
+        </span>
+        재생목록에 저장
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M7.5 2.369v3.263c-4.394.18-6.529 3.25-6.733 9.795-.011.354.433.513.659.24 2.347-2.838 3.262-3.258 6.074-3.291v3.259a.75.75 0 001.235.572l8.515-7.205-8.515-7.205a.75.75 0 00-1.235.572ZM9 7.07V3.986l5.928 5.016L9 14.017v-3.159l-1.517.018c-1.452.017-2.69.127-3.898.768-.35.186-.683.41-1.01.67.266-1.46.687-2.543 1.222-3.32.797-1.156 1.956-1.789 3.765-1.863L9 7.07Z"></path></svg>
+        </span>
+        공유
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M15.755 4.724 8.775.694 8.655.64a.637.637 0 00-.623 1.08l.105.075.55.318-2.545 4.409-1.289.345a1.13 1.13 0 00-.683.525l-.758 1.313a.563.563 0 00.206.769l7.108 4.104c.27.155.613.063.77-.206l.757-1.313c.15-.259.19-.566.113-.854l-.345-1.289 2.545-4.409.551.319.118.053c.24.08.508.008.676-.182l.075-.104a.64.64 0 00-.128-.794l-.103-.075ZM7.442 7.272 9.874 3.06l3.28 1.894-2.43 4.212a1.5 1.5 0 00-.15 1.138l.304 1.138-.213.368-5.484-3.166.212-.368 1.138-.305a1.5 1.5 0 00.911-.699Zm-2.079 9.09 2.545-4.41-1.47-.848-2.545 4.409-.113 1.893 1.583-1.044Z"></path></svg>
+        </span>
+        다시 듣기에 고정
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><g clip-path="url(#a_yt1732)"><path d="M9 .75a8.25 8.25 0 100 16.5A8.25 8.25 0 009 .75Zm0 1.5a6.75 6.75 0 016.185 9.453L3.565 4.995A6.74 6.74 0 019 2.25ZM2.815 6.295l11.619 6.708A6.75 6.75 0 012.815 6.295Z"></path></g><defs><clipPath id="a_yt1732"><path d="M0 0h18v18H0z"></path></clipPath></defs></svg>
+        </span>
+        관심 없음
+      </button>
+        </div>
+    </details>
+    </div>
+    <!-- 카드 1 -->
+    <div class="musiccard  rounded-xl relative group">
+        <div class="w-full rounded-lg relative hover:brightness-90 cursor-pointer">
+        <img id="img" alt="" src="https://i.ytimg.com/vi/HYsz1hP0BFo/sddefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCghqEJQEGHgg6AJIWg&rs=AMzJL3mhPOIBj7GgQZA391h8MOLI4LLd_g">
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="flex items-center justify-center ml-1 
+                w-0 h-0 
+                border-t-[12px] border-t-transparent
+                border-b-[12px] border-b-transparent
+                border-l-[20px] border-l-white/80">
+            </div>
+        </div>
+    </div>
+
+    <!-- 텍스트 -->
+    <div class="text-white mt-3">
+        <p class="font-semibold">Lil Nas X - STAR WALKIN' (League of Legends Worlds Anthem)</p>
+        <p class="text-gray-400 text-sm">릴 나스 엑스 • 조회수 1억회</p>
+    </div>
+
+    <!-- 점 3개 메뉴 -->
+    <details class="absolute top-3 right-3">
+        <summary class="w-9 h-9 bg-black/40 cursor-pointer rounded-full
+                flex items-center justify-center
+                opacity-0 group-hover:opacity-100 transition list-none">
+            <div class="flex flex-col gap-1">
+                <span class="w-1 h-1 bg-white rounded-full"></span>
+                <span class="w-1 h-1 bg-white rounded-full"></span>
+                <span class="w-1 h-1 bg-white rounded-full"></span>
+            </div>
+        </summary>
+
+        <div class="absolute mt-2 w-56 py-2 rounded-lg bg-gray-800 text-white 
+                    max-h-96 overflow-y-auto menu-scrollbar">
+            <!-- 메뉴 항목들 -->
+             <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M12.22.97a.75.75 0 000 1.06l1.72 1.72h-1.032A5.25 5.25 0 008.54 6.088L5.212 11.08a3.75 3.75 0 01-3.12 1.67H1.5a.75.75 0 100 1.5h.592a5.251 5.251 0 004.368-2.338L9.788 6.92a3.75 3.75 0 013.12-1.67h1.032l-1.72 1.72a.75.75 0 001.06 1.06l3.53-3.53L13.28.97a.75.75 0 00-1.06 0ZM2.092 3.75H1.5a.75.75 0 000 1.5h.592a3.75 3.75 0 013.12 1.67l.485.727.902-1.351-.139-.208A5.25 5.25 0 002.092 3.75ZM12.22 9.97a.75.75 0 000 1.06l1.72 1.72h-1.032a3.75 3.75 0 01-3.12-1.67l-.486-.729-.902 1.352.14.209a5.25 5.25 0 004.368 2.338h1.032l-1.72 1.72a.75.75 0 001.06 1.06l3.53-3.53-3.53-3.53a.75.75 0 00-1.06 0Z"></path></svg>
+        </span>
+        셔플 재생
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M3.166 3.161a.75.75 0 011.06 1.06 6.753 6.753 0 000 9.548.75.75 0 01-1.06 1.06 8.253 8.253 0 010-11.668Zm10.607 0a.75.75 0 011.061 0 8.251 8.251 0 010 11.668.75.75 0 01-1.06-1.06 6.752 6.752 0 000-9.547.75.75 0 010-1.06Zm-2.122 2.126a.75.75 0 011.06 0 5.25 5.25 0 010 7.424.75.75 0 01-1.06-1.06 3.75 3.75 0 000-5.303.75.75 0 010-1.06Zm-6.363-.004a.75.75 0 111.06 1.06 3.751 3.751 0 00-.813 4.088c.189.454.466.867.814 1.216a.75.75 0 01-1.06 1.06A5.253 5.253 0 013.75 8.995a5.252 5.252 0 011.538-3.712Zm5.962 3.712-3.75 2.25v-4.5l3.75 2.25Z"></path></svg>
+        </span>
+        뮤직 스테이션 시작
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M6 2.86V5H3a1 1 0 00-1 1v12a1 1 0 102 0V7h2v2.137a.5.5 0 00.748.434L13 5.998 6.748 2.426A.5.5 0 006 2.86ZM21 5h-5a1 1 0 100 2h5a1 1 0 100-2Zm0 6H9a1 1 0 000 2h12a1 1 0 000-2Zm0 6H9a1 1 0 000 2h12a1 1 0 000-2Z"></path></svg>
+        </span>
+        다음에 재생
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M21 6.998a1 1 0 100-2H9a1 1 0 000 2h12ZM6 21.138a.5.5 0 00.748.434L13 18l-6.252-3.573A.5.5 0 006 14.86V17H4V6a1 1 0 00-2 0v12a1 1 0 001 1h3v2.138Zm15-8.14a1 1 0 000-2H9a1 1 0 000 2h12Zm0 6a1 1 0 000-2h-5a1 1 0 000 2h5Z"></path></svg>
+        </span>
+        현재 재생목록에 추가
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M14.25 1.5H3.75A1.5 1.5 0 002.25 3v12.665c0 .95 1.037 1.538 1.852 1.049L9 13.774l4.898 2.94a1.223 1.223 0 001.852-1.049V3a1.5 1.5 0 00-1.5-1.5ZM3.75 15.175V3h10.5v12.175l-4.864-2.918L9 12.025l-.386.232-4.864 2.918Z"></path></svg>
+        </span>
+        보관함에 재생목록 저장
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M12 2a1 1 0 00-1 1v11.586l-4.293-4.293a1 1 0 10-1.414 1.414L12 18.414l6.707-6.707a1 1 0 10-1.414-1.414L13 14.586V3a1 1 0 00-1-1Zm7 18H5a1 1 0 000 2h14a1 1 0 000-2Z"></path></svg>
+        </span>
+        오프라인 저장
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+            <path d="M14.25 11.25A.75.75 0 0115 12v1.5h1.5a.75.75 0 010 1.5H15v1.5a.75.75 0 01-1.5 0V15H12a.75.75 0 010-1.5h1.5V12a.75.75 0 01.75-.75Zm-4.5 3H3a.75.75 0 010-1.5h6.75v1.5Zm5.25-6a.75.75 0 010 1.5H3a.75.75 0 010-1.5h12Zm0-4.5a.75.75 0 010 1.5H3a.75.75 0 010-1.5h12Z">   
+            </path>
+          </svg>
+        </span>
+        재생목록에 저장
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M7.5 2.369v3.263c-4.394.18-6.529 3.25-6.733 9.795-.011.354.433.513.659.24 2.347-2.838 3.262-3.258 6.074-3.291v3.259a.75.75 0 001.235.572l8.515-7.205-8.515-7.205a.75.75 0 00-1.235.572ZM9 7.07V3.986l5.928 5.016L9 14.017v-3.159l-1.517.018c-1.452.017-2.69.127-3.898.768-.35.186-.683.41-1.01.67.266-1.46.687-2.543 1.222-3.32.797-1.156 1.956-1.789 3.765-1.863L9 7.07Z"></path></svg>
+        </span>
+        공유
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M15.755 4.724 8.775.694 8.655.64a.637.637 0 00-.623 1.08l.105.075.55.318-2.545 4.409-1.289.345a1.13 1.13 0 00-.683.525l-.758 1.313a.563.563 0 00.206.769l7.108 4.104c.27.155.613.063.77-.206l.757-1.313c.15-.259.19-.566.113-.854l-.345-1.289 2.545-4.409.551.319.118.053c.24.08.508.008.676-.182l.075-.104a.64.64 0 00-.128-.794l-.103-.075ZM7.442 7.272 9.874 3.06l3.28 1.894-2.43 4.212a1.5 1.5 0 00-.15 1.138l.304 1.138-.213.368-5.484-3.166.212-.368 1.138-.305a1.5 1.5 0 00.911-.699Zm-2.079 9.09 2.545-4.41-1.47-.848-2.545 4.409-.113 1.893 1.583-1.044Z"></path></svg>
+        </span>
+        다시 듣기에 고정
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><g clip-path="url(#a_yt1732)"><path d="M9 .75a8.25 8.25 0 100 16.5A8.25 8.25 0 009 .75Zm0 1.5a6.75 6.75 0 016.185 9.453L3.565 4.995A6.74 6.74 0 019 2.25ZM2.815 6.295l11.619 6.708A6.75 6.75 0 012.815 6.295Z"></path></g><defs><clipPath id="a_yt1732"><path d="M0 0h18v18H0z"></path></clipPath></defs></svg>
+        </span>
+        관심 없음
+      </button>
+        </div>
+    </details>
+    </div>
+    <!-- 카드 1 -->
+    <div class="musiccard  rounded-xl relative group">
+        <div class="w-full rounded-lg relative hover:brightness-90 cursor-pointer">
+        <img id="img" alt="" src="https://i.ytimg.com/vi/HYsz1hP0BFo/sddefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCghqEJQEGHgg6AJIWg&rs=AMzJL3mhPOIBj7GgQZA391h8MOLI4LLd_g">
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="flex items-center justify-center ml-1 
+                w-0 h-0 
+                border-t-[12px] border-t-transparent
+                border-b-[12px] border-b-transparent
+                border-l-[20px] border-l-white/80">
+            </div>
+        </div>
+    </div>
+
+    <!-- 텍스트 -->
+    <div class="text-white mt-3">
+        <p class="font-semibold">Lil Nas X - STAR WALKIN' (League of Legends Worlds Anthem)</p>
+        <p class="text-gray-400 text-sm">릴 나스 엑스 • 조회수 1억회</p>
+    </div>
+
+    <!-- 점 3개 메뉴 -->
+    <details class="absolute top-3 right-3">
+        <summary class="w-9 h-9 bg-black/40 cursor-pointer rounded-full
+                flex items-center justify-center
+                opacity-0 group-hover:opacity-100 transition list-none">
+            <div class="flex flex-col gap-1">
+                <span class="w-1 h-1 bg-white rounded-full"></span>
+                <span class="w-1 h-1 bg-white rounded-full"></span>
+                <span class="w-1 h-1 bg-white rounded-full"></span>
+            </div>
+        </summary>
+
+        <div class="absolute mt-2 w-56 py-2 rounded-lg bg-gray-800 text-white 
+                    max-h-96 overflow-y-auto menu-scrollbar">
+            <!-- 메뉴 항목들 -->
+             <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M12.22.97a.75.75 0 000 1.06l1.72 1.72h-1.032A5.25 5.25 0 008.54 6.088L5.212 11.08a3.75 3.75 0 01-3.12 1.67H1.5a.75.75 0 100 1.5h.592a5.251 5.251 0 004.368-2.338L9.788 6.92a3.75 3.75 0 013.12-1.67h1.032l-1.72 1.72a.75.75 0 001.06 1.06l3.53-3.53L13.28.97a.75.75 0 00-1.06 0ZM2.092 3.75H1.5a.75.75 0 000 1.5h.592a3.75 3.75 0 013.12 1.67l.485.727.902-1.351-.139-.208A5.25 5.25 0 002.092 3.75ZM12.22 9.97a.75.75 0 000 1.06l1.72 1.72h-1.032a3.75 3.75 0 01-3.12-1.67l-.486-.729-.902 1.352.14.209a5.25 5.25 0 004.368 2.338h1.032l-1.72 1.72a.75.75 0 001.06 1.06l3.53-3.53-3.53-3.53a.75.75 0 00-1.06 0Z"></path></svg>
+        </span>
+        셔플 재생
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M3.166 3.161a.75.75 0 011.06 1.06 6.753 6.753 0 000 9.548.75.75 0 01-1.06 1.06 8.253 8.253 0 010-11.668Zm10.607 0a.75.75 0 011.061 0 8.251 8.251 0 010 11.668.75.75 0 01-1.06-1.06 6.752 6.752 0 000-9.547.75.75 0 010-1.06Zm-2.122 2.126a.75.75 0 011.06 0 5.25 5.25 0 010 7.424.75.75 0 01-1.06-1.06 3.75 3.75 0 000-5.303.75.75 0 010-1.06Zm-6.363-.004a.75.75 0 111.06 1.06 3.751 3.751 0 00-.813 4.088c.189.454.466.867.814 1.216a.75.75 0 01-1.06 1.06A5.253 5.253 0 013.75 8.995a5.252 5.252 0 011.538-3.712Zm5.962 3.712-3.75 2.25v-4.5l3.75 2.25Z"></path></svg>
+        </span>
+        뮤직 스테이션 시작
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M6 2.86V5H3a1 1 0 00-1 1v12a1 1 0 102 0V7h2v2.137a.5.5 0 00.748.434L13 5.998 6.748 2.426A.5.5 0 006 2.86ZM21 5h-5a1 1 0 100 2h5a1 1 0 100-2Zm0 6H9a1 1 0 000 2h12a1 1 0 000-2Zm0 6H9a1 1 0 000 2h12a1 1 0 000-2Z"></path></svg>
+        </span>
+        다음에 재생
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M21 6.998a1 1 0 100-2H9a1 1 0 000 2h12ZM6 21.138a.5.5 0 00.748.434L13 18l-6.252-3.573A.5.5 0 006 14.86V17H4V6a1 1 0 00-2 0v12a1 1 0 001 1h3v2.138Zm15-8.14a1 1 0 000-2H9a1 1 0 000 2h12Zm0 6a1 1 0 000-2h-5a1 1 0 000 2h5Z"></path></svg>
+        </span>
+        현재 재생목록에 추가
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M14.25 1.5H3.75A1.5 1.5 0 002.25 3v12.665c0 .95 1.037 1.538 1.852 1.049L9 13.774l4.898 2.94a1.223 1.223 0 001.852-1.049V3a1.5 1.5 0 00-1.5-1.5ZM3.75 15.175V3h10.5v12.175l-4.864-2.918L9 12.025l-.386.232-4.864 2.918Z"></path></svg>
+        </span>
+        보관함에 재생목록 저장
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M12 2a1 1 0 00-1 1v11.586l-4.293-4.293a1 1 0 10-1.414 1.414L12 18.414l6.707-6.707a1 1 0 10-1.414-1.414L13 14.586V3a1 1 0 00-1-1Zm7 18H5a1 1 0 000 2h14a1 1 0 000-2Z"></path></svg>
+        </span>
+        오프라인 저장
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+            <path d="M14.25 11.25A.75.75 0 0115 12v1.5h1.5a.75.75 0 010 1.5H15v1.5a.75.75 0 01-1.5 0V15H12a.75.75 0 010-1.5h1.5V12a.75.75 0 01.75-.75Zm-4.5 3H3a.75.75 0 010-1.5h6.75v1.5Zm5.25-6a.75.75 0 010 1.5H3a.75.75 0 010-1.5h12Zm0-4.5a.75.75 0 010 1.5H3a.75.75 0 010-1.5h12Z">   
+            </path>
+          </svg>
+        </span>
+        재생목록에 저장
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M7.5 2.369v3.263c-4.394.18-6.529 3.25-6.733 9.795-.011.354.433.513.659.24 2.347-2.838 3.262-3.258 6.074-3.291v3.259a.75.75 0 001.235.572l8.515-7.205-8.515-7.205a.75.75 0 00-1.235.572ZM9 7.07V3.986l5.928 5.016L9 14.017v-3.159l-1.517.018c-1.452.017-2.69.127-3.898.768-.35.186-.683.41-1.01.67.266-1.46.687-2.543 1.222-3.32.797-1.156 1.956-1.789 3.765-1.863L9 7.07Z"></path></svg>
+        </span>
+        공유
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M15.755 4.724 8.775.694 8.655.64a.637.637 0 00-.623 1.08l.105.075.55.318-2.545 4.409-1.289.345a1.13 1.13 0 00-.683.525l-.758 1.313a.563.563 0 00.206.769l7.108 4.104c.27.155.613.063.77-.206l.757-1.313c.15-.259.19-.566.113-.854l-.345-1.289 2.545-4.409.551.319.118.053c.24.08.508.008.676-.182l.075-.104a.64.64 0 00-.128-.794l-.103-.075ZM7.442 7.272 9.874 3.06l3.28 1.894-2.43 4.212a1.5 1.5 0 00-.15 1.138l.304 1.138-.213.368-5.484-3.166.212-.368 1.138-.305a1.5 1.5 0 00.911-.699Zm-2.079 9.09 2.545-4.41-1.47-.848-2.545 4.409-.113 1.893 1.583-1.044Z"></path></svg>
+        </span>
+        다시 듣기에 고정
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><g clip-path="url(#a_yt1732)"><path d="M9 .75a8.25 8.25 0 100 16.5A8.25 8.25 0 009 .75Zm0 1.5a6.75 6.75 0 016.185 9.453L3.565 4.995A6.74 6.74 0 019 2.25ZM2.815 6.295l11.619 6.708A6.75 6.75 0 012.815 6.295Z"></path></g><defs><clipPath id="a_yt1732"><path d="M0 0h18v18H0z"></path></clipPath></defs></svg>
+        </span>
+        관심 없음
+      </button>
+        </div>
+    </details>
+    </div>
+
+    <!-- 카드 2 -->
+    <div class="musiccard  rounded-xl overflow-visible relative group">
+        <div class="w-full rounded-lg relative hover:brightness-90 cursor-pointer">
+        <img id="img" alt="" src="https://i.ytimg.com/vi/HYsz1hP0BFo/sddefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCghqEJQEGHgg6AJIWg&rs=AMzJL3mhPOIBj7GgQZA391h8MOLI4LLd_g">
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="flex items-center justify-center ml-1 
+                w-0 h-0 
+                border-t-[12px] border-t-transparent
+                border-b-[12px] border-b-transparent
+                border-l-[20px] border-l-white/80">
+            </div>
+        </div>
+    </div>
+
+    <!-- 텍스트 -->
+    <div class="text-white mt-3">
+        <p class="font-semibold">Lil Nas X - STAR WALKIN' (League of Legends Worlds Anthem)</p>
+        <p class="text-gray-400 text-sm">릴 나스 엑스 • 조회수 1억회</p>
+    </div>
+
+    <!-- 점 3개 메뉴 -->
+    <details class="absolute top-3 right-3">
+        <summary class="w-9 h-9 bg-black/40 cursor-pointer rounded-full
+                flex items-center justify-center
+                opacity-0 group-hover:opacity-100 transition list-none">
+            <div class="flex flex-col gap-1">
+                <span class="w-1 h-1 bg-white rounded-full"></span>
+                <span class="w-1 h-1 bg-white rounded-full"></span>
+                <span class="w-1 h-1 bg-white rounded-full"></span>
+            </div>
+        </summary>
+
+        <div class="absolute mt-2 w-56 py-2 rounded-lg bg-gray-800 text-white 
+                    max-h-96 overflow-y-auto menu-scrollbar">
+            <!-- 메뉴 항목들 -->
+             <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M12.22.97a.75.75 0 000 1.06l1.72 1.72h-1.032A5.25 5.25 0 008.54 6.088L5.212 11.08a3.75 3.75 0 01-3.12 1.67H1.5a.75.75 0 100 1.5h.592a5.251 5.251 0 004.368-2.338L9.788 6.92a3.75 3.75 0 013.12-1.67h1.032l-1.72 1.72a.75.75 0 001.06 1.06l3.53-3.53L13.28.97a.75.75 0 00-1.06 0ZM2.092 3.75H1.5a.75.75 0 000 1.5h.592a3.75 3.75 0 013.12 1.67l.485.727.902-1.351-.139-.208A5.25 5.25 0 002.092 3.75ZM12.22 9.97a.75.75 0 000 1.06l1.72 1.72h-1.032a3.75 3.75 0 01-3.12-1.67l-.486-.729-.902 1.352.14.209a5.25 5.25 0 004.368 2.338h1.032l-1.72 1.72a.75.75 0 001.06 1.06l3.53-3.53-3.53-3.53a.75.75 0 00-1.06 0Z"></path></svg>
+        </span>
+        셔플 재생
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M3.166 3.161a.75.75 0 011.06 1.06 6.753 6.753 0 000 9.548.75.75 0 01-1.06 1.06 8.253 8.253 0 010-11.668Zm10.607 0a.75.75 0 011.061 0 8.251 8.251 0 010 11.668.75.75 0 01-1.06-1.06 6.752 6.752 0 000-9.547.75.75 0 010-1.06Zm-2.122 2.126a.75.75 0 011.06 0 5.25 5.25 0 010 7.424.75.75 0 01-1.06-1.06 3.75 3.75 0 000-5.303.75.75 0 010-1.06Zm-6.363-.004a.75.75 0 111.06 1.06 3.751 3.751 0 00-.813 4.088c.189.454.466.867.814 1.216a.75.75 0 01-1.06 1.06A5.253 5.253 0 013.75 8.995a5.252 5.252 0 011.538-3.712Zm5.962 3.712-3.75 2.25v-4.5l3.75 2.25Z"></path></svg>
+        </span>
+        뮤직 스테이션 시작
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M6 2.86V5H3a1 1 0 00-1 1v12a1 1 0 102 0V7h2v2.137a.5.5 0 00.748.434L13 5.998 6.748 2.426A.5.5 0 006 2.86ZM21 5h-5a1 1 0 100 2h5a1 1 0 100-2Zm0 6H9a1 1 0 000 2h12a1 1 0 000-2Zm0 6H9a1 1 0 000 2h12a1 1 0 000-2Z"></path></svg>
+        </span>
+        다음에 재생
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M21 6.998a1 1 0 100-2H9a1 1 0 000 2h12ZM6 21.138a.5.5 0 00.748.434L13 18l-6.252-3.573A.5.5 0 006 14.86V17H4V6a1 1 0 00-2 0v12a1 1 0 001 1h3v2.138Zm15-8.14a1 1 0 000-2H9a1 1 0 000 2h12Zm0 6a1 1 0 000-2h-5a1 1 0 000 2h5Z"></path></svg>
+        </span>
+        현재 재생목록에 추가
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M14.25 1.5H3.75A1.5 1.5 0 002.25 3v12.665c0 .95 1.037 1.538 1.852 1.049L9 13.774l4.898 2.94a1.223 1.223 0 001.852-1.049V3a1.5 1.5 0 00-1.5-1.5ZM3.75 15.175V3h10.5v12.175l-4.864-2.918L9 12.025l-.386.232-4.864 2.918Z"></path></svg>
+        </span>
+        보관함에 재생목록 저장
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M12 2a1 1 0 00-1 1v11.586l-4.293-4.293a1 1 0 10-1.414 1.414L12 18.414l6.707-6.707a1 1 0 10-1.414-1.414L13 14.586V3a1 1 0 00-1-1Zm7 18H5a1 1 0 000 2h14a1 1 0 000-2Z"></path></svg>
+        </span>
+        오프라인 저장
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+            <path d="M14.25 11.25A.75.75 0 0115 12v1.5h1.5a.75.75 0 010 1.5H15v1.5a.75.75 0 01-1.5 0V15H12a.75.75 0 010-1.5h1.5V12a.75.75 0 01.75-.75Zm-4.5 3H3a.75.75 0 010-1.5h6.75v1.5Zm5.25-6a.75.75 0 010 1.5H3a.75.75 0 010-1.5h12Zm0-4.5a.75.75 0 010 1.5H3a.75.75 0 010-1.5h12Z">   
+            </path>
+          </svg>
+        </span>
+        재생목록에 저장
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M7.5 2.369v3.263c-4.394.18-6.529 3.25-6.733 9.795-.011.354.433.513.659.24 2.347-2.838 3.262-3.258 6.074-3.291v3.259a.75.75 0 001.235.572l8.515-7.205-8.515-7.205a.75.75 0 00-1.235.572ZM9 7.07V3.986l5.928 5.016L9 14.017v-3.159l-1.517.018c-1.452.017-2.69.127-3.898.768-.35.186-.683.41-1.01.67.266-1.46.687-2.543 1.222-3.32.797-1.156 1.956-1.789 3.765-1.863L9 7.07Z"></path></svg>
+        </span>
+        공유
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M15.755 4.724 8.775.694 8.655.64a.637.637 0 00-.623 1.08l.105.075.55.318-2.545 4.409-1.289.345a1.13 1.13 0 00-.683.525l-.758 1.313a.563.563 0 00.206.769l7.108 4.104c.27.155.613.063.77-.206l.757-1.313c.15-.259.19-.566.113-.854l-.345-1.289 2.545-4.409.551.319.118.053c.24.08.508.008.676-.182l.075-.104a.64.64 0 00-.128-.794l-.103-.075ZM7.442 7.272 9.874 3.06l3.28 1.894-2.43 4.212a1.5 1.5 0 00-.15 1.138l.304 1.138-.213.368-5.484-3.166.212-.368 1.138-.305a1.5 1.5 0 00.911-.699Zm-2.079 9.09 2.545-4.41-1.47-.848-2.545 4.409-.113 1.893 1.583-1.044Z"></path></svg>
+        </span>
+        다시 듣기에 고정
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><g clip-path="url(#a_yt1732)"><path d="M9 .75a8.25 8.25 0 100 16.5A8.25 8.25 0 009 .75Zm0 1.5a6.75 6.75 0 016.185 9.453L3.565 4.995A6.74 6.74 0 019 2.25ZM2.815 6.295l11.619 6.708A6.75 6.75 0 012.815 6.295Z"></path></g><defs><clipPath id="a_yt1732"><path d="M0 0h18v18H0z"></path></clipPath></defs></svg>
+        </span>
+        관심 없음
+      </button>
+        </div>
+    </details>
+    </div>
+
+    <!-- 카드 3 -->
+    <div class="musiccard  rounded-xl overflow-visible relative group">
+        <div class="w-full rounded-lg relative hover:brightness-90 cursor-pointer">
+        <img id="img" alt="" src="https://i.ytimg.com/vi/HYsz1hP0BFo/sddefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCghqEJQEGHgg6AJIWg&rs=AMzJL3mhPOIBj7GgQZA391h8MOLI4LLd_g">
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="flex items-center justify-center ml-1 
+                w-0 h-0 
+                border-t-[12px] border-t-transparent
+                border-b-[12px] border-b-transparent
+                border-l-[20px] border-l-white/80">
+            </div>
+        </div>
+    </div>
+
+    <!-- 텍스트 -->
+    <div class="text-white mt-3">
+        <p class="font-semibold">Lil Nas X - STAR WALKIN' (League of Legends Worlds Anthem)</p>
+        <p class="text-gray-400 text-sm">릴 나스 엑스 • 조회수 1억회</p>
+    </div>
+
+    <!-- 점 3개 메뉴 -->
+    <details class="absolute top-3 right-3">
+        <summary class="w-9 h-9 bg-black/40 cursor-pointer rounded-full
+                flex items-center justify-center
+                opacity-0 group-hover:opacity-100 transition list-none">
+            <div class="flex flex-col gap-1">
+                <span class="w-1 h-1 bg-white rounded-full"></span>
+                <span class="w-1 h-1 bg-white rounded-full"></span>
+                <span class="w-1 h-1 bg-white rounded-full"></span>
+            </div>
+        </summary>
+
+        <div class="absolute mt-2 w-56 py-2 rounded-lg bg-gray-800 text-white 
+                    max-h-96 overflow-y-auto menu-scrollbar">
+            <!-- 메뉴 항목들 -->
+             <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M12.22.97a.75.75 0 000 1.06l1.72 1.72h-1.032A5.25 5.25 0 008.54 6.088L5.212 11.08a3.75 3.75 0 01-3.12 1.67H1.5a.75.75 0 100 1.5h.592a5.251 5.251 0 004.368-2.338L9.788 6.92a3.75 3.75 0 013.12-1.67h1.032l-1.72 1.72a.75.75 0 001.06 1.06l3.53-3.53L13.28.97a.75.75 0 00-1.06 0ZM2.092 3.75H1.5a.75.75 0 000 1.5h.592a3.75 3.75 0 013.12 1.67l.485.727.902-1.351-.139-.208A5.25 5.25 0 002.092 3.75ZM12.22 9.97a.75.75 0 000 1.06l1.72 1.72h-1.032a3.75 3.75 0 01-3.12-1.67l-.486-.729-.902 1.352.14.209a5.25 5.25 0 004.368 2.338h1.032l-1.72 1.72a.75.75 0 001.06 1.06l3.53-3.53-3.53-3.53a.75.75 0 00-1.06 0Z"></path></svg>
+        </span>
+        셔플 재생
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M3.166 3.161a.75.75 0 011.06 1.06 6.753 6.753 0 000 9.548.75.75 0 01-1.06 1.06 8.253 8.253 0 010-11.668Zm10.607 0a.75.75 0 011.061 0 8.251 8.251 0 010 11.668.75.75 0 01-1.06-1.06 6.752 6.752 0 000-9.547.75.75 0 010-1.06Zm-2.122 2.126a.75.75 0 011.06 0 5.25 5.25 0 010 7.424.75.75 0 01-1.06-1.06 3.75 3.75 0 000-5.303.75.75 0 010-1.06Zm-6.363-.004a.75.75 0 111.06 1.06 3.751 3.751 0 00-.813 4.088c.189.454.466.867.814 1.216a.75.75 0 01-1.06 1.06A5.253 5.253 0 013.75 8.995a5.252 5.252 0 011.538-3.712Zm5.962 3.712-3.75 2.25v-4.5l3.75 2.25Z"></path></svg>
+        </span>
+        뮤직 스테이션 시작
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M6 2.86V5H3a1 1 0 00-1 1v12a1 1 0 102 0V7h2v2.137a.5.5 0 00.748.434L13 5.998 6.748 2.426A.5.5 0 006 2.86ZM21 5h-5a1 1 0 100 2h5a1 1 0 100-2Zm0 6H9a1 1 0 000 2h12a1 1 0 000-2Zm0 6H9a1 1 0 000 2h12a1 1 0 000-2Z"></path></svg>
+        </span>
+        다음에 재생
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M21 6.998a1 1 0 100-2H9a1 1 0 000 2h12ZM6 21.138a.5.5 0 00.748.434L13 18l-6.252-3.573A.5.5 0 006 14.86V17H4V6a1 1 0 00-2 0v12a1 1 0 001 1h3v2.138Zm15-8.14a1 1 0 000-2H9a1 1 0 000 2h12Zm0 6a1 1 0 000-2h-5a1 1 0 000 2h5Z"></path></svg>
+        </span>
+        현재 재생목록에 추가
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M14.25 1.5H3.75A1.5 1.5 0 002.25 3v12.665c0 .95 1.037 1.538 1.852 1.049L9 13.774l4.898 2.94a1.223 1.223 0 001.852-1.049V3a1.5 1.5 0 00-1.5-1.5ZM3.75 15.175V3h10.5v12.175l-4.864-2.918L9 12.025l-.386.232-4.864 2.918Z"></path></svg>
+        </span>
+        보관함에 재생목록 저장
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M12 2a1 1 0 00-1 1v11.586l-4.293-4.293a1 1 0 10-1.414 1.414L12 18.414l6.707-6.707a1 1 0 10-1.414-1.414L13 14.586V3a1 1 0 00-1-1Zm7 18H5a1 1 0 000 2h14a1 1 0 000-2Z"></path></svg>
+        </span>
+        오프라인 저장
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+            <path d="M14.25 11.25A.75.75 0 0115 12v1.5h1.5a.75.75 0 010 1.5H15v1.5a.75.75 0 01-1.5 0V15H12a.75.75 0 010-1.5h1.5V12a.75.75 0 01.75-.75Zm-4.5 3H3a.75.75 0 010-1.5h6.75v1.5Zm5.25-6a.75.75 0 010 1.5H3a.75.75 0 010-1.5h12Zm0-4.5a.75.75 0 010 1.5H3a.75.75 0 010-1.5h12Z">   
+            </path>
+          </svg>
+        </span>
+        재생목록에 저장
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M7.5 2.369v3.263c-4.394.18-6.529 3.25-6.733 9.795-.011.354.433.513.659.24 2.347-2.838 3.262-3.258 6.074-3.291v3.259a.75.75 0 001.235.572l8.515-7.205-8.515-7.205a.75.75 0 00-1.235.572ZM9 7.07V3.986l5.928 5.016L9 14.017v-3.159l-1.517.018c-1.452.017-2.69.127-3.898.768-.35.186-.683.41-1.01.67.266-1.46.687-2.543 1.222-3.32.797-1.156 1.956-1.789 3.765-1.863L9 7.07Z"></path></svg>
+        </span>
+        공유
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M15.755 4.724 8.775.694 8.655.64a.637.637 0 00-.623 1.08l.105.075.55.318-2.545 4.409-1.289.345a1.13 1.13 0 00-.683.525l-.758 1.313a.563.563 0 00.206.769l7.108 4.104c.27.155.613.063.77-.206l.757-1.313c.15-.259.19-.566.113-.854l-.345-1.289 2.545-4.409.551.319.118.053c.24.08.508.008.676-.182l.075-.104a.64.64 0 00-.128-.794l-.103-.075ZM7.442 7.272 9.874 3.06l3.28 1.894-2.43 4.212a1.5 1.5 0 00-.15 1.138l.304 1.138-.213.368-5.484-3.166.212-.368 1.138-.305a1.5 1.5 0 00.911-.699Zm-2.079 9.09 2.545-4.41-1.47-.848-2.545 4.409-.113 1.893 1.583-1.044Z"></path></svg>
+        </span>
+        다시 듣기에 고정
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><g clip-path="url(#a_yt1732)"><path d="M9 .75a8.25 8.25 0 100 16.5A8.25 8.25 0 009 .75Zm0 1.5a6.75 6.75 0 016.185 9.453L3.565 4.995A6.74 6.74 0 019 2.25ZM2.815 6.295l11.619 6.708A6.75 6.75 0 012.815 6.295Z"></path></g><defs><clipPath id="a_yt1732"><path d="M0 0h18v18H0z"></path></clipPath></defs></svg>
+        </span>
+        관심 없음
+      </button>
+        </div>
+    </details>
+    </div>
+
+    <!-- 카드 4 -->
+    <div class="musiccard rounded-xl overflow-visible relative group">
+        <div class="w-full rounded-lg relative hover:brightness-90 cursor-pointer">
+        <img id="img" alt="" src="https://i.ytimg.com/vi/HYsz1hP0BFo/sddefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCghqEJQEGHgg6AJIWg&rs=AMzJL3mhPOIBj7GgQZA391h8MOLI4LLd_g">
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="flex items-center justify-center ml-1 
+                w-0 h-0 
+                border-t-[12px] border-t-transparent
+                border-b-[12px] border-b-transparent
+                border-l-[20px] border-l-white/80">
+            </div>
+        </div>
+    </div>
+
+    <!-- 텍스트 -->
+    <div class="text-white mt-3">
+        <p class="font-semibold">Lil Nas X - STAR WALKIN' (League of Legends Worlds Anthem)</p>
+        <p class="text-gray-400 text-sm">릴 나스 엑스 • 조회수 1억회</p>
+    </div>
+
+    <!-- 점 3개 메뉴 -->
+    <details class="absolute top-3 right-3">
+        <summary class="w-9 h-9 bg-black/40 cursor-pointer rounded-full
+                flex items-center justify-center
+                opacity-0 group-hover:opacity-100 transition list-none">
+            <div class="flex flex-col gap-1">
+                <span class="w-1 h-1 bg-white rounded-full"></span>
+                <span class="w-1 h-1 bg-white rounded-full"></span>
+                <span class="w-1 h-1 bg-white rounded-full"></span>
+            </div>
+        </summary>
+
+        <div class="absolute mt-2 w-56 py-2 rounded-lg bg-gray-800 text-white 
+                    max-h-96 overflow-y-auto menu-scrollbar">
+            <!-- 메뉴 항목들 -->
+             <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M12.22.97a.75.75 0 000 1.06l1.72 1.72h-1.032A5.25 5.25 0 008.54 6.088L5.212 11.08a3.75 3.75 0 01-3.12 1.67H1.5a.75.75 0 100 1.5h.592a5.251 5.251 0 004.368-2.338L9.788 6.92a3.75 3.75 0 013.12-1.67h1.032l-1.72 1.72a.75.75 0 001.06 1.06l3.53-3.53L13.28.97a.75.75 0 00-1.06 0ZM2.092 3.75H1.5a.75.75 0 000 1.5h.592a3.75 3.75 0 013.12 1.67l.485.727.902-1.351-.139-.208A5.25 5.25 0 002.092 3.75ZM12.22 9.97a.75.75 0 000 1.06l1.72 1.72h-1.032a3.75 3.75 0 01-3.12-1.67l-.486-.729-.902 1.352.14.209a5.25 5.25 0 004.368 2.338h1.032l-1.72 1.72a.75.75 0 001.06 1.06l3.53-3.53-3.53-3.53a.75.75 0 00-1.06 0Z"></path></svg>
+        </span>
+        셔플 재생
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M3.166 3.161a.75.75 0 011.06 1.06 6.753 6.753 0 000 9.548.75.75 0 01-1.06 1.06 8.253 8.253 0 010-11.668Zm10.607 0a.75.75 0 011.061 0 8.251 8.251 0 010 11.668.75.75 0 01-1.06-1.06 6.752 6.752 0 000-9.547.75.75 0 010-1.06Zm-2.122 2.126a.75.75 0 011.06 0 5.25 5.25 0 010 7.424.75.75 0 01-1.06-1.06 3.75 3.75 0 000-5.303.75.75 0 010-1.06Zm-6.363-.004a.75.75 0 111.06 1.06 3.751 3.751 0 00-.813 4.088c.189.454.466.867.814 1.216a.75.75 0 01-1.06 1.06A5.253 5.253 0 013.75 8.995a5.252 5.252 0 011.538-3.712Zm5.962 3.712-3.75 2.25v-4.5l3.75 2.25Z"></path></svg>
+        </span>
+        뮤직 스테이션 시작
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M6 2.86V5H3a1 1 0 00-1 1v12a1 1 0 102 0V7h2v2.137a.5.5 0 00.748.434L13 5.998 6.748 2.426A.5.5 0 006 2.86ZM21 5h-5a1 1 0 100 2h5a1 1 0 100-2Zm0 6H9a1 1 0 000 2h12a1 1 0 000-2Zm0 6H9a1 1 0 000 2h12a1 1 0 000-2Z"></path></svg>
+        </span>
+        다음에 재생
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M21 6.998a1 1 0 100-2H9a1 1 0 000 2h12ZM6 21.138a.5.5 0 00.748.434L13 18l-6.252-3.573A.5.5 0 006 14.86V17H4V6a1 1 0 00-2 0v12a1 1 0 001 1h3v2.138Zm15-8.14a1 1 0 000-2H9a1 1 0 000 2h12Zm0 6a1 1 0 000-2h-5a1 1 0 000 2h5Z"></path></svg>
+        </span>
+        현재 재생목록에 추가
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M14.25 1.5H3.75A1.5 1.5 0 002.25 3v12.665c0 .95 1.037 1.538 1.852 1.049L9 13.774l4.898 2.94a1.223 1.223 0 001.852-1.049V3a1.5 1.5 0 00-1.5-1.5ZM3.75 15.175V3h10.5v12.175l-4.864-2.918L9 12.025l-.386.232-4.864 2.918Z"></path></svg>
+        </span>
+        보관함에 재생목록 저장
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M12 2a1 1 0 00-1 1v11.586l-4.293-4.293a1 1 0 10-1.414 1.414L12 18.414l6.707-6.707a1 1 0 10-1.414-1.414L13 14.586V3a1 1 0 00-1-1Zm7 18H5a1 1 0 000 2h14a1 1 0 000-2Z"></path></svg>
+        </span>
+        오프라인 저장
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+            <path d="M14.25 11.25A.75.75 0 0115 12v1.5h1.5a.75.75 0 010 1.5H15v1.5a.75.75 0 01-1.5 0V15H12a.75.75 0 010-1.5h1.5V12a.75.75 0 01.75-.75Zm-4.5 3H3a.75.75 0 010-1.5h6.75v1.5Zm5.25-6a.75.75 0 010 1.5H3a.75.75 0 010-1.5h12Zm0-4.5a.75.75 0 010 1.5H3a.75.75 0 010-1.5h12Z">   
+            </path>
+          </svg>
+        </span>
+        재생목록에 저장
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M7.5 2.369v3.263c-4.394.18-6.529 3.25-6.733 9.795-.011.354.433.513.659.24 2.347-2.838 3.262-3.258 6.074-3.291v3.259a.75.75 0 001.235.572l8.515-7.205-8.515-7.205a.75.75 0 00-1.235.572ZM9 7.07V3.986l5.928 5.016L9 14.017v-3.159l-1.517.018c-1.452.017-2.69.127-3.898.768-.35.186-.683.41-1.01.67.266-1.46.687-2.543 1.222-3.32.797-1.156 1.956-1.789 3.765-1.863L9 7.07Z"></path></svg>
+        </span>
+        공유
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M15.755 4.724 8.775.694 8.655.64a.637.637 0 00-.623 1.08l.105.075.55.318-2.545 4.409-1.289.345a1.13 1.13 0 00-.683.525l-.758 1.313a.563.563 0 00.206.769l7.108 4.104c.27.155.613.063.77-.206l.757-1.313c.15-.259.19-.566.113-.854l-.345-1.289 2.545-4.409.551.319.118.053c.24.08.508.008.676-.182l.075-.104a.64.64 0 00-.128-.794l-.103-.075ZM7.442 7.272 9.874 3.06l3.28 1.894-2.43 4.212a1.5 1.5 0 00-.15 1.138l.304 1.138-.213.368-5.484-3.166.212-.368 1.138-.305a1.5 1.5 0 00.911-.699Zm-2.079 9.09 2.545-4.41-1.47-.848-2.545 4.409-.113 1.893 1.583-1.044Z"></path></svg>
+        </span>
+        다시 듣기에 고정
+      </button>
+      <button class="w-full text-left px-2 py-2 hover:bg-gray-700 flex flex-row items-center">
+        <span class="p-2" style="display: block; fill: currentcolor;">
+          <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 18 18" width="18" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><g clip-path="url(#a_yt1732)"><path d="M9 .75a8.25 8.25 0 100 16.5A8.25 8.25 0 009 .75Zm0 1.5a6.75 6.75 0 016.185 9.453L3.565 4.995A6.74 6.74 0 019 2.25ZM2.815 6.295l11.619 6.708A6.75 6.75 0 012.815 6.295Z"></path></g><defs><clipPath id="a_yt1732"><path d="M0 0h18v18H0z"></path></clipPath></defs></svg>
+        </span>
+        관심 없음
+      </button>
+        </div>
+    </details>
+    </div>
+
+</div>
+            
         
-        
-        <div class="ms-25">
+        <div>
             <div>
                 <div class="flex justify-between items-center">
                     <div class="chart-title text-4xl font-bold text-white">빠른선곡</div>
@@ -1338,157 +2190,7 @@
 
             </div>
 
-            <!-- ---------------------------------뮤직 비디오 --------------------------------------- -->
-            <div class="w-full mx-auto">
-                <h3 class="text-5xl font-bold mb-5 mt-35">맞춤 추천 뮤직비디오</h3>
-
-                <!-- 오른쪽 버튼 영역 -->
-                <div class="flex justify-end -mt-10 mr-5 space-x-2">
-                    <button class="border border-gray-500 text-white px-4 py-1 rounded-full text-sm hover:bg-gray-700">
-                        모두 재생
-                    </button>
-                    <button
-                        class="border border-gray-500 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-gray-700">
-                        &lt
-                    </button>
-                    <button
-                        class="border border-gray-500 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-gray-700">
-                        >
-                    </button>
-                </div>
-
-                <div class="as">
-                    <!-- 카드 영역 -->
-                    <div class="grid grid-cols-4 gap-132 mt-10">
-
-                        <!-- 카드 1 -->
-
-
-                        <div class="card-1">
-                            <div style="width: 510px;" class="hover:brightness-90 relative group cursor-pointer">
-                                <!-- 이미지 -->
-                                <img id="god" style="width: 510px; height: 280px;"
-                                    src="https://i.ytimg.com/vi/19oT04OuBhg/sddefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCghqEJQEGHgg6AJIWg&rs=AMzJL3mf09hGxizvmH-JzpZfwOlQd7ebuw"
-                                    alt="">
-                                <!-- 이미지 끝 -->
-                                <svg class="w-4 h-4 fill-current text-white absolute top-2 right-2
-            opacity-0 group-hover:opacity-100 bg-white/50 rounded-full" viewBox="0 0 24 24">
-                                    <!-- 점3개 ⁝ 아이콘 -->
-                                    <circle cx="12" cy="5" r="2" />
-                                    <circle cx="12" cy="12" r="2" />
-                                    <circle cx="12" cy="19" r="2" />
-                                </svg>
-
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                    <!-- Play버튼 -->
-                                    <div class=" flex items-center justify-center
-                  border-t-[12px] border-t-transparent
-                  border-b-[12px] border-b-transparent
-                  border-l-[20px] border-l-white/80">
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="mt-3 font-bold">멸종위기사랑</p>
-                            <p class="text-sm text-gray-300"> <span class="hover:underline cursor-pointer">LEE CHANHYUK
-                                    ·</span>
-                                · 조회수 737만회 </p>
-                        </div>
-
-                        <!-- 카드 2 -->
-                        <div class="card-1">
-                            <div style="width: 510px;" class="hover:brightness-90 relative group cursor-pointer">
-                                <!-- 이미지 -->
-                                <img id="god" style="width: 510px; height: 280px;"
-                                    src="https://i.ytimg.com/vi/YBzJ0jmHv-4/sddefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCghqEJQEGHgg6AJIWg&rs=AMzJL3kJmYto0Hzw_B3zd45OigFhvJFv1A"
-                                    alt="">
-                                <!-- 이미지 끝 -->
-                                <svg class="w-4 h-4 fill-current text-white absolute top-2 right-2
-            opacity-0 group-hover:opacity-100 bg-white/50 rounded-full" viewBox="0 0 24 24">
-                                    <!-- 점3개 ⁝ 아이콘 -->
-                                    <circle cx="12" cy="5" r="2" />
-                                    <circle cx="12" cy="12" r="2" />
-                                    <circle cx="12" cy="19" r="2" />
-                                </svg>
-
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                    <!-- Play버튼 -->
-                                    <div class=" flex items-center justify-center
-                  border-t-[12px] border-t-transparent
-                  border-b-[12px] border-b-transparent
-                  border-l-[20px] border-l-white/80">
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="mt-3 font-bold">너를 만나</p>
-                            <p class="text-sm text-gray-300"><span class="hover:underline cursor-pointer">폴킴(Paul
-                                    Kim)</span>
-                                · 조회수 6988만회 </p>
-                        </div>
-
-                        <div class="card-1">
-                            <div style="width: 510px;" class="hover:brightness-90 relative group cursor-pointer">
-                                <!-- 이미지 -->
-                                <img id="god" style="width: 510px; height: 280px;"
-                                    src="https://i.ytimg.com/vi/bLoO0FSXncg/sddefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCghqEJQEGHgg6AJIWg&rs=AMzJL3nJOUoLk8UC6XVar6Yd6J836OP06A"
-                                    alt="">
-                                <!-- 이미지 끝 -->
-                                <svg class="w-4 h-4 fill-current text-white absolute top-2 right-2
-            opacity-0 group-hover:opacity-100 bg-white/50 rounded-full" viewBox="0 0 24 24">
-                                    <!-- 점3개 ⁝ 아이콘 -->
-                                    <circle cx="12" cy="5" r="2" />
-                                    <circle cx="12" cy="12" r="2" />
-                                    <circle cx="12" cy="19" r="2" />
-                                </svg>
-
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                    <!-- Play버튼 -->
-                                    <div class=" flex items-center justify-center
-                  border-t-[12px] border-t-transparent
-                  border-b-[12px] border-b-transparent
-                  border-l-[20px] border-l-white/80">
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="mt-3 font-bold">소녀</p>
-                            <p class="text-sm text-gray-300"> <span class="hover:underline cursor-pointer">오혁</span>
-                                · 조회수 4726만회 </p>
-                        </div>
-
-                        <div class="card-1">
-                            <div style="width: 510px;" class="hover:brightness-90 relative group cursor-pointer">
-                                <!-- 이미지 -->
-                                <img id="god" style="width: 510px; height: 280px;"
-                                    src="https://i.ytimg.com/vi/cHkDZ1ekB9U/sddefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCghqEJQEGHgg6AJIWg&rs=AMzJL3mfwxNAzMCIOp9Wix9krZ1Xh5sDVw"
-                                    alt="">
-                                <!-- 이미지 끝 -->
-                                <svg class="w-4 h-4 fill-current text-white absolute top-2 right-2
-            opacity-0 group-hover:opacity-100 bg-white/50 rounded-full" viewBox="0 0 24 24">
-                                    <!-- 점3개 ⁝ 아이콘 -->
-                                    <circle cx="12" cy="5" r="2" />
-                                    <circle cx="12" cy="12" r="2" />
-                                    <circle cx="12" cy="19" r="2" />
-                                </svg>
-
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                    <!-- Play버튼 -->
-                                    <div class=" flex items-center justify-center
-                  border-t-[12px] border-t-transparent
-                  border-b-[12px] border-b-transparent
-                  border-l-[20px] border-l-white/80">
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="mt-3 font-bold">나무</p>
-                            <p class="text-sm text-gray-300"> <span class="hover:underline cursor-pointer">카더가든</span>
-                                · 조회수 2273만회 </p>
-                        </div>
-
-
-
-
-                    </div>
-                </div>
-            </div>
+            
 
 
             <!-- ---------------------------------앨범 --------------------------------------- -->
@@ -1721,6 +2423,234 @@
                 </div>
             </div>
     
+            <div class="">
+            <div class="flex  items-center pt-8 pb-2">
+                <div class="text-white flex justify-between items-center w-full">
+                    <p class="text-5xl font-bold ml-3 mr-16">분위기 및 장르</p>
+                    <button class=" border rounded-2xl p-1 pl-2 pr-2 ">더보기</button>
+                </div>
+                <div class="text-white ml-5">
+                    <div class="flex gap-5 ">
+                        <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"
+                            class="border rounded-full p-1"><svg xmlns="http://www.w3.org/2000/svg" height="24"
+                                viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true"
+                                style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                <path
+                                    d="M13.793 5.293 7.086 12l6.707 6.707a1 1 0 101.414-1.414L9.914 12l5.293-5.293a1 1 0 10-1.414-1.414Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"
+                            class="border rounded-full p-1"><svg xmlns="http://www.w3.org/2000/svg" height="24"
+                                viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true"
+                                style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                <path
+                                    d="M8.793 5.293a1 1 0 000 1.414L14.086 12l-5.293 5.293a1 1 0 101.414 1.414L16.914 12l-6.707-6.707a1 1 0 00-1.414 0Z">
+                                </path>
+                            </svg></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overflow-hidden hover:overflow-x-auto p-4" id="ard">
+                <div class="flex gap-4">
+                    <div class="flex-none w-min[42rem] grid grid-cols-6 grid-rows-4 gap-5">
+                        <button
+                            class="border-l-6 border-amber-500 bg-gray-700 w-52 h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">한국 힙합</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-amber-200 bg-gray-700 w-FULL h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">잠잘 때</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-blue-200 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">1960년대</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-red-400 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">Pop</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-indigo-400 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">클래식</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-fuchsia-400 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">출퇴근 & 등하교</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-emerald-400 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">국내 록/얼터너티브</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-rose-300 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">1970년대 음악</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-emerald-200 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">OST & 뮤지컬</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-cyan-200 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">J팝</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-rose-600 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">계절의 변화를 위한 테마</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-amber-200 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">에너지 충전</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-sky-700 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">트로트</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-fuchsia-800 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">2000년대</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-lime-200 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">가족</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-fuchsia-200 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">국내 발라드</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-purple-600 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">파티 음악</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-sky-400 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">댄스 & 일렉트로닉</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-red-700 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">아랍 음악</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-teal-300 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">편안한 분위기</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-gray-300 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">사랑 노래</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-teal-800 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">이라크 음악</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-cyan-400 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">블루스</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-indigo-300 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">가족</p>
+                        </button>
+                    </div>
+
+                    <div class="flex-none w-min[42rem] grid grid-cols-6 grid-rows-4 gap-5">
+                        <button
+                            class="border-l-6 border-rose-300 bg-gray-700 w-52 h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">만도팝 및 캔터팝</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-purple-600 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">1980년대</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-amber-200 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">재즈</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-cyan-200 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">라틴</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-emerald-400 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">국내 R&B</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-indigo-400 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">컨트리 & 아메리카나</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-teal-800 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">게임</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-gray-300 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">출퇴근 & 등하교</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-amber-500 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">1990년대</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-rose-600 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">록</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-sky-700 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">메탈</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-indigo-300 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">연말 연시</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-emerald-200 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">포크/어쿠스틱</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-cyan-400 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">발리우드 & 인도</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-emerald-400 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">힙합</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-red-400 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">슬픔</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-indigo-400 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">아프리카</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-red-800 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">1990년대</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-teal-400 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">2010년대</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-amber-700 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">1960년대</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-indigo-100 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">라틴</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-rose-100 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">reggae & caribbean</p>
+                        </button>
+                        <button
+                            class="border-l-6 border-purple-900 bg-gray-700 w-full h-12 rounded-lg hover:cursor-pointer">
+                            <p class="text-white text-left p-2">R&B 및 소울 </p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
         </main>
 
 </body>
