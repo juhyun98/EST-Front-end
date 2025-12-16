@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="output.css" rel="stylesheet">
     <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css"> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -52,12 +51,12 @@
 
         .box {
             box-sizing: border-box;
-            width: 1468px;
+            width: 100%;
 
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             grid-template-rows: repeat(4, 1fr);
-            scrollbar-color: #555 #272727;
+            scrollbar-color: #555 black;
             text-overflow: ellipsis;
             overflow: hidden;
         }
@@ -129,12 +128,12 @@
 
         .favorite-album {
             box-sizing: border-box;
-            width: 1468px;
+            width: 100%;
             height: 100%;
             display: grid;
             grid-template-columns: repeat(10, 1fr);
             grid-template-rows: repeat(1, 1fr);
-            scrollbar-color: #555 #272727;
+            scrollbar-color: #555 black;
             text-overflow: ellipsis;
             overflow: hidden;
         }
@@ -427,10 +426,9 @@
                                     <div class="font-medium">홈</div>
                                 </div>
                             </div>
-                            <div
-                                class="text-white text-xl hover:bg-[rgba(255,255,255,0.2)] font-medium inline-block relative w-full h-12 rounded-lg items-center justify-center">
-                                <div
-                                    class="px-4 whitespace-nowrap rounded-lg cursor-pointer flex flex-row items-center text-base font-normal h-12">
+                            <a href="Search.html">
+                            <div class="text-white text-xl hover:bg-[rgba(255,255,255,0.2)] font-medium inline-block relative w-full h-12 rounded-lg items-center justify-center">
+                                <div class="px-4 whitespace-nowrap rounded-lg cursor-pointer flex flex-row items-center text-base font-normal h-12">
                                     <div class="mr-5 inline-flex items-center relative align-middle">
                                         <span class="flex items-center justify-center w-full h-full cursor-pointer">
                                             <div class="block"><svg xmlns="http://www.w3.org/2000/svg"
@@ -446,6 +444,7 @@
                                     <div class="font-medium">둘러보기</div>
                                 </div>
                             </div>
+                            </a>
                             <div
                                 class="text-white text-xl hover:bg-[rgba(255,255,255,0.2)] font-medium inline-block relative w-full h-12 rounded-lg items-center justify-center">
                                 <div
@@ -506,10 +505,11 @@
     <!-- 헤더 영역 -->
     <div class="fixed top-0 w-full bg-black z-10">
         <div class=" flex items-center" id="hb">
-            <div class="flex items-center ml-7 " id="main-1">
-                <i
-                    class="material-icons hover:cursor-pointer text-white border-none rounded-3xl p-1 hover:bg-gray-800">menu</i>
-                <img alt="" src="//music.youtube.com/img/on_platform_logo_dark.svg">
+            <div class="flex items-center  " id="main-1">
+                <button class=" ml-4 p-2 rounded-full border-none w-10 h-10 hover:bg-[#363636] hover:cursor-pointer">
+                    <svg class="fill-white" xmlns="http://www.w3.org/2000/svg" height="15" viewBox="0 0 24 24" width="10" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M20 5H4a1 1 0 000 2h16a1 1 0 100-2Zm0 6H4a1 1 0 000 2h16a1 1 0 000-2Zm0 6H4a1 1 0 000 2h16a1 1 0 000-2Z"></path></svg>
+                </button>
+                <img class="logo style-scope ytmusic-logo ml-3 hover:cursor-pointer" alt="" src="//music.youtube.com/img/on_platform_logo_dark.svg">
             </div>
             <div class="flex items-start w-426 ms-20">
                 <div class="flex items-center" id="sch">
@@ -532,7 +532,7 @@
             </div>
             <div class="flex items-center gap-2 me-20">
                 <div>
-                    <button class="w-8 hover:cursor-pointer" id="to-TV"><svg xmlns="http://www.w3.org/2000/svg"
+                    <button class="w-6 hover:cursor-pointer" id="to-TV"><svg xmlns="http://www.w3.org/2000/svg"
                             height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true"
                             style="fill: #fff; pointer-events: none; display: inherit; width: 100%; height: 100%;">
                             <path
@@ -541,9 +541,9 @@
                         </svg></button>
                 </div>
                 <div>
-                    <button class="flex items-center p-2  rounded-3xl cursor-pointer"><img
-                            src="https://cdn.discordapp.com/attachments/1448124423042371786/1448204868425748550/login-icon2-removebg-preview.png?ex=693a6962&is=693917e2&hm=7cfa1eb42bf94140ec8c1e8f235710081eb29cb778c6d81651e2c84de14d5f61&>"
-                            class="max-w-10"></button>
+                    <button class="flex items-center p-2  rounded-3xl cursor-pointer">
+                        <img draggable="false" class="style-scope yt-img-shadow w-[37px] h-[25px] rounded-full" alt="" src="https://yt3.ggpht.com/hgHf-3w9mgc2kEkxjmbTB6SGR9KtO1YACcaG1kTDTQXhurza1eF1nDXCCox8zVrTD5DiE5CJrAU=s108-c-k-c0x00ffffff-no-rj">
+                    </button>
                 </div>
             </div>
         </div>
@@ -608,7 +608,7 @@
                         src="https://lh3.googleusercontent.com/VGf2lFXKQdSyrz2g3Czj66doPtUxvJBrWDK6UFeOj8zRqS-tgs_D8FG5-8pYTX-Uh9FxZBDJIXtN1nKF=w60-h60-l90-rj">
                 </div>
                 <div class="flex flex-col overflow-hidden mr-2 ml-4">
-                    <span class="text-white font-[550]">IRIS OUT</span>
+                    <a href="playlist.html" class="text-white font-[550] hover:underline">IRIS OUT</a>
                     <span class="flex items-center">
                         <span class="flex flex-row w-full overflow-hidden">
                             <span class="font-normal text-[rgba(255,255,255,0.7)]">
@@ -799,7 +799,7 @@
                 </div>
                 <div class="text-white ml-5">
                     <div class="flex gap-5 pt-5">
-                        <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"
+                        <div id="prev_btn" style="width: 100%; height: 100%; display: block; fill: currentcolor;"
                             class="border border-neutral-800 text-gray-500 rounded-full p-1 hover:cursor-pointer hover:bg-neutral-800">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
                                 focusable="false" aria-hidden="true"
@@ -809,7 +809,7 @@
                                 </path>
                             </svg>
                         </div>
-                        <div style="width: 100%; height: 100%; display: block; fill: currentcolor;"
+                        <div id="next_btn" style="width: 100%; height: 100%; display: block; fill: currentcolor;"
                             class="border border-neutral-800 rounded-full p-1 hover:cursor-pointer hover:bg-neutral-800">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
                                 focusable="false" aria-hidden="true"
@@ -15056,6 +15056,34 @@
 
     </main>
 
+    <script>
+  // "맞춤 추천 뮤직비디오" 가로 슬라이드
+  // 앞으로가기, 뒤로가기, 보여줄 이미지 영역 찾기(Element)
+  const prevBtn = document.getElementById("prev_btn");
+  const nextBtn = document.getElementById("next_btn");
+  const musicVedio = document.querySelector(".musicvedio");
+
+  // 각 요소가 존재한다면 기능을 동작하겠다 -> 조건문
+  if (prevBtn && nextBtn && musicVedio) {
+    // 사용자가 보이는 카드 영역의 길이를 80%로 설정 
+    const getStep = () => Math.floor(musicVedio.clientWidth * 0.8);
+
+    // 다음 버튼을 눌렀을 때 화면의 스크롤 위치를 왼쪽에서 80%로 부드럽게 이동
+    nextBtn.addEventListener("click", () => {
+      musicVedio.scrollBy({
+        left: getStep(),
+        behavior: "smooth",
+      });
+    });
+    // 이전 버튼을 눌렀을 때 화면의 스크롤 위치를 오른쪽에서 80%로 부드럽게 이동
+    prevBtn.addEventListener("click", () => {
+      musicVedio.scrollBy({
+        left: -getStep(),
+        behavior: "smooth",
+      });
+    });
+  }
+</script>
 </body>
 
 </html>

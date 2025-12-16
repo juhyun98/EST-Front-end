@@ -44,7 +44,7 @@
 
         .box {
             box-sizing: border-box;
-            width: 1215px;
+            width: 100%;
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             grid-template-rows: repeat(4, 1fr);
@@ -95,7 +95,7 @@
 
         .arround-box {
             box-sizing: border-box;
-            width: 1215px;
+            width: 100%;
             display: grid;
             grid-template-columns: repeat(10, 1fr);
             grid-template-rows: repeat(4, 1fr);
@@ -394,22 +394,24 @@
                         <div class="max-h-full overflow-auto">
                             <div
                                 class="text-white text-xl hover:bg-[rgba(255,255,255,0.2)] font-medium inline-block relative w-full h-12 rounded-lg items-center justify-center">
-                                <div
+                                <a href="main.html">
+                                    <div
                                     class="px-4 whitespace-nowrap rounded-lg cursor-pointer flex flex-row items-center text-base font-normal h-12">
                                     <div class="mr-5 inline-flex items-center relative align-middle">
                                         <span class="flex items-center justify-center w-full h-full cursor-pointer">
                                             <div class="block"><svg xmlns="http://www.w3.org/2000/svg" height="24"
-                                                    fill="currentColor" viewBox="0 0 24 24" width="24" focusable="false"
-                                                    aria-hidden="true"
-                                                    style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
-                                                    <path
-                                                        d="m11.485 2.143-8 4.8-2 1.2a1 1 0 001.03 1.714L3 9.567V20a2 2 0 002 2h6v-7h2v7h6a2 2 0 002-2V9.567l.485.29a1 1 0 001.03-1.714l-2-1.2-8-4.8a1 1 0 00-1.03 0ZM5 8.366l7-4.2 7 4.2V20h-4v-5.5a1.5 1.5 0 00-1.5-1.5h-3A1.5 1.5 0 009 14.5V20H5V8.366Z">
-                                                    </path>
-                                                </svg></div>
-                                        </span>
-                                    </div>
-                                    <div class="font-medium">홈</div>
+                                                fill="currentColor" viewBox="0 0 24 24" width="24" focusable="false"
+                                                aria-hidden="true"
+                                                style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                                                <path
+                                                d="m11.485 2.143-8 4.8-2 1.2a1 1 0 001.03 1.714L3 9.567V20a2 2 0 002 2h6v-7h2v7h6a2 2 0 002-2V9.567l.485.29a1 1 0 001.03-1.714l-2-1.2-8-4.8a1 1 0 00-1.03 0ZM5 8.366l7-4.2 7 4.2V20h-4v-5.5a1.5 1.5 0 00-1.5-1.5h-3A1.5 1.5 0 009 14.5V20H5V8.366Z">
+                                            </path>
+                                        </svg></div>
+                                    </span>
                                 </div>
+                                <div class="font-medium">홈</div>
+                            </div>
+                        </a>
                             </div>
                             <div
                                 class="text-white text-xl bg-[rgba(255,255,255,.1)] hover:bg-[rgba(255,255,255,0.2)] font-medium inline-block relative w-full h-12 rounded-lg items-center justify-center">
@@ -496,10 +498,11 @@
     <!-- 헤더 영역 -->
     <div class="fixed top-0 w-full bg-black z-10">
         <div class=" flex items-center" id="hb">
-            <div class="flex items-center ml-7 " id="main-1">
-                <i
-                    class="material-icons hover:cursor-pointer text-white border-none rounded-3xl p-1 hover:bg-gray-800">menu</i>
-                <img alt="" src="//music.youtube.com/img/on_platform_logo_dark.svg">
+            <div class="flex items-center  " id="main-1">
+                <button class=" ml-4 p-2 rounded-full border-none w-10 h-10 hover:bg-[#363636] hover:cursor-pointer">
+                    <svg class="fill-white" xmlns="http://www.w3.org/2000/svg" height="15" viewBox="0 0 24 24" width="10" focusable="false" aria-hidden="true" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M20 5H4a1 1 0 000 2h16a1 1 0 100-2Zm0 6H4a1 1 0 000 2h16a1 1 0 000-2Zm0 6H4a1 1 0 000 2h16a1 1 0 000-2Z"></path></svg>
+                </button>
+                <img class="logo style-scope ytmusic-logo ml-3 hover:cursor-pointer" alt="" src="//music.youtube.com/img/on_platform_logo_dark.svg">
             </div>
             <div class="flex items-start w-426 ms-20">
                 <div class="flex items-center" id="sch">
@@ -517,11 +520,12 @@
                             class="border bg-[#363636] border-gray-600 rounded-r-sm border-l-0 inset-shadow-xs pl-3 h-11 w-md text-white"
                             type="text" placeholder="노래, 앨범, 아티스트, 팟캐스트 검색" id="sch-1">
                     </div>
+
                 </div>
             </div>
             <div class="flex items-center gap-2 me-20">
                 <div>
-                    <button class="w-8 hover:cursor-pointer" id="to-TV"><svg xmlns="http://www.w3.org/2000/svg"
+                    <button class="w-6 hover:cursor-pointer" id="to-TV"><svg xmlns="http://www.w3.org/2000/svg"
                             height="24" viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true"
                             style="fill: #fff; pointer-events: none; display: inherit; width: 100%; height: 100%;">
                             <path
@@ -530,9 +534,9 @@
                         </svg></button>
                 </div>
                 <div>
-                    <button class="flex items-center p-2  rounded-3xl cursor-pointer"><img
-                            src="https://cdn.discordapp.com/attachments/1448124423042371786/1448204868425748550/login-icon2-removebg-preview.png?ex=693a6962&is=693917e2&hm=7cfa1eb42bf94140ec8c1e8f235710081eb29cb778c6d81651e2c84de14d5f61&>"
-                            class="max-w-10"></button>
+                    <button class="flex items-center p-2  rounded-3xl cursor-pointer">
+                        <img draggable="false" class="style-scope yt-img-shadow w-[37px] h-[25px] rounded-full" alt="" src="https://yt3.ggpht.com/hgHf-3w9mgc2kEkxjmbTB6SGR9KtO1YACcaG1kTDTQXhurza1eF1nDXCCox8zVrTD5DiE5CJrAU=s108-c-k-c0x00ffffff-no-rj">
+                    </button>
                 </div>
             </div>
         </div>
@@ -602,7 +606,9 @@
                         src="https://lh3.googleusercontent.com/VGf2lFXKQdSyrz2g3Czj66doPtUxvJBrWDK6UFeOj8zRqS-tgs_D8FG5-8pYTX-Uh9FxZBDJIXtN1nKF=w60-h60-l90-rj">
                 </div>
                 <div class="flex flex-col overflow-hidden mr-2 ml-4">
-                    <span class="text-white font-[550]">IRIS OUT</span>
+                    <a href="playlist.html" class="hover:underline text-white">
+                        <span class="text-white font-[550]">IRIS OUT</span>
+                    </a>
                     <span class="flex items-center">
                         <span class="flex flex-row w-full overflow-hidden">
                             <span class="font-normal text-[rgba(255,255,255,0.7)]">
@@ -2244,7 +2250,7 @@
                     </div>
                 </div>
             </div>
-            <div class="arround-box">
+            <div class="arround-box h-72 gap-x-16">
                 <div class="content mt-3 flex gap-4">
                     <div class="album">
                         <img class="album-album"
@@ -3279,7 +3285,7 @@
                 </div>
             </div>
 
-            <div class="box mt-5">
+            <div class="box mt-5 gap-x-16">
                 <div class="content mt-3 flex gap-3">
                     <div class="album">
                         <img class="album-album"

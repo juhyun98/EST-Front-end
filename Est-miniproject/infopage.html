@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .box {
+            background-color: #272727;
+        }
+
+        .flex-box {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .bgcolor {
+            background-color: #0f0f0f;
+        }
+
+        .img {
+            margin: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-bgcolor {
+            background-color: #065fd4;
+        }
+
+        .btn-bgcolor:hover {
+            background-color: #0556bf;
+        }
+
+        #hb {
+            border-bottom: 1px none;
+        }
+
+        #glass {
+            background-color: rgb(245, 245, 245);
+        }
+
+        #btn-mike {
+            background-color: rgb(238, 238, 238);
+        }
+
+        #btn-mike:hover {
+            background-color: rgb(218, 218, 218);
+        }
+
+        #glass:hover {
+            background-color: rgb(221, 221, 221);
+        }
+
+        #kr {
+            font-size: 10px;
+        }
+
+        #fixed {
+            position: fixed;
+            width: 100vw;
+            background-color: white;
+        }
+
+
+        .box {
+            background-color: #272727;
+        }
+
+        #arrowbtn {
+            display: none;
+        }
+
+        .div {
+            display: none;
+        }
+
+        #arrowbtn:checked+.div {
+            display: block;
+        }
+
+        #arrowbtn2 {
+            display: none;
+        }
+
+        .div2 {
+            display: none;
+        }
+
+        #arrowbtn2:checked+.div2 {
+            display: block;
+        }
+
+        #arrowbtn3 {
+            display: none;
+        }
+
+        .div3 {
+            display: none;
+        }
+
+        #arrowbtn3:checked+.div3 {
+            display: block;
+        }
+
+        .flex-box {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .bgcolor {
+            background-color: #0f0f0f;
+        }
+
+        .img {
+            margin: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-bgcolor {
+            background-color: #065fd4;
+        }
+
+        .btn-bgcolor:hover {
+            background-color: #0556bf;
+        }
+    </style>
+</head>
+
+<body class="bgcolor">
+
+    <div id="fixed">
+        <div class="flex justify-between items-center h-15 " id="hb">
+            <div class="flex items-center ml-4">
+                <span class="rounded-full p-2 hover:cursor-pointer hover:bg-[#d8d8d8]">
+                    <button class="btnsize rounded-full w-6 hover:cursor-pointer  "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            focusable="false" aria-hidden="true"
+                            style="pointer-events: none; display: inherit;">
+                            <path
+                                d="M20 5H4a1 1 0 000 2h16a1 1 0 100-2Zm0 6H4a1 1 0 000 2h16a1 1 0 000-2Zm0 6H4a1 1 0 000 2h16a1 1 0 000-2Z">
+                            </path>
+                        </svg></button>
+                </span>
+                <button class="ml-5 hover:cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" id="yt-ringo2-svg_yt9" width="93" height="20"
+                        viewBox="0 0 93 20" focusable="false" aria-hidden="true"
+                        style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                        <g>
+                            <path
+                                d="M14.4848 20C14.4848 20 23.5695 20 25.8229 19.4C27.0917 19.06 28.0459 18.08 28.3808 16.87C29 14.65 29 9.98 29 9.98C29 9.98 29 5.34 28.3808 3.14C28.0459 1.9 27.0917 0.94 25.8229 0.61C23.5695 0 14.4848 0 14.4848 0C14.4848 0 5.42037 0 3.17711 0.61C1.9286 0.94 0.954148 1.9 0.59888 3.14C0 5.34 0 9.98 0 9.98C0 9.98 0 14.65 0.59888 16.87C0.954148 18.08 1.9286 19.06 3.17711 19.4C5.42037 20 14.4848 20 14.4848 20Z"
+                                fill="#FF0033"></path>
+                            <path d="M19 10L11.5 5.75V14.25L19 10Z" fill="white"></path>
+                        </g>
+                        <g id="youtube-paths_yt9">
+                            <path
+                                d="M37.1384 18.8999V13.4399L40.6084 2.09994H38.0184L36.6984 7.24994C36.3984 8.42994 36.1284 9.65994 35.9284 10.7999H35.7684C35.6584 9.79994 35.3384 8.48994 35.0184 7.22994L33.7384 2.09994H31.1484L34.5684 13.4399V18.8999H37.1384Z">
+                            </path>
+                            <path
+                                d="M44.1003 6.29994C41.0703 6.29994 40.0303 8.04994 40.0303 11.8199V13.6099C40.0303 16.9899 40.6803 19.1099 44.0403 19.1099C47.3503 19.1099 48.0603 17.0899 48.0603 13.6099V11.8199C48.0603 8.44994 47.3803 6.29994 44.1003 6.29994ZM45.3903 14.7199C45.3903 16.3599 45.1003 17.3899 44.0503 17.3899C43.0203 17.3899 42.7303 16.3499 42.7303 14.7199V10.6799C42.7303 9.27994 42.9303 8.02994 44.0503 8.02994C45.2303 8.02994 45.3903 9.34994 45.3903 10.6799V14.7199Z">
+                            </path>
+                            <path
+                                d="M52.2713 19.0899C53.7313 19.0899 54.6413 18.4799 55.3913 17.3799H55.5013L55.6113 18.8999H57.6012V6.53994H54.9613V16.4699C54.6812 16.9599 54.0312 17.3199 53.4212 17.3199C52.6512 17.3199 52.4113 16.7099 52.4113 15.6899V6.53994H49.7812V15.8099C49.7812 17.8199 50.3613 19.0899 52.2713 19.0899Z">
+                            </path>
+                            <path d="M62.8261 18.8999V4.14994H65.8661V2.09994H57.1761V4.14994H60.2161V18.8999H62.8261Z">
+                            </path>
+                            <path
+                                d="M67.8728 19.0899C69.3328 19.0899 70.2428 18.4799 70.9928 17.3799H71.1028L71.2128 18.8999H73.2028V6.53994H70.5628V16.4699C70.2828 16.9599 69.6328 17.3199 69.0228 17.3199C68.2528 17.3199 68.0128 16.7099 68.0128 15.6899V6.53994H65.3828V15.8099C65.3828 17.8199 65.9628 19.0899 67.8728 19.0899Z">
+                            </path>
+                            <path
+                                d="M80.6744 6.26994C79.3944 6.26994 78.4744 6.82994 77.8644 7.73994H77.7344C77.8144 6.53994 77.8744 5.51994 77.8744 4.70994V1.43994H75.3244L75.3144 12.1799L75.3244 18.8999H77.5444L77.7344 17.6999H77.8044C78.3944 18.5099 79.3044 19.0199 80.5144 19.0199C82.5244 19.0199 83.3844 17.2899 83.3844 13.6099V11.6999C83.3844 8.25994 82.9944 6.26994 80.6744 6.26994ZM80.7644 13.6099C80.7644 15.9099 80.4244 17.2799 79.3544 17.2799C78.8544 17.2799 78.1644 17.0399 77.8544 16.5899V9.23994C78.1244 8.53994 78.7244 8.02994 79.3944 8.02994C80.4744 8.02994 80.7644 9.33994 80.7644 11.7299V13.6099Z">
+                            </path>
+                            <path
+                                d="M92.6517 11.4999C92.6517 8.51994 92.3517 6.30994 88.9217 6.30994C85.6917 6.30994 84.9717 8.45994 84.9717 11.6199V13.7899C84.9717 16.8699 85.6317 19.1099 88.8417 19.1099C91.3817 19.1099 92.6917 17.8399 92.5417 15.3799L90.2917 15.2599C90.2617 16.7799 89.9117 17.3999 88.9017 17.3999C87.6317 17.3999 87.5717 16.1899 87.5717 14.3899V13.5499H92.6517V11.4999ZM88.8617 7.96994C90.0817 7.96994 90.1717 9.11994 90.1717 11.0699V12.0799H87.5717V11.0699C87.5717 9.13994 87.6517 7.96994 88.8617 7.96994Z">
+                            </path>
+                        </g>
+                    </svg>
+                </button>
+                <span class="mb-5 text-xs absolute pl-40 text-gray-500 hover:cursor-pointer" id="kr">KR</span>
+            </div>
+            <div class="flex items-center" id="sch">
+                <div class="flex mr-5">
+                    <input class="border border-gray-300 rounded-l-3xl inset-shadow-xs pl-3 h-11 w-xl border-r-0"
+                        type="search" placeholder="검색" id="sch-1">
+                    <button
+                        class="border border-gray-300 rounded-r-3xl h-11 w-18 flex p-2 hover:bg-gray-600 cursor-pointer"
+                        id="glass"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                            focusable="false" aria-hidden="true"
+                            style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                            <path
+                                d="M11 2a9 9 0 105.641 16.01.966.966 0 00.152.197l3.5 3.5a1 1 0 101.414-1.414l-3.5-3.5a1 1 0 00-.197-.153A8.96 8.96 0 0020 11a9 9 0 00-9-9Zm0 2a7 7 0 110 14 7 7 0 010-14Z">
+                            </path>
+                        </svg></button>
+                </div>
+                <div>
+                    <button class="border-white border rounded-3xl w-11 p-2 cursor-pointer" id="btn-mike"><svg
+                            xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                            focusable="false" aria-hidden="true"
+                            style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                            <path
+                                d="M18.063 14.5a1 1 0 111.73 1A8.998 8.998 0 0113 19.942V22a1 1 0 11-2 0v-2.058A8.999 8.999 0 014.206 15.5l.866-.5.865-.5a7.002 7.002 0 0012.125 0ZM12 1a5 5 0 015 5v5a5 5 0 01-10 0V6a5 5 0 015-5ZM4.572 14.134a1 1 0 011.365.366l-1.731 1a1 1 0 01.366-1.366ZM12 3a3 3 0 00-3 3v5a3 3 0 106 0V6a3 3 0 00-3-3Z">
+                            </path>
+                        </svg></button>
+                </div>
+            </div>
+            <div class="flex items-center mr-6">
+                <div class=>
+                    <button class="w-8 hover:cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" height="24"
+                            viewBox="0 0 24 24" width="24" focusable="false" aria-hidden="true"
+                            style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                            <path
+                                d="M12 4a2 2 0 100 4 2 2 0 000-4Zm0 6a2 2 0 100 4 2 2 0 000-4Zm0 6a2 2 0 100 4 2 2 0 000-4Z">
+                            </path>
+                        </svg></button>
+                </div>
+                <div>
+                    <a href="main.html">
+                        <button
+                            class="flex items-center pl-2 p-1 border border-gray-200  rounded-3xl w-24 text-blue-500 hover:bg-blue-100 cursor-pointer"><svg
+                                class="fill-[#065fd4]" xmlns="http://www.w3.org/2000/svg" height="11"
+                                viewBox="0 0 24 24" width="12" focusable="false" aria-hidden="true"
+                                style="pointer-events: none; display: inherit; width: 30%; height: 25% ;">
+                                <path
+                                    d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1Zm0 2a9 9 0 016.447 15.276 7 7 0 00-12.895 0A9 9 0 0112 3Zm0 2a4 4 0 100 8 4 4 0 000-8Zm0 2a2 2 0 110 4 2 2 0 010-4Zm-.1 9.001L11.899 16a5 5 0 014.904 3.61A8.96 8.96 0 0112 21a8.96 8.96 0 01-4.804-1.391 5 5 0 014.704-3.608Z">
+                                </path>
+                            </svg><span class="text-[14px] ml-2 font-bold">로그인</span></button>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div>
+
+        <div
+            class=" mx-auto px-50 py-50 bg-[url(https://www.gstatic.com/youtube/img/promos/growth/music_premium_lp2_header_background_dark_1440x578.webp)] bg-cover pt-25 pb-15">
+
+            <!-- 유튜브 로고 -->
+            <div class="flex justify-around">
+                <img style="width: 200px;" class="mt-5 mb-10 "
+                    src="https://www.gstatic.com/youtube/img/promos/growth/db55569cc2ba162998714b884befdf5bf6bbe745535d6ec67f329d2d694a366a_163x31.png"
+                    alt="">
+            </div>
+
+            <!-- 제목 -->
+            <h2 class="text-6xl mb-10 font-bold text-center text-gray-50"> Music Premium으로 Youtube Music을 즐기세요</h2>
+
+            <!-- 내용 1  -->
+            <p class="text-base p-3 mb-5 font-bold text-gray-50 text-center">₩0에 1개월 무료 체험 • 이후 ₩11,990⁠/⁠월 • VAT 포함 •
+                언제든지 취소 가능 </p>
+
+
+            <!-- 버튼  -->
+            <a
+                href="https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Dko%26next%3D%252Fmusicpremium%253Fybp%253DOgIIAUoVCAYSEXVubGltaXRlZC1CLW11c2lj&hl=ko">
+                <button style="cursor: pointer ;" class="text-gray-100 btn-bgcolor rounded-full p-3 
+                font-bold m-5 block mx-auto
+                hover:scale-100"> ₩0에 1개월 체험하기</button>
+
+            </a>
+
+            <!-- 내용 2 -->
+            <p class="text-xs mt-8 text-center font-medium text-gray-400">
+                무료 체험이 종료되기 전에 멤버십을 유지할지 확인해야 합니다. 확인할 때까지 요금이 청구되지 않습니다.
+                정기 결제이며 무료 체험판은 신규 회원에게만 제공됩니다.
+            </p>
+
+            <!-- 하이퍼링크 -->
+            <p class="text-center text-blue-500 font-bold text-xs">
+                <a class="" href="https://www.youtube.com/t/terms_paidservice?chromeless=1#premium">제한사항이 적용됩니다. </a>
+            </p>
+        </div>
+
+        <div class="max-w-7xl mx-auto">
+            <div class="text-stone-100 text-6xl font-black text-center m-3 mb-40 mt-10">1억 곡이 넘는 노래, 동영상, 라이브 공연을 간편하게
+            </div>
+            <div
+                class="grid grid-cols-3 place-items-center max-[640px]:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 sm:grid-cols-1">
+                <div class="h-50 max-w-sm max-[527px]:flex justify-center items-center">
+                    <img class="img pb-5 pr-7"
+                        src="https://www.gstatic.com/youtube/img/promos/growth/music_premium_lp2_small_feature_ad_free_static_dark_100x100.png"
+                        alt="">
+                    <div class="text-sm text-white font-bold text-center h-3 max-[527px]:text-left">좋아하는 음악을 광고로 끊김 없이
+                        즐기세요</div>
+                </div>
+                <div class="h-50 max-w-sm max-[527px]:flex justify-center items-center">
+                    <img class="img pr-7"
+                        src="https://www.gstatic.com/youtube/img/promos/growth/music_premium_lp2_small_feature_background_play_dark_100x100.webp"
+                        alt="">
+                    <div class="text-sm text-white font-bold text-center h-3 max-[527px]:text-left">오프라인 저장하여 이동 중에 청취하고
+                        백그라운드에서도 재생하는 등 끊김 없는 감상 환경을 즐기세요</div>
+                </div>
+                <div class="h-50 max-w-sm max-[527px]:flex justify-center items-center">
+                    <img class="img pr-7"
+                        src="https://www.gstatic.com/youtube/img/promos/growth/music_premium_lp2_small_feature_song_video_dark_100x100.webp"
+                        alt="">
+                    <div class="text-sm text-white font-bold text-center h-3 max-[527px]:text-left">노래를 듣는 중에 탭 한 번으로
+                        오디오에서 동영상으로 전환하세요.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mx-auto px-6 max-w-7xl">
+
+            <!-- Section Title -->
+            <div class="flex justify-center py-14 text-center">
+                <span class="font-bold text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+                    마음대로 즐기는 YouTube Music
+                </span>
+            </div>
+
+            <!-- First Row -->
+            <div class="flex flex-col md:flex-col lg:flex-row-reverse gap-10 my-16">
+                <div class="w-full lg:w-auto flex justify-center">
+                    <img class="w-full max-w-[640px] h-auto"
+                        src="https://www.gstatic.com/youtube/img/promos/growth/music_premium_lp2_large_feature_move_to_rhythm_dark_640x200.webp"
+                        alt="" />
+                </div>
+
+                <div class="flex-1 flex flex-col justify-center">
+                    <div class="mx-4 md:mx-12">
+                        <div class="mt-4">
+                            <span class="font-bold text-white text-2xl sm:text-3xl md:text-4xl lg:text-4xl">
+                                나만의 리듬에 맞춰 즐기기
+                            </span>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-[#AAAAAA] leading-relaxed text-base sm:text-lg">
+                                내가 좋아하는 음악을 기준으로 생성된 믹스를 듣고 분위기나 상황에 맞게
+                                선별된 수천 개의 재생목록을 탐색해 보세요.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Row -->
+            <div class="flex flex-col md:flex-col lg:flex-row gap-10 my-16">
+                <div class="w-full lg:w-auto flex justify-center">
+                    <img class="w-full max-w-[640px] h-auto"
+                        src="https://www.gstatic.com/youtube/img/promos/growth/music_premium_lp2_large_feature_custom_listening_dark_640x592.webp"
+                        alt="" />
+                </div>
+
+                <div class="flex flex-col flex-1 justify-center">
+                    <div class="mx-4 md:mx-12">
+                        <div class="mt-4">
+                            <span class="font-bold text-white text-2xl sm:text-3xl md:text-4xl lg:text-4xl">
+                                나만을 위한 감상 환경 맞춤설정
+                            </span>
+                        </div>
+                        <div class="mt-4">
+                            <span class="text-[#AAAAAA] leading-relaxed text-base sm:text-lg">
+                                좋아하는 아티스트를 조합하여 내게 꼭 맞는 음악 감상 환경을 만드세요.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div>
+            <div class="box container mx-auto p-6 w-full max-w-6xl min-h-[400px] rounded-2xl mb-20">
+                <div class="row">
+                    <h2 class="text-slate-50 font-black text-5xl my-5">궁금한 점이 있으면 문의해 주세요</h2>
+                </div>
+                <div class="row flex-box">
+                    <p class="text-slate-50 font-bold py-2">백그라운드에서 동영상과 음악을 재생하려면 어떻게 해야 하나요?</p>
+                    <label for="arrowbtn" class="arrow ml-auto cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="white" height="24" viewBox="0 0 24 24" width="24"
+                            focusable="false" aria-hidden="true"
+                            style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                            <path
+                                d="M18.707 8.793a1 1 0 00-1.414 0L12 14.086 6.707 8.793a1 1 0 10-1.414 1.414L12 16.914l6.707-6.707a1 1 0 000-1.414Z">
+                            </path>
+                        </svg>
+                    </label>
+                </div>
+                <input type="checkbox" id="arrowbtn">
+                <div class="div text-slate-300 my-2">YouTube Music Premium 요금제를 이용하면 YouTube Music 앱에 백그라운드 재생이 기본적으로 사용
+                    설정됩니다. 따라서 음악을 듣거나 뮤직비디오를 시청하면서 화면을 닫거나 앱을 종료해도 일시중지하기 전까지 음악이 백그라운드에서 계속 재생됩니다. 언제든지 설정에서 백그라운드 재생을
+                    사용 중지할 수 있습니다.
+                </div>
+                <div class="bg-slate-500 w-full h-px my-4"></div>
+                <div class="row flex-box">
+                    <p class="text-slate-50 font-bold py-2">어떤 제품, 서비스, 기기에서 YouTube Music Premium이 지원되나요?</p>
+                    <label for="arrowbtn2" class="arrow ml-auto cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="white" height="24" viewBox="0 0 24 24" width="24"
+                            focusable="false" aria-hidden="true"
+                            style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                            <path
+                                d="M18.707 8.793a1 1 0 00-1.414 0L12 14.086 6.707 8.793a1 1 0 10-1.414 1.414L12 16.914l6.707-6.707a1 1 0 000-1.414Z">
+                            </path>
+                        </svg>
+                    </label>
+                </div>
+                <input type="checkbox" id="arrowbtn2">
+                <div class="div2 text-slate-300 my-2">YouTube Music 앱은 스마트폰, 노트북, 태블릿, 스마트 TV와 같은 기기에서 지원됩니다. <a
+                        href="https://support.google.com/youtubemusic/answer/9231765"
+                        class="text-blue-500 hover:underline">호환 제품 및 서비스 목록</a>에서 최신 정보를 확인하고 그 밖의 기기에 대해 자세히 알아보세요.
+                </div>
+                <div class="bg-slate-500 w-full h-px my-4"></div>
+                <div class="row flex-box">
+                    <p class="text-slate-50 font-bold py-2">구독을 취소하려면 어떻게 해야 하나요?</p>
+                    <label for="arrowbtn3" class="arrow ml-auto cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="white" height="24" viewBox="0 0 24 24" width="24"
+                            focusable="false" aria-hidden="true"
+                            style="pointer-events: none; display: inherit; width: 100%; height: 100%;">
+                            <path
+                                d="M18.707 8.793a1 1 0 00-1.414 0L12 14.086 6.707 8.793a1 1 0 10-1.414 1.414L12 16.914l6.707-6.707a1 1 0 000-1.414Z">
+                            </path>
+                        </svg>
+                    </label>
+                </div>
+                <input type="checkbox" id="arrowbtn3">
+                <div class="div3 text-slate-300 my-2"><a href="https://www.youtube.com/paid_memberships"
+                        class="text-blue-500 hover:underline">유료 멤버십</a> 페이지로 이동하여 멤버십을 취소하세요. 언제든지 YouTube Music
+                    Premium을 다시 이용할 수 있습니다.
+                </div>
+                <div class="bg-slate-500 w-full h-px my-4"></div>
+                <div class="row">
+                    <p class="text-slate-50 font-bold py-2">다른 궁금한 점이 있나요? <br> <a
+                            href="https://support.google.com/youtube/go/red_help"
+                            class="hover:underline text-blue-500">YouTube 고객센터</a>를 방문하세요.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
