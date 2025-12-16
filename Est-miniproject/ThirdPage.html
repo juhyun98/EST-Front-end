@@ -357,15 +357,15 @@
             padding-bottom: 15px;
         }
 
-        .musicvedio{
+        .musicvedio {
             overflow-x: hidden;
             overflow-y: hidden;
             scrollbar-color: #555 black;
-    
+
         }
 
-        .musicvedio:hover{
-             overflow-x: scroll;
+        .musicvedio:hover {
+            overflow-x: scroll;
         }
 
         .musicvedio::-webkit-scrollbar {
@@ -381,7 +381,7 @@
             opacity: 1;
         }
 
-        .musiccard{
+        .musiccard {
             width: 400px;
             height: 306px;
         }
@@ -390,6 +390,12 @@
             border-radius: 10px;
         }
 
+        .music-list:hover {
+             .album-opacity {
+                opacity: 0.5;
+             }
+        }
+        
     </style>
 </head>
 
@@ -760,7 +766,7 @@
     <!-- 메인 콘텐츠 영역 -->
     <main class="mt-15 ms-60 px-25 mb-18">
 
-        <div class="flex h-full box-border pt-12 px-16">
+        <div class="flex h-full box-border pl-3.5 ">
             <div class="flex flex-col h-full flex-1 pr-16">
                 <div class="flex justify-center pt-12 pb-12">
                     <div class="inline-flex h-8 bg-[#212121] rounded-2xl text-white">
@@ -768,497 +774,537 @@
                         <button style="margin-left: -4px;" class="px-4 cursor-pointer">동영상</button>
                     </div>
                 </div>
-                <div class="max-w-[800px] inline-block my-auto flex-none rounded-sm relative justify-center items-center">
-                    <div class="">
-                        <div class="absolute">
-                            <img id="img" style="object-fit: cover; width: 100%; height: 100%;" draggable="false" class="style-scope yt-img-shadow" alt="" width="1048" src="https://lh3.googleusercontent.com/SSorroIBWlUYL9GPtSfIiKm94b-IJdUUawDaS1sL4IIuI82jt3b7wyGxcVie1aQnKnH5MG6f2l0G2q7j=w544-h544-l90-rj">
-                        </div>
+                <div class="flex rounded-sm relative justify-center items-center">
+                    <div class="w-[87.5%]">
+                        <img id="img" draggable="false" class="style-scope yt-img-shadow" alt="" width="1048"
+                            src="https://lh3.googleusercontent.com/VGf2lFXKQdSyrz2g3Czj66doPtUxvJBrWDK6UFeOj8zRqS-tgs_D8FG5-8pYTX-Uh9FxZBDJIXtN1nKF=w544-h544-l90-rj">
                     </div>
                 </div>
             </div>
 
             <!-- 사이드 뷰 -->
             <div class="ml-20">
-                <div class="flex font-bold items-center justify-center gap-20 mt-18 w-[400px] border border-b-gray-800 text-[14px] pb-3">
-                    <p class="text-white">다음 트랙</p>
-                    <p class="text-[#ffffffb3]">가사</p>
-                    <p class="text-[#ffffffb3]">관련 항목</p>
+                <div
+                    class="flex w-full font-bold items-center justify-evenly gap-20 mt-18 w-[400px] border border-b-gray-800 text-[14px] pb-3">
+                    <p class="text-white cursor-pointer">다음 트랙</p>
+                    <p class="text-[#ffffffb3] cursor-pointer">가사</p>
+                    <p class="text-[#ffffffb3] cursor-pointer">관련 항목</p>
                 </div>
                 <div class="h-[680px] overflow-y-scroll" id="scroll-station">
-                <div class="flex text-white justify-between items-center mt-[16px] mb-[16px]">
-                    <p><span class="text-[12px] text-[#929292] font-bold">재생 중인 트랙 출처</span><br>
-                        <span class="font-bold">Discord (Discord) 뮤직 스테이션</span></p>
-                    <div class=""> 
-                    <button class="w-[90px] h-[30px] font-semibold bg-white text-black rounded-4xl cursor-pointer hover:scale-100 hover:bg-gray-200 text-base flex items-center justify-center">
-                        <!-- 목록 아이콘 -->
-                        <svg class="" xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 24 24"
-                            focusable="false" aria-hidden="true"
-                            style="pointer-events: none; display: inherit; width:30px; height: 25px; ">
-                            <path
-                                d="M19 15a1 1 0 011 1v2h2a1 1 0 110 2h-2v2a1 1 0 11-2 0v-2h-2a1 1 0 110-2h2v-2a1 1 0 011-1Zm-6 4H4a1 1 0 110-2h9v2Zm7-8a1 1 0 110 2H4a1 1 0 110-2h16Zm0-6a1 1 0 110 2H4a1 1 0 010-2h16Z">
-                            </path>
-                        </svg> 저장 </button>
-                        </div>
-                        </div>
-                        <div id="scroll-music" class="mt-8 flex flex-nowrap overflow-x-auto overflow-y-hidden text-white w-[423px] h-[60px] gap-2">
-                            <button class="border rounded-lg bg-white h-[32px] p-1 w-[40px] text-black text-sm shrink-0">All</button>
-                            <button class="border-none rounded-lg bg-[#212121] h-[32px] p-1 w-[80px] text-sm shrink-0">친숙한 곡</button>
-                            <button class="border-none rounded-lg bg-[#212121] h-[32px] p-1 w-[100px] text-sm shrink-0">처음 듣는 곡</button>
-                            <button class="border-none rounded-lg bg-[#212121] h-[32px] p-1 w-[40px] text-sm shrink-0">인기</button>
-                            <button class="border-none rounded-lg bg-[#212121] h-[32px] p-1 w-[80px] text-sm shrink-0">숨은 명곡</button>
-                            <button class="border-none rounded-lg bg-[#212121] h-[32px] p-1 w-[110px] text-sm shrink-0">신나는 분위기</button>
-                            <button class="border-none rounded-lg bg-[#212121] h-[32px] p-1 w-[40px] text-sm shrink-0">파티</button>
-                            <button class="border-none rounded-lg bg-[#212121] h-[32px] p-1 w-[120px] text-sm shrink-0">운동할 때 듣는</button>
-                            <button class="border-none rounded-lg bg-[#212121] h-[32px] p-1 w-[90px] text-sm shrink-0">일렉트로닉</button>
-                            <button class="border-none rounded-lg bg-[#212121] h-[32px] p-1 w-[30px] text-sm shrink-0">팝</button>
-                            <button class="border-none rounded-lg bg-[#212121] h-[32px] p-1 w-[70px] text-sm shrink-0">2010초</button>
-                            <button class="border-none rounded-lg bg-[#212121] h-[32px] p-1 w-[70px]text-sm shrink-0">2020초</button>
-                        </div>
-                        <div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
-                            <div class="flex items-center h-16 w-full px-3 py-2 cursor-pointer border-b border-white/10">
-                                <img
-                                    src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
-                                    class="w-9 h-9 rounded mr-3" /> <!--앨범 이미지-->
-
-                                <div class="flex flex-col overflow-hidden">
-                                    <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
-                                    <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
-                                </div>
-                                <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
-                                </div>
+                    <div class="flex text-white justify-between items-center mt-[16px] mb-[16px]">
+                        <p><span class="text-[12px] text-[#929292] font-bold">재생 중인 트랙 출처</span><br>
+                            <span class="font-bold">IRIS OUT 뮤직 스테이션</span>
+                        </p>
+                        <div class="">
+                            <button
+                                class="w-[90px] h-[30px] font-semibold bg-white text-black rounded-4xl cursor-pointer hover:scale-100 hover:bg-gray-200 text-base flex items-center justify-center">
+                                <!-- 목록 아이콘 -->
+                                <svg class="" xmlns="http://www.w3.org/2000/svg" height="20" width="20"
+                                    viewBox="0 0 24 24" focusable="false" aria-hidden="true"
+                                    style="pointer-events: none; display: inherit; width:30px; height: 25px; ">
+                                    <path
+                                        d="M19 15a1 1 0 011 1v2h2a1 1 0 110 2h-2v2a1 1 0 11-2 0v-2h-2a1 1 0 110-2h2v-2a1 1 0 011-1Zm-6 4H4a1 1 0 110-2h9v2Zm7-8a1 1 0 110 2H4a1 1 0 110-2h16Zm0-6a1 1 0 110 2H4a1 1 0 010-2h16Z">
+                                    </path>
+                                </svg> 저장 </button>
                         </div>
                     </div>
+                    <div id="scroll-music"
+                        class="mt-8 flex flex-nowrap overflow-x-auto overflow-y-hidden text-white w-[540px] h-[60px] gap-2">
+                        <button
+                            class="border rounded-lg bg-white h-[32px] p-1 w-[40px] text-black text-sm shrink-0">All</button>
+                        <button class="border-none rounded-lg bg-[#212121] h-[32px] p-1 w-[80px] text-sm shrink-0  cursor-pointer hover:bg-[#353535]">친숙한
+                            곡</button>
+                        <button class="border-none rounded-lg bg-[#212121] h-[32px] p-1 w-[100px] text-sm shrink-0 cursor-pointer hover:bg-[#353535]">처음
+                            듣는 곡</button>
+                        <button
+                            class="border-none rounded-lg bg-[#212121] h-[32px] p-1 w-[40px] text-sm shrink-0 cursor-pointer hover:bg-[#353535]">인기</button>
+                        <button class="border-none rounded-lg bg-[#212121] h-[32px] p-1 w-[80px] text-sm shrink-0 cursor-pointer hover:bg-[#353535]">숨은
+                            명곡</button>
+                        <button class="border-none rounded-lg bg-[#212121] h-[32px] p-1 w-[110px] text-sm shrink-0 cursor-pointer hover:bg-[#353535]">신나는
+                            분위기</button>
+                        <button
+                            class="border-none rounded-lg bg-[#212121] h-[32px] p-1 w-[40px] text-sm shrink-0 cursor-pointer hover:bg-[#353535]">파티</button>
+                        <button class="border-none rounded-lg bg-[#212121] h-[32px] p-1 w-[120px] text-sm shrink-0 cursor-pointer hover:bg-[#353535]">운동할
+                            때 듣는</button>
+                        <button
+                            class="border-none rounded-lg bg-[#212121] h-[32px] p-1 w-[90px] text-sm shrink-0 cursor-pointer hover:bg-[#353535]">일렉트로닉</button>
+                        <button
+                            class="border-none rounded-lg bg-[#212121] h-[32px] p-1 w-[30px] text-sm shrink-0 cursor-pointer hover:bg-[#353535]">팝</button>
+                        <button
+                            class="border-none rounded-lg bg-[#212121] h-[32px] p-1 w-[70px] text-sm shrink-0 cursor-pointer hover:bg-[#353535]">2010초</button>
+                        <button
+                            class="border-none rounded-lg bg-[#212121] h-[32px] p-1 w-[70px]text-sm shrink-0 cursor-pointer hover:bg-[#353535]">2020초</button>
+                    </div>
+                    <div class="cursor-move">
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2  border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/s7jisaUhTxUK3Bb_6zp43XtrwqdlFJp-uaP9xcuRknKAfNo2bizJj65Ne9thZlQAHt3e8cR-fMl_QgI=w60-h60-l90-rj"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /> <!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white">하얀 그리움</span> <!--곡 제목-->
+                                <span class="text-sm font-bold text-gray-400 truncate">프로미스나인</span> <!--아티스트-->
+                            </div>
+                            <span class="ml-auto text-sm text-gray-300">3:01</span> <!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2  border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/elrXpeg3ct6Qe4BybunGB9wp0WYqEMBJwC0FUmOJXZhRkjEXEU1edh3makvsDM8F-GQuBcP0PhuSdbOqzg=w60-h60-l90-rj"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /> <!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white"> 지금 이대로도 좋아</span>
+                                <!--곡 제목-->
+                                <span class="text-sm text-gray-400 truncate"> 폴킴</span> <!--아티스트-->
+                            </div>
+
+                            <span class="ml-auto text-sm text-gray-300">4:30</span> <!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2  border-b border-white/10">
+                            <img src=" https://lh3.googleusercontent.com/u4pjTDQ-pPxfAWlh9us4z5vJOfS8mk69R-lLAPIurq5mXJTYxhbKnfBTAa_ROHHE7WhU8pSp_SX77NSI=w60-h60-l90-rj "
+                                class="w-9 h-9 rounded mr-3 album-opacity" /><!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white"> 어떤 날 어떤 마음으로
+                                </span><!--곡 제목-->
+                                <span class="text-sm text-gray-400 truncate"> 성시경 </span><!--아티스트-->
+                            </div>
+
+
+                            <span class="ml-auto text-sm text-gray-300"> 3:50 </span><!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2  border-b border-white/10">
+                            <img src=" https://lh3.googleusercontent.com/Rcvo28hUGbI01QIghuDeBjhny7sHZNFQ5_AEmYpZET0NgAmISjS-MEj0jka3TKHLj9opgSHuOyI3XW4a=w60-h60-l90-rj "
+                                class="w-9 h-9 rounded mr-3 album-opacity" /><!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white"> 순간들 </span><!--곡 제목-->
+                                <span class="text-sm text-gray-400 truncate"> 로이킴 </span><!--아티스트-->
+                            </div>
+
+                            <span class="ml-auto text-sm text-gray-300"> 3:13 </span><!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2  border-b border-white/10">
+                            <img src=" https://lh3.googleusercontent.com/qNA16Z4AVjdcBCWER_-xEx9Zk5GQ5xbVcxHMg1QoRTKyAR95wlCloLAWYER3PVfsn3SMncOvYfbKXA9s=w60-h60-l90-rj "
+                                class="w-9 h-9 rounded mr-3 album-opacity" /><!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white"> 12월32일
+                                </span><!--곡 제목-->
+                                <span class="text-sm text-gray-400 truncate"> 신예영 </span><!--아티스트-->
+                            </div>
+
+                            <span class="ml-auto text-sm text-gray-300"> 4:47 </span><!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2  border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/iYiaGyhUeQBPUubQGee4a6tdaPi3uJ7YXgWtLwqgMJ5pnZpG6itiwbauhKFHdCPEOCtwZaLM3kH0kcxQ=w60-h60-l90-rj "
+                                class="w-9 h-9 rounded mr-3 album-opacity" /><!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white"> 멸종위기사랑
+                                </span><!--곡 제목-->
+                                <span class="text-sm text-gray-400 truncate"> 이찬혁 </span><!--아티스트-->
+                            </div>
+
+                            <span class="ml-auto text-sm text-gray-300"> 3:41 </span><!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2  border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/Zji12a1-Hgm33cUY_hSl5_oCYwzClBMIn2bvvnl9BoeShuvd6aNYk3CCgh05XWEeNxOwLmtYRBknph8q=w60-h60-l90-rj "
+                                class="w-9 h-9 rounded mr-3 album-opacity" /><!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white"> 어제보다 슬픈 오늘
+                                </span><!--곡 제목-->
+                                <span class="text-sm text-gray-400 truncate"> 우디(Woody) </span><!--아티스트-->
+                            </div>
+
+                            <span class="ml-auto text-sm text-gray-300"> 3:57 </span><!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2  border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/jcDjWl9FUvJDHqeQgKZdA9h0SRnOcQpDWggNVf5Ym41O81R-WpSx-9CwIjvlolRjf20885F9g8uPfTA=w60-h60-l90-rj "
+                                class="w-9 h-9 rounded mr-3 album-opacity" /><!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white">그대가 있는 곳, 어디든
+                                </span><!--곡 제목-->
+                                <span class="text-sm text-gray-400 truncate"> 로이킴 </span><!--아티스트-->
+                            </div>
+
+                            <span class="ml-auto text-sm text-gray-300">3:41 </span><!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2  border-b border-white/10">
+                            <img src=" https://lh3.googleusercontent.com/bvgQwozpUBeVWpGUiJw5AEjlIkLRHVZBsMfTjCTbyeO5AE9J6KPkyKkheNhzUA_kD5OF7VydZf8HXqcI=w60-h60-l90-rj"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /><!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white">안녕 잘 지내.
+                                </span><!--곡 제목-->
+                                <span class="text-sm text-gray-400 truncate">홍이삭 </span><!--아티스트-->
+                            </div>
+
+                            <span class="ml-auto text-sm text-gray-300"> 3:06 </span><!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2  border-b border-white/10">
+                            <img src=" https://lh3.googleusercontent.com/RjUSxo2IQhYKPtmwDmxU_nHI8UcvYfXHExiWhCSzlGGkc-C01a5Ez7VOKAS78TzMa1-qxQmO425DpkkO=w60-h60-l90-rj"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /><!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white"> 바이, 썸머
+                                </span><!--곡 제목-->
+                                <span class="text-sm text-gray-400 truncate"> 아이유 </span><!--아티스트-->
+                            </div>
+
+                            <span class="ml-auto text-sm text-gray-300"> 3:39 </span><!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2  border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/ZpA0xrTtvCfgHBaoxNsUsrC7oKe6q0Du8KV6dZaZAQwy2a7gGvuacPqcq5eq30Yb3pv9tF7-Cy5P9P3qGg=w60-h60-l90-rj "
+                                class="w-9 h-9 rounded mr-3 album-opacity" /><!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white"> 내게 사랑이 뭐냐고 물어본다면
+                                </span><!--곡 제목-->
+                                <span class="text-sm text-gray-400 truncate">로이킴 </span><!--아티스트-->
+                            </div>
+
+                            <span class="ml-auto text-sm text-gray-300">3:44 </span><!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2  border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/UWM-x77xhcEEAK8tKICtlDSxsYedoFxQhdiDPzW-Ww59DWs7rDQpD_idJQ6h5YEJruURgpEr1O-0oq5Y=w60-h60-l90-rj "
+                                class="w-9 h-9 rounded mr-3 album-opacity" /><!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white"> Ditto </span><!--곡 제목-->
+                                <span class="text-sm text-gray-400 truncate"> New Jeans </span><!--아티스트-->
+                            </div>
+
+                            <span class="ml-auto text-sm text-gray-300"> 3:06 </span><!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2  border-b border-white/10">
+                            <img src=" https://lh3.googleusercontent.com/9MBuckbCHfEMBQX8DjS1yggHJwCFbydaiV6x_fGQqlHL_gwcDu9zb4u2LPCc-TvuP3SxfVYBql8OdCD3=w60-h60-l90-rj"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /><!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white">소나기 </span><!--곡 제목-->
+                                <span class="text-sm text-gray-400 truncate"> 이클립스 </span><!--아티스트-->
+                            </div>
+
+                            <span class="ml-auto text-sm text-gray-300"> 3:54 </span><!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2  border-b border-white/10">
+                            <img src=" https://lh3.googleusercontent.com/Uv4HDtCmh5TpbMln5Qn8hSA0wMAT2F0r4wZ79jMCDCMlZWVfOLhFANEBumQLR2cwyJFrBVsFDZslIz7I=w60-h60-l90-rj"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /><!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white"> 다시 사랑한다면
+                                </span><!--곡 제목-->
+                                <span class="text-sm text-gray-400 truncate"> 정승환 </span><!--아티스트-->
+                            </div>
+
+                            <span class="ml-auto text-sm text-gray-300"> 4:05 </span><!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2  border-b border-white/10">
+                            <img src=" https://lh3.googleusercontent.com/qrB_VTTqdEP-NF9H6U9M8xL_DuhTD_YacLvW1IGeSFHBh1crpyCF8kD4AbUdts9Y2nQBwoRMnbYSJABTJA=w60-h60-l90-rj"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /><!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white">LIKE YOU BETTER
+                                </span><!--곡 제목-->
+                                <span class="text-sm text-gray-400 truncate">프로미스나인 </span><!--아티스트-->
+                            </div>
+
+                            <span class="ml-auto text-sm text-gray-300"> 3:06 </span><!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2  border-b border-white/10">
+                            <img src=" https://lh3.googleusercontent.com/Q1cVg5V-jJebw9vNvRQsr07E0GVOSwWOEptcmekT_UnGKzo61XxQ2MOuHs1myp1zCp_Zf1i5i4-DZ9xg=w60-h60-l90-rj"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /><!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white"> 있어줘요 </span><!--곡 제목-->
+                                <span class="text-sm text-gray-400 truncate"> 허각 </span><!--아티스트-->
+                            </div>
+
+                            <span class="ml-auto text-sm text-gray-300"> 3:55 </span><!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2  border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/_RGo_fAPKYezzLMsRcDpoXw-cCnhR3rFT7tsXy_MzM4SQ2-cCOpUQlzNZhCfQoXr_civQRhhaHDia10=w60-h60-l90-rj "
+                                class="w-9 h-9 rounded mr-3 album-opacity" /><!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white"> 그댈 위한 멜로디
+                                </span><!--곡 제목-->
+                                <span class="text-sm text-gray-400 truncate"> 임영웅 </span><!--아티스트-->
+                            </div>
+
+                            <span class="ml-auto text-sm text-gray-300"> 3:56 </span><!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2  border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/gy4klX9ojShUZZCwfEGKfFLH8UGWOHFWL_1yoB7pZTdXafHU4Gdps4TeUDeV4skPtwpVhK8fWDcMrn-2=w60-h60-l90-rj "
+                                class="w-9 h-9 rounded mr-3 album-opacity" /><!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white"> 울어 </span><!--곡 제목-->
+                                <span class="text-sm text-gray-400 truncate"> 이예은 및 아샤트리 </span><!--아티스트-->
+                            </div>
+
+                            <span class="ml-auto text-sm text-gray-300"> 4:09 </span><!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2  border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/59Hn-G9WuBK2xlHJrrzMg_fxccObZZxHN6bqMSqNEhzPtkTvquYMzYnu6w-lqui2S8zcEexUoufU8F53=w60-h60-l90-rj "
+                                class="w-9 h-9 rounded mr-3 album-opacity" /><!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white"> 지나왔던 추억이 사랑이 되고
+                                </span><!--곡 제목-->
+                                <span class="text-sm text-gray-400 truncate"> 이무진 </span><!--아티스트-->
+                            </div>
+
+                            <span class="ml-auto text-sm text-gray-300"> 3:54 </span><!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2 border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/5a6DbIblLIys2gJCNdT8oBUztB1iZX2lWIj2PueVxQ82nQlwWDVtIiXKAzTH1y61tXncHNlekmAOFpK7-w=w60-h60-l90-rj "
+                                class="w-9 h-9 rounded mr-3 album-opacity" /><!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white"> 종소리 </span><!--곡 제목-->
+                                <span class="text-sm text-gray-400 truncate"> 러블리즈 </span><!--아티스트-->
+                            </div>
+
+                            <span class="ml-auto text-sm text-gray-300"> 3:44 </span><!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2 border-b border-white/10">
+                            <img src=" https://lh3.googleusercontent.com/eLlVSrQGYhusl3k9cO0fi1LtwIWZd29iUzm2bh1ntErA60MtIZIo80o8jLAebesDeKIAW0vXSnWAMvYx=w60-h60-l90-rj"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /><!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white"> Shooting Star
+                                </span><!--곡 제목-->
+                                <span class="text-sm text-gray-400 truncate"> Kep1er </span><!--아티스트-->
+                            </div>
+
+                            <span class="ml-auto text-sm text-gray-300"> 3:04 </span><!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2 border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/BUvfDzYYoFWiMZ7qdbRmDNwQAb1BUO2EJqDlSF7D8cVqaqOYCnibj4YtRf70liOT8j8382sVdjQb-9OJ9g=w60-h60-l90-rj "
+                                class="w-9 h-9 rounded mr-3 album-opacity" /><!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white"> FOREVER
+                                    1</span><!--곡 제목-->
+                                <span class="text-sm text-gray-400 truncate"> Girls' Generation</span><!--아티스트-->
+                            </div>
+
+                            <span class="ml-auto text-sm text-gray-300"> 3:23 </span><!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2 border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/Mzq5XV0b5JNnDySr_yQFrcEDvT1dxdICkU2bYWxY15vWYl2Da91ko1u5Bksi7nejhRlKaHLyrZhiQUsg=w60-h60-l90-rj"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /> <!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white">Don't You Say(You Love
+                                    Me)</span> <!--곡 제목-->
+                                <span class="text-sm font-bold text-gray-400 truncate">Sad Puppy</span> <!--아티스트-->
+                            </div>
+                            <span class="ml-auto text-sm text-gray-300">3:38</span> <!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2 border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/dDw1E4ZlxG7E3AlcuQaNpCqgNKcjwquYxUKt1PQ0U6ggbWl3Xt0tlfLFOj_H9AWTifz2OFV0kQNwDgXV=w60-h60-l90-rj"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /> <!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white">Atomsphere(feat.
+                                    Ailee)</span> <!--곡 제목-->
+                                <span class="text-sm font-bold text-gray-400 truncate">Juncoco 및 Advanced</span>
+                                <!--아티스트-->
+                            </div>
+                            <span class="ml-auto text-sm text-gray-300">3:12</span> <!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2 border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/LGRYjsvcyrkpknlFi9EpXmXuv5bbaT18Bn-azm7m3fH0VI4FBcV-4siwBi34bEm_MiY8tNH1Lm3jjWs5XA=w60-h60-l90-rj"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /> <!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white">Save Me</span>
+                                <!--곡 제목-->
+                                <span class="text-sm font-bold text-gray-400 truncate">DEAMN</span> <!--아티스트-->
+                            </div>
+                            <span class="ml-auto text-sm text-gray-300">3:05</span> <!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2 border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/Dp8iOq_cvBmLBS8pCXWG1hf0R37sm8lyib4DEVuQK_KoRV7hBhoLsgEqZB_cUiXgIwUk-YcnWKzQDbw0=w60-h60-l90-rj"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /> <!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white">Don't Touch</span>
+                                <!--곡 제목-->
+                                <span class="text-sm font-bold text-gray-400 truncate">Dan Farber</span> <!--아티스트-->
+                            </div>
+                            <span class="ml-auto text-sm text-gray-300">3:50</span> <!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2 border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/8RK_OveffzGx3DM2OyzRJtCRolgIJdcsSdgaHb4DcnzjfsbKWbLI0jOOduC0aJMgFxxRDNdw1IyNfhvd=w60-h60-l90-rj"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /> <!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white">Goodnight Horizon</span>
+                                <!--곡 제목-->
+                                <span class="text-sm font-bold text-gray-400 truncate">DannyHO</span> <!--아티스트-->
+                            </div>
+                            <span class="ml-auto text-sm text-gray-300">4:22</span> <!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2 border-b border-white/10">
+                            <img src="https://i.ytimg.com/vi/80DvBY4KiFU/sddefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCghqEJQEGHgg6AJIWg&rs=AMzJL3m2SbPoN0x0yzQMGHFw8lFaBv3dMg"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /> <!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white">Marshmello, Ellie
+                                    Goulding & AVAION - Save My Love...</span> <!--곡 제목-->
+                                <span class="text-sm font-bold text-gray-400 truncate">Sadbois</span> <!--아티스트-->
+                            </div>
+                            <span class="ml-auto text-sm text-gray-300">3:32 </span> <!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2 border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/sQE2dK0Hp_m9m03NZheriaGKlD0txUTPTiEJy1rAJA0EEBlCTOUHSwRkMr38en8pNsnQccNt8E8B2Ls=w60-h60-l90-rj"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /> <!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white">Cloud 9</span>
+                                <!--곡 제목-->
+                                <span class="text-sm font-bold text-gray-400 truncate">Tobu 및 Itro</span> <!--아티스트-->
+                            </div>
+                            <span class="ml-auto text-sm text-gray-300">4:38</span> <!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2 border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/Mk7gjhMNRxhf6NrcJkN0lWr_lsq_rYIV8smrsTPrz5-3SOOme-dKHkv70VS6f80SGCjIZzvKBcRAcbT5=w60-h60-l90-rj"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /> <!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white">I Really Want to Stay at
+                                    Your House</span> <!--곡 제목-->
+                                <span class="text-sm font-bold text-gray-400 truncate">Samuel Kim 및 Lorien</span>
+                                <!--아티스트-->
+                            </div>
+                            <span class="ml-auto text-sm text-gray-300">4:07</span> <!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2 border-b border-white/10">
+                            <img src="https://i.ytimg.com/vi/Sk-SRlk5lJQ/sddefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCghqEJQEGHgg6AJIWg&rs=AMzJL3nITqQB_Z4cgsOoPoHhNDr1iGwUCA"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /> <!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white">Royal 44 - 할 것</span>
+                                <!--곡 제목-->
+                                <span class="text-sm font-bold text-gray-400 truncate">박찬혁</span> <!--아티스트-->
+                            </div>
+                            <span class="ml-auto text-sm text-gray-300">3:05</span> <!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2 border-b border-white/10">
+                            <img src="https://i.ytimg.com/vi/ZSOPs1-ZY3c/sddefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCghqEJQEGHgg6AJIWg&rs=AMzJL3lOyCTasdEq0zxZTXyjG1H0XKpOXQ"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /> <!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white">Ass up ( ATMOX Remix
+                                    )</span> <!--곡 제목-->
+                                <span class="text-sm font-bold text-gray-400 truncate">ATMOX</span> <!--아티스트-->
+                            </div>
+                            <span class="ml-auto text-sm text-gray-300">3:20</span> <!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2 border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/j7GGCRLpGntOfIJIOti_D2dp3CJKNVZ-YbLW3wuFpCwNC5cu9yylQBwEp15Rr-OD5DnvEmNaVnRRnRrE=w60-h60-l90-rj"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /> <!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white">Remember Our
+                                    Summer</span> <!--곡 제목-->
+                                <span class="text-sm font-bold text-gray-400 truncate">Frogmonster</span> <!--아티스트-->
+                            </div>
+                            <span class="ml-auto text-sm text-gray-300">2:44</span> <!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2 border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/Jqvskdrf0uHfstbdIQ8CuA8EQuYLVgbanJfc_-u3qeyyLXs6q3tS2HlpC-Vq_JSaoRKjTIWfckbwlTTv=w60-h60-l90-rj"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /> <!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white">Fool For You</span>
+                                <!--곡 제목-->
+                                <span class="text-sm font-bold text-gray-400 truncate">Kastra</span> <!--아티스트-->
+                            </div>
+                            <span class="ml-auto text-sm text-gray-300">3:28</span> <!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2 border-b border-white/10">
+                            <img src="https://i.ytimg.com/vi/iuM7UQCy1K8/sddefault.jpg?sqp=-oaymwEWCJADEOEBIAQqCghqEJQEGHgg6AJIWg&rs=AMzJL3lX11aEmGU-BJnHbjPiV6ATttkpOw"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /> <!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white">Vicetone - Nothing
+                                    Stopping Me 한글가사</span> <!--곡 제목-->
+                                <span class="text-sm font-bold text-gray-400 truncate">하늘음표</span> <!--아티스트-->
+                            </div>
+                            <span class="ml-auto text-sm text-gray-300">3:45</span> <!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2 border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/BGdEjmS9xEYsmdhoktgkJckHCWkIFuWTh0TSr_qolPagSh6ri3XVX3brWWaRd6tKvWkkFrk0CbdUbuHK=w60-h60-l90-rj"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /> <!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white">ReviveD (feat. Michael
+                                    Barbera)</span> <!--곡 제목-->
+                                <span class="text-sm font-bold text-gray-400 truncate">Seum Dero</span> <!--아티스트-->
+                            </div>
+                            <span class="ml-auto text-sm text-gray-300">4:12</span> <!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2 border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/a04AQuOpfFfl69D2pCehUarO-A0nSjQT22cOrx8j4_PnrUElswNmr8AlgCuTZ0BKil5sLZ5mPCnrc3mX=w60-h60-l90-rj"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /> <!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white">Hear Me Now</span>
+                                <!--곡 제목-->
+                                <span class="text-sm font-bold text-gray-400 truncate">Alok, Zeeba 및 Bruno
+                                    Martini</span> <!--아티스트-->
+                            </div>
+                            <span class="ml-auto text-sm text-gray-300">3:13</span> <!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2 border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/a-9ylKMX4Px2S6MzHZSXAyMHJWMo8zG7crkDLRIduj0UPiP9TOAIMi3Z0eyra4cyP-q7JtXRLqZOsOXI=w60-h60-l90-rj"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /> <!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white">Make A Stand</span>
+                                <!--곡 제목-->
+                                <span class="text-sm font-bold text-gray-400 truncate">Speo 및 Budobo</span> <!--아티스트-->
+                            </div>
+                            <span class="ml-auto text-sm text-gray-300">4:12</span> <!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2 border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/qYRFSrHxOFF5HbU6CfDRDxLFlhw8X6_AGFL9x-ZoAtpmwamsDfLSc8l6TRcmwrJOgnQQg_FuHcrFFhk3=w60-h60-l90-rj"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /> <!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white">Sky High</span>
+                                <!--곡 제목-->
+                                <span class="text-sm font-bold text-gray-400 truncate">Elektronomia</span> <!--아티스트-->
+                            </div>
+                            <span class="ml-auto text-sm text-gray-300">3:57</span> <!--재생 시간-->
+                        </div>
+                        <div class="music-list flex items-center h-16 w-full px-3 py-2 border-b border-white/10">
+                            <img src="https://lh3.googleusercontent.com/Yq27hnGq8IsfHc9v-_k6p1x_d7vD4HYGK4WyJdLhZPPVtwSqrPh9qDBKDrMjxWAHZtWxDEeM9Vgqxtg=w60-h60-l90-rj"
+                                class="w-9 h-9 rounded mr-3 album-opacity" /> <!--앨범 이미지-->
+
+                            <div class="flex flex-col overflow-hidden">
+                                <span class="text-base font-semibold truncate pb-1 text-white">Royalty</span>
+                                <!--곡 제목-->
+                                <span class="text-sm font-bold text-gray-400 truncate">Egzod, Maestro Chives 및
+                                    Neoni</span> <!--아티스트-->
+                            </div>
+                            <span class="ml-auto text-sm text-gray-300">3:44</span> <!--재생 시간-->
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
+
+
+
+
+
 
     </main>
     <!-- 메인 영역 끝 -->
