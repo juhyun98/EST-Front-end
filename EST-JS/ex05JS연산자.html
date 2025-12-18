@@ -26,6 +26,49 @@
         console.log(parseInt(num2 / 100) * 100);
         console.log(num2 - (num2 % 100));
 
+
+        /* 
+            증감연산자 : 1씩 증가하고, 1씩 감소하는 연산자
+            1씩 증가 : ++ / 1씩 감소 : --
+            포인트) 우리는 앞으로 ++기호만 자주 사용 -> 아 지금 변수에 1을 더하라는 말이구나
+        */
+        let number = 1;
+        console.log(number);
+        // number = number+1 -> number++
+        console.log(number++);
+        console.log(number);
+
+        
+        // 대입연산자 : 변수에 값을 넣을 때 쓰는 연산자
+        // += : 값을 더해서 넣겠다.
+        let number2 = 10;
+        number2 = 5;
+        number2 = number2 + 5;
+        number2 += 5;
+
+        // 비교 연산자
+        // 두개의 값을 비교할 때 사용하는 연산자
+        // 1) 같냐? -> ==
+        // 2) 다르냐 -> !=
+        // == vs ===
+        // 1) == -> 문자와 숫자를 비교하는 경우 컴퓨터가 숫자를 문자로 변환 -> 문자와 문자로 비교
+        // 2) === -> 문자와 숫자를 비교하는 경우 타입 그대로 비교 -> 문자와 숫자로 비교 -> 정확(권장사항)
+        let num3 = 10;
+        let num4 = 20;
+        console.log(num3 === num4);
+
+        /* 
+            논리연산자
+            1) && -> and(그리고)
+                - 모든 비교가 true인 경우에만 tue라고 성립 * 하나라도 false면 모든 결과가 false
+            2) || -> or(또는)
+                - 하나라도 true면 모든 결과를 true라고 성립
+            * 조건문에서 다시 사용
+        */
+        
+        
+
+
     </script>
 
 </body>
