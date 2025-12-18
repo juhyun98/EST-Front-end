@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 프로그래밍 언어 자료형
+        // 숫자 -> 정수, 실수 등등 (number)
+        // 문자 -> '', "" (string)
+        // 논리 -> true, false (boolean)
+        // etc... --> null, undefined
+
+        // JS 변수를 선언할 때 자료형 구분x
+        var num1 = 4;
+        var num2 = 3.14;
+        console.log(num1, num2);
+        
+        let name1 = "김운비";
+        let name2 = "정형";
+        console.log(name1, name2);
+
+        const chk1 = true;
+        const chk2 = false;
+        console.log(chk1,chk2);
+
+        // 비어있는 값임을 나타낼 때 --> null
+        var value1 = null;
+        // 값이 할당된적이 없는 변수 --> undefined
+        var value2;
+        console.log(value1,value2);
+
+        // prompt() 결과값 --> 문자 (string)
+        // confirm() 결과값 --> 논리 (boolean)
+        
+        console.log("12" + 4);
+        console.log(12 + 4);
+        // 문자 + 숫자 --> 문자형태가 된다! 367
+        console.log(3 + "6" + 7);
+
+        
+        console.log("12" - 4);
+        // 연산기호가 숫자만으로 동작하는 것들은
+        // 알아서 자동으로 문자여도 숫자화 시켜준다.
+        console.log("김운비" - 4); // --> xxxxx
+        
+        
+        
+
+    </script>
+
+</body>
+</html>
