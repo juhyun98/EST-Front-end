@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        /* 
+            배열 : 하나의 공간에 여러개의 데이터를 관리하는 방법
+            사용법 : "[]" 기호를 활용해서 데이터를 저장한다.
+            조회법 : 배열이름[인덱스번호] * 인덱스번호는 방번호 -> 0부터 1씩 증가한다.
+            활용법 : for문과 함께 사용한다. -> for문은 범위가 정해져있고, 1씩 증가하는 i를 가지고있다.
+            tip : for문과 배열을 함께 사용할 때는 배열의 길이를 범위로 사용하자 -> 유지보수하기 편하게
+                * 배열이름.length
+            tip2 : 배열의 길이를 통해서 데이터의 유무 검증이 가능 -> 조건문
+            핵심포인트 : 배열은 반드시 같은 의미의 데이터를 관리해야 한다 -> 배열의 이름으로만 의미를 유추가 가능
+        */
+
+        let num1 = 5;
+        let num2 = 10;
+        let num3 = 15;
+        let num4 = [5, 10, 15];
+
+        console.log(num4);
+        console.log(num4[0]);
+        console.log(num4[1]);
+        console.log(num4[2]);
+        
+        // for문과 함께 쓰는 방법
+        for(let i = 0; i < num4.length; i++) {
+            console.log(num4[i]);
+        }
+
+
+    </script>
+
+</body>
+</html>
