@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        /* 
+            형변환 : 만들어진 데이터를 원하는 자료형으로 변경하는 방법
+            - 문자를 숫자로 변경하는 형변환이 가장 많이 사용한다
+            - 이유 : 웹에서 사용자가 입력한 값의 대부분은 문자 형태
+            - 사용방법 : Number(바꿀문자)
+            - 반대 : 숫자를 문자로 바꿀 때는 String()
+        */
+        let num = "10";
+
+        console.log(num);
+        console.log(Number(num));
+        
+
+        /* 
+            실습 : 사용자에게 두개의 숫자를 입력받은 후, 두 값의 더한 결과를 콘솔창에 출력
+            - 사용할 기술 : prompt(입력 받기), let(변수에 저장), +, console.log(콘솔창 출력), Number(형변환)
+        */
+
+        let number1 = prompt();
+        let number2 = prompt();
+        console.log(Number(number1) + Number(number2));
+        
+
+        let number3 = Number(prompt());
+        let number4 = Number(prompt());
+        console.log(number3 + number4);
+        
+
+    </script>
+
+</body>
+</html>

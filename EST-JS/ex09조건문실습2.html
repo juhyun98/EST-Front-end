@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        /* 
+            1) 사용자에게 독감주사 접종요부 검사하기 (확인, 취소)
+                1.1 확인을 누른 경우에는 양성, 음성 체크
+                    1.1.1 양성인 경우에는 "집으로 가세요" 출력
+                    1.1.2 음성인 경우에는 "수업 들으세요" 출력
+                1.2 취소를 누른 경우에는 alert창으로 "주사 맞고 오세요"
+        */
+
+        let check = confirm("독감 주사 접종 하셨습니까?");
+
+        if(check == true) {
+            let covid = prompt("양성입니까 음성입니까");
+
+            if(covid == "양성") {
+                alert("집으로 가세요");
+            }
+            else if(covid == "음성") {
+                alert("수업 들으세요");
+            } else {
+                alert("올바르지 않은 대답입니다.")
+            }
+            
+        } else {
+            alert("주사 맞고 오세요");
+        }
+
+
+    </script>
+
+</body>
+</html>
