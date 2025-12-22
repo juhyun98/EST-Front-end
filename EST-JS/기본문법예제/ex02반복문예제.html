@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // JS 랜덤한 숫자를 뽑는 방법
+        // 0 ~ 10 랜덤한 숫자
+
+        let answer = Math.floor(Math.random() * 10);
+        
+        while(true) {
+            var myAnswer = prompt("숫자를 입력해주세요!");
+            if (answer == myAnswer) {
+                alert("정답입니다 축하합니다!");
+                break;
+            } else if (answer > myAnswer) {
+                alert("입력한 숫자보다 큰 수 입니다...");
+            } else {
+                alert("입력한 숫자보다 작은 수 입니다...");
+            }
+        }
+
+    </script>
+
+</body>
+</html>
