@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="box">A</div>
+    <div class="box" id="second">B</div>
+    <div>C</div>
+
+    <script>
+
+        // 실습 : A, B, C의 내용을 각각 A, Z, D로 변경해보자
+        // A -> A (bold, italic)
+        // B -> Z
+        // C -> D
+
+        const divBox = document.getElementsByClassName("box");
+        divA = divBox[0];
+        divA.innerHTML = "<div class='box' style='font-weight:bold; font-style: italic'>A</div>";
+        console.log(divA);
+        
+
+        const divB = document.getElementById("second");
+        divB.innerText = "Z";
+        console.log(divB);
+        
+
+        const divTag = document.getElementsByTagName("div");
+        console.log(divTag);
+        
+        const divC = divTag[3];
+        divC.innerText = "D";
+        console.log(divC);
+        
+        
+        
+
+    </script>
+
+</body>
+</html>

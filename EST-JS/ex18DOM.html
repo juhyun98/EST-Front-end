@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="tit">Hello DOM!</h1>
+
+    <p class="content">p태그1</p>
+    <p class="content">p태그2</p>
+    <p>p태그3</p>
+
+    <script>
+        /* 
+            DOM(Document Object Model) : 문서 객체 모델
+             - HTML문서의 요소를 JavaScript에서 다룰 수 있도록
+               모든 요소를 분리해서, 트리 구조의 객체로 구조화한 형태
+
+            document 객체 : 웹 페이지 그 자체를 가리키는 객체
+            HTML요소에 접근하기 위해서는 항상 document 객체를 거쳐야 한다!
+        */
+
+        // 1. id를 통해서 웹 문서 내 요소에 접근하는 방법
+        // document.getElementById(아이디값);
+        const h1Tag = document.getElementById("tit");
+        console.log(h1Tag);
+        console.log(typeof h1Tag);
+
+        // ※ 접근한 요소의 내용 가져오기
+        console.log("h1Tag내용 : ", h1Tag.innerHTML);
+        console.log("h1Tag내용 : ", h1Tag.innerText);
+
+        // ※ 접근한 요소의 내용 변경하기
+        h1Tag.innerText = "안녕하세요! DOM!";
+        h1Tag.innerHTML = "반갑습니다! DOM!";
+
+        // innerText와 innerHTML간의 차이
+        // innerText : 요소의 내용을 문자열로 수정(태그를 문자열로 인식)
+        // innerHTML : 요소의 내용을 문자열 + 태그로 수정(태그를 브라우저가 인식)
+        h1Tag.innerText = "<a href='https://www.naver.com'>네이버 이동</a>";
+        h1Tag.innerHTML = "<a href='https://www.naver.com'>네이버 이동</a>";
+
+        // ※ 추가적으로 innerText와 비슷한 역할을 하는 속성 : textContent
+        console.log("h1Tag내용 (textContent)", h1Tag.textContent);
+        console.log("h1Tag내용 (innerText)", h1Tag.innerText);
+        
+
+        // 2. class를 통해서 웹 문서 내 요소들에 접근하는 방법
+        // document.getElementsByClassName(클래스값);
+        const contents = document.getElementsByClassName("content");
+        console.log(contents);
+        console.log(contents[0]);
+
+        // 3. Tag를 통해서 웹 문서 내 요소들에 접근하는 방법
+        // document.getElementsByTagName(태그이름);
+        const pTags = document.getElementsByTagName("p");
+        console.log(pTags);
+        console.log(pTags[2]);
+        
+        for (let i = 0; i < pTags.length; i++) {
+            console.log(`p태그${i+1} 내용 : ${pTags[i].innerText}`);
+        }
+
+        // 4. querySelector를 통한 요소 접근
+        // CSS 선택자 문법을 그대로 사용할 수 있어서, 매우 강력하고 직관적
+
+        // id선택자
+        const h1Element = document.querySelector("#tit");
+        console.log(h1Element);
+        
+        // class선택자
+        const pContents = document.querySelectorAll(".content");
+        console.log(pContents);
+
+        // tag선택자
+        const pElements = document.querySelectorAll("p");
+        console.log(pElements);
+
+        // ※ querySelectorAll 사용시 주의할 점 :
+        // 1개만 존재하는 요소를 가져온 경우에도 항상 배열의 형태
+        const title = document.querySelectorAll("#tit");
+        console.log(title[0].innerText);
+        
+        
+        
+        
+
+    </script>
+
+</body>
+</html>
