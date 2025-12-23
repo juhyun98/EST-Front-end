@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        복잡한 로직이 아니라, 비교적 간단하게 선언만 해주는 로직을 갖고있다면?
+        : script 태그를 head태그 안쪽에 넣어줄 수 있다!
+    -->
+    <script>
+        function click2() {
+            alert("클릭!!");
+        }
+        // (2) script 태그 안쪽에서 직접 호출 *추천*
+        // click();
+    </script>
+</head>
+<body>
+    <!-- 함수 호철 방식 (1) 태그 속성을 사용한 인라인 형식 -->
+    <button onclick="click2()">클릭버튼</button>
+
+    <!-- (3) 외부 JS 파일을 가져오는 방식 -->
+    <script src="assets/JS/ex01test.js"></script>
+    <!-- 주의할 점!! 외부 JS 파일을 가져올 때는, 가져오는 순서도 중요하다!! -->
+    <script>
+        temp();
+    </script>
+    
+</body>
+</html>

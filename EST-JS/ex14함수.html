@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        // 변수의 영역 (variable scope)
+        // 지역변수
+        // : {} (scope, 영역) 안쪽에서 선언된 변수가 해당하는 영역까지만 사용가능
+        // 전역변수
+        // : 전체적인 모든 영역에 사용 가능한 변수
+
+        // 2. 호이스팅 (Hoisting)
+        // : JS 특징중의 하나! 선언구문들이 가장 최상단으로 끌어올려지는 것
+        // 함수 선언문 - 호이스팅 발생
+        // 화살표 함수, 함수 표현식 - 호이스팅 발생x
+        console.log(add(1,2));
+        console.log(add2(2,3));
+
+        function add(data1, data2) {
+            // var 키워드를 사용해서 "함수" 안쪽에서 변수를 선언
+            // --> 사용가능한 영역은 함수안쪽까지만 가능!
+            // 함수영역 지역변수
+            var result = data1 + data2;
+            // let 키워드를 사용해서 변수를 선언하면
+            // {} 영역 안쪽에서만 사용 가능한 지역변수
+            let result2 = data1 + data2;
+            return result;
+        }
+        // console.log(result2);
+        
+        if(true) {
+            var test1 = "데이터";
+            let test2 = "데이터2";
+        }
+
+        const add2 = (data1, data2) => {
+            return data1 + data2;
+        }
+        
+        
+
+    </script>
+
+</body>
+</html>

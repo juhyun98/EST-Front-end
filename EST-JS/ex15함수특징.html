@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // JS 함수의 특징
+        // 1. 함수의 매개변수 자료형을 검사하지 않는다.
+        // 2. 매개변수의 개수를 검사하지 않는다.
+        // --> arguments라는 매개변수를 담아주는 공간을 자동으로 생성
+        // 3. 매개변수의 개수를 부족하게 담는다면?
+        // --> undefined 형태가 담기게 되고, NaN 결측치가 되돌아온다.
+
+        // * arguments : 배열과 유사한 형태
+
+        function temp(data, data2) {
+            console.log(arguments);
+        }
+
+        temp(4,6,7,8);
+
+        const add = (data1, data2) => {
+            return data1 + data2;
+        }
+        
+        console.log(add(1,2));
+        
+        console.log(add("운비", "정형"));
+        console.log(add("운비", 4));
+
+        console.log(add(1,2,3,4,5));
+        console.log(add(1));
+        
+        
+
+    </script>
+
+</body>
+</html>
