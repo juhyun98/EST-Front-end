@@ -18,26 +18,33 @@
         // B -> Z
         // C -> D
 
-        const divBox = document.getElementsByClassName("box");
-        divA = divBox[0];
-        divA.innerHTML = "<div class='box' style='font-weight:bold; font-style: italic'>A</div>";
-        console.log(divA);
+        // const divBox = document.getElementsByClassName("box");
+        // divA = divBox[0];
+        // divA.innerHTML = "<div class='box' style='font-weight:bold; font-style: italic'>A</div>";
+        // console.log(divA);
         
+
+        // const divB = document.getElementById("second");
+        // divB.innerText = "Z";
+        // console.log(divB);
+        
+
+        // const divTag = document.getElementsByTagName("div");
+        // console.log(divTag);
+        
+        // const divC = divTag[3];
+        // divC.innerText = "D";
+        // console.log(divC);
+        
+
+        const divA = document.getElementsByClassName("box")[0];
+        divA.innerHTML = "<b><i>A</i></b>"
 
         const divB = document.getElementById("second");
         divB.innerText = "Z";
-        console.log(divB);
         
-
-        const divTag = document.getElementsByTagName("div");
-        console.log(divTag);
-        
-        const divC = divTag[3];
+        const divC = document.getElementsByTagName("div")[2];
         divC.innerText = "D";
-        console.log(divC);
-        
-        
-        
 
     </script>
 
