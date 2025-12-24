@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+        }
+        .text {
+            font-size: 24px;
+        }
+        .bg {
+            background-color: tomato;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div id="content" class="box text">class 속성 다루기</div>
+
+    <button onclick="addClass()">class 추가</button>
+    <button>class 삭제</button>
+    <button>class 토글</button>
+
+    <script>
+
+        // 1. 클래스 리스트 확인 (유사배열)
+        // 요소명.classList
+        const content = document.getElementById("content");
+        console.log(content.classList);
+
+        const addClass = () => {
+            // 2. 클래스 리스트에 클래스 추가하기
+            // 요소명.classList.add(클래스명)
+            content.classList.add("bg");
+        }
+        
+        
+
+    </script>
+
+</body>
+</html>

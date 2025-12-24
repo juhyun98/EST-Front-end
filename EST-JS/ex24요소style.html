@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color : blue;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 id="title">요소 스타일 변경하기</h1>
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <button onclick="styleChange()">스타일 변경</button>
+
+    <script>
+
+        // 요소의 스타일 변경하기 (style 객체 이용)
+        // 요소명.style.속성명 을 통해서 요소의 style을 가져오거나
+        // 변경할 수 있다!
+        const title = document.getElementById("title");
+
+        title.style.backgroundColor = "#FF8800"
+        // title.style.color = "white";
+        title.style.border = "3px solid black";
+        title.style.padding = "5px";
+
+        console.log(title.style.color);
+        
+        const styleChange = () => {
+            const lis = document.getElementsByTagName("li");
+            for (let i = 0; i < lis.length; i++) {
+                lis[i].style.color = "blue";
+            }
+        }
+        
+    </script>
+
+</body>
+</html>
