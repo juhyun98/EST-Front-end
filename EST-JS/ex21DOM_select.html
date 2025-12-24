@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form name="frm">
+        <select name="major">
+            <option>HTML</option>
+            <option>CSS</option>
+            <option>JavaScript</option>
+        </select>
+
+        <input type="button" value="전송">
+    </form>
+
+    <script>
+
+        // 1. select에 접근
+        const major = document.forms.frm.elements.major;
+        console.log(major);
+
+        // 2. option에 접근
+        const options = major.options;
+        console.log(options);
+
+        // 3. option의 값 접근
+        console.log(options[1].value);
+        
+    
+        const send = () => {
+            // 현재 선택된 option의 값을 가져오는 방법!
+            // 1. options의 selectedIndex 속성을 통해서
+            //    선택된 options의 index 번호를 가져올 수 있다!
+            // 2. 가져온 selectedIndex를 통해서 options의 index에
+            //    사용할 경우, 현재 선택된 option객체를 가져올 수 있다!
+            // 3. 현재 선택된 option객체의 value 속성을 통해
+            //    최종적으로 선택된 option값을 가져올 수 있다!
+            const selectedIndex = options.selectedIndex;
+            console.log(selectedIndex);
+            console.log(options[selectedIndex].value);
+        }
+
+    </script>
+
+</body>
+</html>

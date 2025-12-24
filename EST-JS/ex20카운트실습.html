@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>숫자 카운팅 실습</h1>
+    <p id="num">0</p>
+    <button onclick="increase()">증가 +1</button>
+    <button onclick="decrease()">감소 -1</button>
+
+    <script>
+        // 실습 : 버튼을 클릭했을 때, 웹 페이지의 숫자를 카운팅 해보자!
+        // const increase = () => {
+        //     // console.log("증가 함수 실행");
+        //     // 1. 숫자 정보를 가지고 있는 p요소를 가져오기!
+        //     // 2. p요소 객체의 내용(텍스트)를 가져와서 +1시켜서 적용!
+        //     let pTag = document.getElementsByTagName("p")[0];
+        //     let pCount = pTag.innerText;
+        //     pCount++
+        //     pTag.innerHTML = `<p>${pCount}</p>`;
+        // }
+
+        // const decrease = () => {
+        //     console.log("감소 함수 실행");
+        //     let pTag = document.getElementsByTagName("p")[0];
+        //     let pCount = pTag.innerText;
+        //     pCount--;
+        //     pTag.innerHTML = `<p>${pCount}</p>`;
+        // }
+
+
+        const increase = () => {
+            // console.log("증가 함수 실행");
+            // 1. 숫자 정보를 가지고 있는 p요소를 가져오기!
+            // 2. p요소 객체의 내용(텍스트)를 가져와서 +1시켜서 적용!
+            let pTag = document.getElementById("num");
+            let pCount = parseInt(pTag.innerText);
+            pTag.innerText = pCount + 1;
+        }
+
+        const decrease = () => {
+            // console.log("감소 함수 실행");
+            let pTag = document.getElementById("num");
+            let pCount = parseInt(pTag.innerText);
+            pTag.innerText = pCount - 1;
+        }
+
+
+
+
+
+    </script>
+
+</body>
+</html>

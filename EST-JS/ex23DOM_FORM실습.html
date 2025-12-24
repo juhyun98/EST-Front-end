@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form name="frm">
+        <input type="text" name="text" id="text">
+        <input type="button" value="출력" onclick="handlePrint()">
+        <p id="printText"></p>
+    </form>
+
+    <script>
+
+        const handlePrint = () => {
+            // 실습 : 출력버튼 클릭 시,
+            //        input의 내용이 화면에 작성되는 프로그램 만들기!
+
+            // 1. input요소와 p요소를 가져온다!
+            const frm =  document.frm;
+            const inputText = document.frm.text;
+            const pText = document.getElementsByTagName("p")[0];
+            console.log(inputText);
+            console.log(pText);
+            // 2. input요소의 value를 통해서 작성된 값을 가져온다!
+            const myText = inputText.value;
+            console.log(myText);
+            // 3. p요소의 innerText에 값을 넣어준다!
+            pText.innerText = myText;
+        }
+
+    </script>
+
+</body>
+</html>
