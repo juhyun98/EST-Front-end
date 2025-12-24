@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .light {
+            background-color: white;
+            color: black;
+        }
+        .dark {
+            background-color: black;
+            color: white;
+        }
+    </style>
+
+</head>
+<body class="light">
+    
+    <h1>Light / Dark 모드 실습</h1>
+    <button id="btn" onclick="toggleDarkMode()">다크 모드</button>
+
+    <script>
+
+        const toggleDarkMode = () => {
+            // 실습 : 다크모드 전환 프로그램 만들기! (classList사용)
+
+            // 1. 다크모드 / 라이트모드를 적용할 body 요소 가져오기
+            // const changeMode = document.getElementsByTagName("body")[0];
+            let changeMode = document.body;
+            
+            // 2-1. body요소에서 light 클래스 토글
+            // 2-2. body요소에서 dark 클래스 토글
+            changeMode.classList.toggle("light");
+            changeMode.classList.toggle("dark");
+
+            // 3. 다크모드 / 라이트모드가 적힌 버튼요소 가져오기
+            let btnText = document.getElementById("btn");
+            
+            // 4. body요소가 light클래스를 가지고 있는지 여부를 확인 (contains)
+            // 4.1 가지고 있다면 -> 버튼의 글자를 "다크모드"
+            // 4.2 가지고 있지 않다면 -> 버튼의 글자를 "라이트모드"
+            if (changeMode.classList.contains("light")) {
+                btnText.innerText = "다크 모드";
+            } else {
+                btnText.innerText = "라이트 모드";
+            }
+        }
+
+    </script>
+
+</body>
+</html>

@@ -25,8 +25,8 @@
     <div id="content" class="box text">class 속성 다루기</div>
 
     <button onclick="addClass()">class 추가</button>
-    <button>class 삭제</button>
-    <button>class 토글</button>
+    <button onclick="removeClass()">class 삭제</button>
+    <button onclick="toggleClass()">class 토글</button>
 
     <script>
 
@@ -40,9 +40,28 @@
             // 요소명.classList.add(클래스명)
             content.classList.add("bg");
         }
-        
-        
 
+        const removeClass = () => {
+            // 3. 클래스 리스트에 클래스 삭제하기
+            // 요소명.classList.remove(클래스명)
+            content.classList.remove("bg");
+        }
+
+        const toggleClass = () => {
+            // 4. 클래스 리스트에 클래스 포함 여부 확인하기
+            // 요소명.classList.contains(클래스명)
+            // 반환값 : 논리값(boolean)
+            // if (content.classList.contains("bg")) {
+            //     content.classList.remove("bg");
+            // } else {
+            //     content.classList.add("bg");
+            // }
+
+            // 5. 클래스 리스트에 클래스 토글 (없으면 추가, 있으면 삭제)
+            // 요소명.classList.toggle(클래스명)
+            content.classList.toggle("bg");
+        }
+        
     </script>
 
 </body>
