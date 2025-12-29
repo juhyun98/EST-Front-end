@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>어떤 키를 눌렀는지 확인해보자</h1>
+    <p id="result"></p>
+
+    <script>
+
+        const result = document.getElementById("result");
+
+        // 키보드 관련 이벤트 : keydown, keyup, keypress
+        // event.key : 누른 키를 문자열로 저장
+        // event.keyCode : 누른 키를 아스키코드로 저장
+        addEventListener("keydown", (e) => {
+            // console.log(e.key);
+            e.preventDefault();
+            result.innerText = `누른 키 : ${e.key}\n누른 keyCode : ${e.keyCode}`;
+        });
+
+    </script>
+
+</body>
+</html>

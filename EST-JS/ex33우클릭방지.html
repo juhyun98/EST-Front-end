@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>우클릭 방지</h1>
+
+    <script>
+        // event.prevenDefault() : 요소의 기본 이벤트 동작을 막는 메소드
+        // window.addEventListener를 사용할 때는, window.을 생략 가능
+        addEventListener("contextmenu", (e) => {
+            e.preventDefault();
+            alert("우클릭을 하실 수 없습니다!");
+        });
+
+    </script>
+
+</body>
+</html>

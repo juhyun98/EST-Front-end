@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>클릭</button>
+
+    <script>
+        const btn = document.querySelector("button");
+
+        btn.addEventListener("click", (event) => {
+            // Event객체 : 웹 페이지에서 발생한 이벤트 정보를 저장하는 객체
+            // event : 발생한 이벤트 정보가 담긴 이벤트 객체
+            //       : 이벤트 핸들러 함수의 첫번째 인자값
+            // event.target : 이벤트를 발생시킨 HTML요소 (= btn)
+            console.log(event);
+            console.dir(event.target);
+            console.dir(btn);
+        });
+    </script>
+</body>
+</html>
