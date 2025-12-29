@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="printText()">인라인 방식</button>
+    <button id="btn1">프로퍼티 방식</button>
+    <button id="btn2">리스너 방식</button>
+
+    <script>
+        /* 
+            인라인 방식
+            - HTML태그 안에 속성으로 JS를 연결하는 방식
+            - 사용처 : 개발 테스트단에서 사용, 중요하지 않은 함수는 괜찮다 (권장 X)
+            - 장점 : 코드를 빠르게 연결이 가능하다.
+            - 단점 : 보안에 좋지 않다, 재사용성, 유지보수성이 좋지 않다, HTML과 JS가 분리되지 않는다. (가독성 ↓)
+        */
+
+        const printText = () => {
+            alert("함수실행");
+        }
+
+        /* 
+            프로퍼티 방식
+            - HTML과 JS를 분리하는 방법 -> HTML의 속성이름을 그대로 JS에 옮겨 오는 방법
+        */
+
+        let btn1 = document.getElementById("btn1");
+        btn1.onclick = () => {
+            printText();
+        }
+
+        /* 
+            이벤트리스너 방식
+            - HTML과 JS를 분리하는 방식
+            - 권장사항 -> 가장 많이 사용하는 방법
+            - 주의점 : 함수를 연결할 때 ()를 제거한다 -> 바로 실행되기 때문에
+            - 특징 : 여러개의 이벤트를 연결이 가능하다.
+        */
+
+        let btn2 = document.getElementById("btn2");
+        btn2.addEventListener("click", printText);
+
+        /* 
+            익명함수
+            - 함수명이 없는 이벤트 생성
+            - 다른 요소에서 호출이 불가능
+            - 사용처 : 오직 특정 요소 하나에만 동작하는 함수를 만들 때 사용
+            - 사용처2 : 매개변수가 필요한 함수를 연결할 때는 익명함수를 사용한다. -> 콜백함수
+            - 비교 -> 익명함수는 매개변수가 필요한 함수를 만들 때 사용, 기본방식은 매개변수가 필요 없을 때 사용한다.
+            - 보통 익명함수 기법의 사용빈도가 높다.
+        */
+       
+        btn2.addEventListener("click", () => {
+            
+        })
+
+    </script>
+
+</body>
+</html>

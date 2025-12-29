@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ESC 안내</title>
+    <style>
+      .popup {
+        width: 250px;
+        padding: 20px;
+        border: 1px solid #333;
+        margin-top: 20px;
+        display: none;
+      }
+      .hint {
+        margin-top: 10px;
+        color: #555;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="openBtn">퀘스트 받기</button>
+
+    <div class="popup" id="popup">
+      <button id="btn_ok">퀘스트 수락(F)</button>
+      <button id="btn_no">퀘스트 취소(ESC)</button>
+    </div>
+
+    <script>
+        /* 
+            실습 : 사용자가 버튼을 클릭하면 각각 이벤트 제어
+            1. 퀘스트받기 버튼을 클릭하면 숨어있는 popup div를 보이게 제어
+                -> style에 display속성을 block으로 변경
+        */
+
+        let div = document.getElementById("popup");
+        let openBtn = document.getElementById("openBtn");
+        let btn_ok = document.getElementById("btn_ok");
+        let btn_no = document.getElementById("btn_no");
+
+        openBtn.addEventListener("click", () => {
+            div.style.display = "block";
+        })
+
+        btn_ok.addEventListener("click", () => {
+            alert("퀘스트 수락!");
+        })
+        
+        btn_no.addEventListener("click", () => {
+            div.style.display = "none";
+        })
+
+        /* 
+            사용자 접근 편의성을 위한 키보드 제어 추가
+            1. 사용자가 키보드의 "f"키를 누르면 퀘스트 수락
+            2. 사용자가 키보드의 "esc"키를 누르면 퀘스트 취소
+            핵심 : key이벤트는 보통 document에 전달한다. * input은 보통 input요소를 불러와서 제어한다.
+            핵심2 : 사용자가 실행한 이벤트는 이벤트 객체에 담겨 넘어온다 -> window.event
+            핵심3 : 화면에 대한 정보를 알고 있는 객체는 document, 브라우저에 대한 정보를 알고있는 객체는 window
+        */
+
+        document.addEventListener("keydown", () => {
+            // 사용자가 입력한 키가 뭔지 검사
+            console.log(window.event.keyCode);
+            if (div.style.display == "block") {
+                if (window.event.keyCode == 70) {
+                    alert("퀘스트 수락");
+                } else if (window.event.keyCode == 27) {
+                    div.style.display = "none";
+                }
+            }
+        })
+
+
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>이미지 미리보기</title>
+    <style>
+      body {
+        font-family: Arial;
+        padding: 20px;
+      }
+
+      .main {
+        width: 300px;
+        height: 200px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+      }
+
+      .main img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .thumbs {
+        display: flex;
+        gap: 10px;
+      }
+
+      .thumbs img {
+        width: 90px;
+        height: 60px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>상품 이미지</h3>
+
+    <!-- 메인 이미지 -->
+    <div class="main">
+      <img
+        id="mainImg"
+        src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/ee7dcded-2ccf-4a8d-bbaa-91c250873e4b/PEGASUS+PLUS.png"
+      />
+    </div>
+
+    <!-- 썸네일 -->
+    <div class="thumbs">
+      <img
+        id="img1"
+        src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/ee7dcded-2ccf-4a8d-bbaa-91c250873e4b/PEGASUS+PLUS.png"
+      />
+      <img
+        id="img2"
+        src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/bfd73176-cc5d-4fe8-95c6-7d599e2ec1dd/PEGASUS+PLUS.png"
+      />
+      <img
+        id="img3"
+        src="https://static.nike.com/a/images/t_web_pdp_535_v2/f_auto/97aa1d75-7549-4228-b82c-7069249aff6f/PEGASUS+PLUS.png"
+      />
+    </div>
+
+    <script>
+        /* 
+            실습 : 각각 썸네일 위에 마우스를 올렸을 때 -> 대표이미지를 썸네일 이미지로 변경
+            핵심 : JS로 속성을 접근할 때는 .속성명 (value, style, classList, innerText)
+            핵심2 : JS로 속성을 변경할 때는 "="을 통해서 변경한다.
+        */
+
+        let mainImg = document.getElementById("mainImg");
+        let img1 = document.getElementById("img1");
+        let img2 = document.getElementById("img2");
+        let img3 = document.getElementById("img3");
+
+        img1.addEventListener("mouseover", () => {
+            mainImg.src = img1.src
+        })
+        img2.addEventListener("mouseover", () => {
+            mainImg.src = img2.src
+        })
+        img3.addEventListener("mouseover", () => {
+            mainImg.src = img3.src
+        })
+
+
+    </script>
+    
+  </body>
+</html>
