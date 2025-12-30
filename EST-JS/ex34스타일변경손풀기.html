@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #div {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="div"></div>
+    <button>원</button>
+    <button>직사각형</button>
+    <button>사각형</button>
+
+    <script>
+        // 1. 필요한 태그들을 가져오기
+
+        // 원 --> div태그가 동그란 원모양, 색상은 노란색
+        let div = document.getElementById("div");
+        
+        let circle = document.querySelectorAll("button")[0];
+        
+        circle.addEventListener("click", () => {
+            div.style.width = "100px";
+            div.style.borderRadius = "50%";
+            div.style.backgroundColor = "yellow";
+            div.style.transition = "all ease 2s 0s";
+        })
+
+        // 직사각형 --> div태그가 너비가 200px, 색상은 빨간색
+        let neMo = document.querySelectorAll("button")[1];
+
+        neMo.addEventListener("click", () => {
+            div.style.width = "200px";
+            div.style.borderRadius = "0px";
+            div.style.backgroundColor = "red";
+            div.style.transition = "all ease 2s 0s";
+        })
+        
+        // 사각형 --> 원래대로 모양이 될 수 있도록, 색상은 파란색
+        let rectangle = document.querySelectorAll("button")[2];
+
+        rectangle.addEventListener("click", () => {
+            div.style.width = "100px";
+            div.style.borderRadius = "0px";
+            div.style.backgroundColor = "blue";
+            div.style.transition = "all ease 2s 0s";
+        })
+
+    </script>
+
+</body>
+</html>
