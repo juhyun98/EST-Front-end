@@ -57,7 +57,54 @@
     <script>
 
         // 1. 필요한 태그들을 가져오기
-        // 
+
+        let score = document.getElementById("score");
+
+        let userImg = document.getElementById("userImg");
+        let comImg = document.getElementById("comImg");
+
+        let userBtn = document.getElementsByClassName("user");
+
+        let imgList = ["assets/scissors.png", "assets/rock.png", "assets/paper.png"]
+
+        // 2. 버튼들을 눌렀을 때, 사용자 이미지를 버튼에 맞게 변경하기
+        
+        for (let i = 0; i < userBtn.length; i++) {
+            userBtn[i].addEventListener("click", function() {
+
+                // 내가 현재 이벤트를 처리하고 있는 태그를 가져오기
+                // this키워드 --> 이벤트 대상이 되는 객체 의미
+                // 주의할 점! --> 화살표 함수형식을 사용할 때는 this가 전혀 다른 의미!
+                console.log(this.innerText);
+
+                // 이미지 변경
+                userImg.src = imgList[i];
+
+                // 3. 컴퓨터가 랜덤하게 가위바위보 세개중에 하나를 결정
+                // 3-1) 랜덤한 숫자가 필요 : 0 ~ 2
+                let com = Math.floor(Math.random() * 3);
+                
+                // 3-2) 컴퓨터 이미지 변경
+                comImg.src = imgList[com];
+
+                // 4. 사용자가 이겼을 때, score를 1씩 증가
+                if (i == 0 && com == 2 || i == 1 && com == 0 || i == 2 && com == 1) {
+                    score.innerText++;
+                }
+            })
+        }
+
+
+        // userBtn[0].addEventListener("click", () => {
+        //     userImg.src = "assets/scissors.png";
+        // })
+        // userBtn[1].addEventListener("click", () => {
+        //     userImg.src = "assets/rock.png";
+        // })
+        // userBtn[2].addEventListener("click", () => {
+        //     userImg.src = "assets/paper.png";
+        // })
+
 
     </script>
 
