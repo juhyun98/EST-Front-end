@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="container">
+        
+    </div>
+
+    <script>
+
+        /* 
+            노드 생성
+            노드? 웹을 이루는 가장 작은 단위를 노드(태그, 속성, 속성값, 컨텐츠)
+            tip! 블록을 조립한다 
+        */
+
+        // 1. 태그 노드를 생성 -> html에 (태그)요소를 만들어줘
+        let span = document.createElement("span");
+        console.log(span);
+        
+        // 2. 컨텐츠(text) 노드 생성 
+        let text = document.createTextNode("새해 복 많이 받으세요~");
+        console.log(text);
+        
+        // 3. 태그노드 + 컨텐츠노드 결합 -> 태그노드는 컨텐츠노드의 부모
+        span.appendChild(text);
+        console.log(span);
+        
+        // 4. 생성한 요소를 화면에 출력
+        let div = document.getElementById("container");
+        div.appendChild(span);
+
+        // 5. 속성이 포함된 요소를 제작
+        // 이미지 태그를 제작 => src속성이 필요하다
+        let img1 = document.createElement("img");
+        img1.src = "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNTAxMjVfMjY3%2FMDAxNzM3NzYwOTUyMjE3.gzYMmaWGI6jqEtNB6SJFRuJqUesfXp82nErQxCaX0qAg.K2xGch2Lr1thXathYOaYo366QqTeUye1EYEKjGVVswMg.PNG%2Fhappy-new-year-card-8951604_1280.png&type=sc960_832"
+        
+        div.appendChild(img1);
+
+        // 6. 요소 삭제
+        img1.remove();
+
+
+    </script>
+
+</body>
+</html>

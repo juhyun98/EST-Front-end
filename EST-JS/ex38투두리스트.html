@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="text">
+    <button id="btn">할 일 추가하기!</button>
+    <ul id="container">
+
+    </ul>
+
+    <script>
+
+        // 실습1 : 사용자가 입력한 input값을 버튼을 누를 때마다 li태그와 함께 생성
+        const makeLi = () => {
+            // li태그 생성
+            let li = document.createElement("li");
+
+            // input태그 가져오기
+            let input = document.getElementById("text");
+            
+            // input.value를 활용해서 텍스트 노드를 제작 * 태그노드는 반드시 텍스트노드와 결합이 가능하다.
+            let text = document.createTextNode(input.value);
+
+            // 삭제버튼 생성
+            let btn = document.createElement("button");
+            let btnText = document.createTextNode("삭제");
+            btn.appendChild(btnText);
+            btn.addEventListener("click", () => {
+                li.remove()
+            })
+
+            // 체크박스 생성
+            let checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.addEventListener("click", () => {
+                if (checkbox.checked) {
+                    li.style.textDecoration = "line-through";
+                } else {
+                    li.style.textDecoration = "none";
+                }
+            })
+
+            // li노드와 text노드를 결합
+            // li.appendChild(text);
+            // li.appendChild(btn);
+            li.append(checkbox, text, btn)
+            
+            // ul태그를 가져와서 li노드를 결합
+            let ul = document.getElementById("container");
+            
+            if (input.value == "") {
+                alert("값을 입력하세요");
+            } else {
+                ul.appendChild(li);
+                input.value = "";
+            }
+
+        }
+
+        // 함수와 버튼을 연결
+        let btn = document.getElementById("btn");
+        btn.addEventListener("click", makeLi);
+
+    </script>
+
+</body>
+</html>

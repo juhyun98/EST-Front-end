@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/input.css">
+    <link rel="stylesheet" href="css/list.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <h2>To do list</h2>
+        <form onsubmit="return false">
+            <!--action이 실행되지 않도록 막는 속성-->
+            <input type="text" id="item" autofocus="true">
+            <button id="add" class="addBtn">추가</button>
+        </form>
+        <div id="itemList">
+            <ul>
+                <li>자바스크립트 복습하기<span id="1" class="close">X</span></li>
+                <li>이력서 작성하기<span id="2" class="close">X</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        
+        // 1. 필요한 태그들 가져오기
+        // input태그, 추가 button태그, div태그
+
+        let input = document.getElementById("item");
+        let addBtn = document.getElementById("add");
+        let itemList = document.getElementById("itemList");
+
+        // 2. button태그를 클릭했을 때 이벤트 처리하기
+
+        addBtn.addEventListener("click", () => {
+
+            // 3. input태그 안쪽에 있는 글자를 가져와서 console 출력
+            let data = input.value;
+            console.log(input.value);
+            
+            // 4. input태그 안쪽에 있는 글자를 지워주기
+            input.value = "";
+
+            // input태그에 커서를 유지시키는 방법
+            input.focus();
+
+            // 5. itemList div태그 영역 안쪽에 ul - li - span 태그 모양 추가
+            let content = `<ul>
+                                <li>${data}<span class="close">X</span></li>
+                           </ul>`;
+            itemList.innerHTML = content;
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>
