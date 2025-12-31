@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    
+    <h1 id="txt">오후도 화이팅 합시다!</h1>
+
+    <script>
+
+        // 1. 요소 접근 
+        document.getElementById("txt");
+        $('#txt');
+
+        // 2. 컨텐츠 수집
+        document.getElementById("txt").innerText;
+        $("#txt").text();
+
+        // 3. 컨텐츠 수정
+        document.getElementById("txt").innerText = "변경변경~";
+        $("#txt").text("변경하겠다!");
+
+        // 4. 디자인 변경
+        document.getElementById("txt").style.color = "red";
+        document.getElementById("txt").style.backgroundColor = "yellow";
+        $("#txt").css("color", "red");
+        $("#txt").css("background-color", "yellow");
+        $("#txt").css({color : "red", backgroundColor : "yellow"});
+
+    </script>
+
+</body>
+</html>

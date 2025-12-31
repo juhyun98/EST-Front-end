@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+
+    <style>
+
+        .normal {
+            background-color: white;
+            color: black;
+        }
+
+        .dark {
+            background-color: black;
+            color: white;
+        }
+
+    </style>
+    
+</head>
+<body class="normal">
+    <h1>다크모드 변경~</h1>
+    <button id="btn">다크모드 변경</button>
+
+    <script>
+
+        $("#btn").on("click", () => {
+            // body가 클래스를 normal로 가지고 있다면 dark로 바꿔라, 반대로 dark면 normal로 바꿔라
+            if ($("body").hasClass("normal")) {
+                $("body").addClass("dark");
+                $("body").removeClass("normal");
+                $("h1").text("라이트모드 변경");
+                $("#btn").text("라이트모드 변경");
+            }else {
+                $("body").addClass("normal");
+                $("body").removeClass("dark");
+                $("h1").text("다크모드 변경");
+                $("#btn").text("다크모드 변경");
+            }
+
+        })
+
+    </script>
+
+</body>
+</html>
