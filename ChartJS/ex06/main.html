@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+     <div>
+        <h1>팀원추가</h1>
+        <table>
+            <tr>
+                <td>이름</td>
+                <td>힘</td>
+                <td>민첩</td>
+                <td>지능</td>
+                <td>운</td>
+                <td>체력</td>
+                <td>방어력</td>
+                <td>생성하기</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="name"></td>
+                <td><input type="text" id="power"></td>
+                <td><input type="text" id="dex"></td>
+                <td><input type="text" id="int"></td>
+                <td><input type="text" id="luck"></td>
+                <td><input type="text" id="hp"></td>
+                <td><input type="text" id="def"></td>
+                <td><button id="create">생성하기</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="grapDiv" style="width: 400px; display: flex;">
+        <canvas onclick="dest(1)" id="myChart1" width="100" height="100" ></canvas>
+        <canvas onclick="dest(2)" id="myChart2" width="100" height="100" ></canvas>
+        <canvas onclick="dest(3)" id="myChart3" width="100" height="100" ></canvas>
+    </div>
+
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

@@ -1,7 +1,17 @@
 
 let label = ""; // 제목을 저장할 변수
 
+let grap = ""; // 그래프의 종류를 저장할 변수
+
 document.getElementById('make').onclick = function () {
+
+    // Select Option 선택한 값 가져오기
+    // Select 요소 가져오기
+    let graps = document.getElementById("grap");
+
+    // 선택한 Option의 값을 가져오기
+    grap = graps.options[graps.selectedIndex].value;
+
     label = document.getElementById("label").value;
     let labelNum = document.getElementById("labelNum").value;
     let html = ""; // 화면에 보여줄 태그를 저장할 변수
@@ -30,14 +40,22 @@ document.getElementById('make').onclick = function () {
     document.getElementById("inputData").innerHTML = html;
 }
 
+let myChart;
+
 // 차트 그리는 함수
 let ctx = document.getElementById("myChart");
 
 function inputData() {
+
+    // 차트를 지우는 방법
+    if (myChart) {
+        myChart.destroy();
+    }
+
     // 라벨과 데이터 값 가져오기
     let labelli = document.getElementsByName("labels");
     let datas = document.getElementsByName("datas");
-
+    
     let labels = [];
     let data = [];
     
@@ -48,7 +66,7 @@ function inputData() {
     
     // 위 데이터 만큼 그래프 그리기
     let config = {
-        type : "bar", // 차트의 종류
+        type : grap, // 차트의 종류
         data : { // 차트 안에 들어갈 데이터
             labels : labels, // 범례
             datasets : [
@@ -69,6 +87,6 @@ function inputData() {
     }
 
     let ctx = document.getElementById("myChart");
-    new Chart(ctx, config);
+    myChart = new Chart(ctx, config);
 
 }

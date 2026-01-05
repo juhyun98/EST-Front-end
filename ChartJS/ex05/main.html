@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    
+    <div>
+        힘 <input type="range" onchange="change(1)" class="ran1" name="datas" min="0" max="100"> <br>
+        민첩 <input type="range" onchange="change(2)" name="datas" class="ran2" min="0" max="100"> <br>
+        운 <input type="range" onchange="change(3)" name="datas" class="ran3" min="0" max="100"> <br>
+        지능 <input type="range" onchange="change(4)" name="datas" class="ran4" min="0" max="100"> <br>
+        체력 <input type="range" onchange="change(5)" name="datas" class="ran5" min="0" max="100">
+    </div>
+
+
+    <div style="width : 800px">
+        <canvas id="myChart" width="400px" height="200px"></canvas>
+    </div>
+
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
