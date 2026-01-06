@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    
+    <div>
+        <h3>메일 보내기</h3>
+        
+        보내는 사람 이름 : <input type="text" name="from_name"> <br>
+        받는사람 이름 : <input type="text" value="오주현" name="name"> <br>
+        받는 사람 이메일 : <input type="email" value="clarigw98@gmail.com" name="email"> <br>
+        메세지 : <textarea name="message"></textarea> <br>
+        <button onclick="sendMail()">전송</button>
+        
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
