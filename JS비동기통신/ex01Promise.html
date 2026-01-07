@@ -54,7 +54,7 @@
         // 1. Promise 객체 생성
         const delay = (ms) => {
             return new Promise((resolve, reject) => {
-                const success = false; // 성공 여부를 확인하기 위한 변수
+                const success = true; // 성공 여부를 확인하기 위한 변수
 
                 setTimeout(() => {
                     if (success) {
@@ -93,6 +93,19 @@
                 console.log("작업 완료 - 무조건 실행");
             });
         console.log("먼저 실행");
+
+        // 4. 실습 : Promise 객체 처리(async, await)
+        const asyncDelay = async () => {
+            try {
+                let msg = await delay(5000);
+                console.log("최종 숫자 : ", msg);
+            } catch (error) {
+                console.log("실패", error);
+            } finally {
+                console.log("작업 완료 - 무조건 실행");
+            }
+        }
+        asyncDelay();
 
     </script>
 

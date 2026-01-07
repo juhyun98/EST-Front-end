@@ -17,21 +17,22 @@
                 setTimeout(() => {
                     count++;
                     console.log("count : ", count);
-                    resolve(count);
+                    // resolve(count);
+                    reject("에러발생");
                 }, 1000)
             })
         }
 
         // Promise.then() 체이닝 방식
-        countUp().then((num) => {
-            countUp().then((num) => {
-                countUp().then((num) => {
-                    countUp().then((num) => {
-                        countUp().then((num) => {});
-                    });
-                });
-            });
-        });
+        // countUp().then((num) => {
+        //     countUp().then((num) => {
+        //         countUp().then((num) => {
+        //             countUp().then((num) => {
+        //                 countUp().then((num) => {});
+        //             });
+        //         });
+        //     });
+        // });
 
         // 이런 방식을 "콜백 지옥(callback hell)"이라고 부른다.
         // 가독성이 매우 떨어지고, 유지보수도 어렵다.
@@ -46,7 +47,68 @@
         //     즉, 기존의 Promise 객체 처리를 편하게 할 수 있도록
         //     도와주는 역할로 만들어진 문법이지, 내부적으로는 동일하게 처리
 
+        // await는 Promise가 처리될 때까지 기다린다.
+        // 따라서 비동기 작업이 완료된 후의 값을 바로 꺼내서 사용할 수 있다!
+        // await를 사용했을 때, 반환되는 값은 Promise가 이행(fulfilled)된 값
 
+        // async로 선언된 함수는 반드시 Promise객체를 반환한다
+        // 그래서 async로 선언된 함수를 외부에서 사용할 때는
+        // 앞에 await를 붙여야만 한다! (동기식으로 작동하기 위해서)
+
+        const asyncCountUp = async () => {
+            await countUp();
+            await countUp();
+            await countUp();
+            await countUp();
+            await countUp();
+            let finalNum = await countUp();
+            console.log("최종 숫자 : ", finalNum);
+        };
+
+        // asyncCountUp();
+
+        const asyncCountUpToNum = async () => {
+            let finalNum = 0;
+
+            // for문 안에서 await를 사용하면
+            // 비동기 작업이 순차적으로 이뤄진다.
+            // 이것이 가능한 이유는 await가 비동기 작업을 동기 작업처럼 바꿔주기 때문
+            for (let i = 0; i < num; i++) {
+                finalNum = await countUp();
+            }
+            console.log("최종 숫자 : ", finalNum);
+        }
+
+        // asyncCountUpToNum(15);
+
+        // try / catch문을 이용한 에러 처리
+        // async, await 문법은 에러 처리 기능이 내장되어 있지 않다.
+        // 따라서 async, await를 사용했을 때, 에러가 발생 시,
+        // 이를 처리해주기 위해서 try ~ catch 구문을 사용한다.
+
+        // try ~ catch 구문
+        //  - try 블록 : 에러가 발생할 수 있는 코드를 작성하는 영역
+        //  - catch 블록 : 에러가 발생했을 때, 실행되는 코드 영역
+        //  - finally 블록 : 에러 발생 여부 무관하게 실행되는 코드 영역
+        //  - 기본적으로 .then().catch().finally()와 동일한 역할
+        const safeCountUp = async () => {
+            try {
+                // 에러를 발생시킬 가능성이 있는 코드를 작성
+                await countUp();
+                await countUp();
+                await countUp();
+                await countUp();
+                let finalNum = await countUp();
+                console.log("최종 숫자 : ", finalNum);
+            } catch (error) {
+                // 에러처리를 해줄 수 있는 코드를 작성
+                console.log("카운트 업 중에 에러 발생", error);
+            } finally {
+                // 에러 발생 유무와 무관하게 항상 실행되는 코드를 작성
+                console.log("카운트 업 종료!");
+            }
+        }
+        safeCountUp();
 
     </script>
 
