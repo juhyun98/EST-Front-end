@@ -7,7 +7,7 @@ let config1 = {
     data: {
         labels: ['힘', '민첩', '지능', '운', '체력', '방어력'],
         datasets: [{
-            label: '정형',
+            label: 'name1',
             data: [9, 9, 9, 9, 9, 9],
             borderWidth: 5
         }
@@ -32,7 +32,7 @@ let config2 = {
     data: {
         labels: ['힘', '민첩', '지능', '운', '체력', '방어력'],
         datasets: [{
-            label: '신정욱',
+            label: 'name2',
             data: [9, 9, 8, 9, 6, 9],
             borderWidth: 5
         }
@@ -56,7 +56,7 @@ let config3 = {
     data: {
         labels: ['힘', '민첩', '지능', '운', '체력', '방어력'],
         datasets: [{
-            label: '박병관',
+            label: 'name3',
             data: [9, 9, 9, 7, 9, 8],
             borderWidth: 5
         }

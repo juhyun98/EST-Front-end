@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        /* 
+            Promise 객체
+                - 비동기 작업 (결과가 나올 때까지 시간이 걸리는 작업)을 처리하기 위한 객체
+                - 대부분의 비동기 통신 함수는 Promise객체를 반환
+                - Promise 객체의 처리 방법을 알아야, 비동기 작업의 결과를 다룰 수 있다!
+        */
+
+        // 1. Promise 객체의 생성
+        // new Promise( (resolve, reject) => {...});
+        //  - resolve : 비동기 작업이 성공했을 때, 호출되는 함수 (resolve(값))
+        //  - reject : 비동기 작업이 실패했을 때, 호출되는 함수 (reject(에러내용))
+        // ※ Promise객체를 생성할 때는, 변수에 바로 할당하지 않고
+        //    함수 내에서 반환하는 형태를 주로 사용한다.
+
+        // 2. Promise 객체의 상태
+        // 1). 대기(pending) : 비동기 작업이 완료되지 않은 상태
+        // 2). 이행(fulfilled) : 비동기 작업이 성공적으로 완료된 상태
+        // 3). 거부(rejected) : 비동기 작업이 실패한 상태
+
+        // 3. Promise 객체의 처리(★★★)
+        //  1). .then() 메소드
+        //      - 비동기 작업이 성공했을 때, 실행되는 콜백함수 등록
+        //      - .then((data) => {}) 형태로 사용 가능
+        //  2). .catch() 메소드
+        //      - 비동기 작업이 실패했을 때, 실행되는 콜백함수 등록
+        //      - .catch((err) => {}) 형태로 사용 가능
+        //  3). .finally() 메소드
+        //      - 비동기 작업의 성공여부와 무관하게 무조건 실행
+        //      - .finally(() => {}) 형태로 사용 가능
+        //      - 생략이 가능하다.
+        //  ==> 비동기 통신의 처리 방법!!(★★★★★)
+
+
+        // == 예제 : setTimeout 함수를 이용해서 Promise 실습 ==
+
+        // setTimeout 함수
+        // setTimeout(콜백함수, 시간(ms))
+        // setTimeout( () => {
+        //     console.log("2초 후에 실행");
+        // }, 2000);
+
+        // 1. Promise 객체 생성
+        const delay = (ms) => {
+            return new Promise((resolve, reject) => {
+                const success = false; // 성공 여부를 확인하기 위한 변수
+
+                setTimeout(() => {
+                    if (success) {
+                        resolve(`지연시간 ${ms}ms 이후 완료(성공)`);
+                    } else {
+                        reject(`지연시간 ${ms}ms 이후 완료(실패)`);
+                    }
+                }, ms);
+            })
+        }
+
+        // 2. Promise 객체의 상태 확인
+        const delayPromise = delay(3000);
+
+        // 생성 직후의 상태 : 대기(pending)
+        // console.log(delayPromise);
+
+        // 5초 후의 상태 : 이행(fulfilled) 또는 거절 (rejected)
+        // setTimeout(() => {
+        //     console.log(delayPromise);
+            
+        // }, 5500);
+
+        // 3. Promise 객체 처리
+        delayPromise
+            .then((msg) => {
+                // 성공
+                console.log("성공 : ", msg);
+            })
+            .catch((err) => {
+                // 실패 처리
+                console.log("실패 : ", err);
+            })
+            .finally(() => {
+                // 무조건 실행
+                console.log("작업 완료 - 무조건 실행");
+            });
+        console.log("먼저 실행");
+
+    </script>
+
+</body>
+</html>

@@ -13,7 +13,7 @@
 
     <div id="map" style="width:500px;height:400px;"></div>
 
-    <button id="smhrd">스마트인재개발원</button>
+    <button id="kakao">카카오본사</button>
     <button id="rest">식당</button>
 
     <br>
@@ -31,13 +31,13 @@
     <script>
         var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
         var options = { //지도를 생성할 때 필요한 기본 옵션
-            center: new kakao.maps.LatLng(35.150498, 126.9161673), //지도의 중심좌표.
+            center: new kakao.maps.LatLng(33.4502221, 126.5701423), //지도의 중심좌표.
             level: 3 //지도의 레벨(확대, 축소 정도)
         };
 
         var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
 
-        document.getElementById("smhrd").onclick = function () {
+        document.getElementById("kakao").onclick = function () {
             let moveMap = new kakao.maps.LatLng(35.150498, 126.9161673);
             map.panTo(moveMap);
         }
