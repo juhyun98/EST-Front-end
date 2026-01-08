@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <style>
     * {
       margin: 0;
@@ -16,6 +17,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+
       height: 100vh;
     }
 
@@ -25,6 +27,7 @@
       width: 60%;
       height: 70%;
       border-radius: 20px;
+
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -33,6 +36,7 @@
 
     #buttons {
       width: 80%;
+
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -87,7 +91,7 @@
   </style>
 </head>
 <body>
-    <div class="weather-container">
+  <div class="weather-container">
     <div class="weather-item">
       <h1>🌤️날씨</h1>
       <div class="weather-data">
@@ -97,30 +101,29 @@
       </div>
       <div id="buttons">
         <button>Seoul</button>
-        <button>Praha</button>
-        <button>Monaco</button>
-        <button>Baku</button>
+        <button>New York</button>
+        <button>Paris</button>
+        <button>Tokyo</button>
       </div>
     </div>
   </div>
 
-
     <script>
         // 날씨 정보를 받아서 버튼을 누르면 각 도시의 날씨가 뜨는 프로그램
-        // 1. 화면의 첫 렌더링 직후, 'Gwangju'의 날씨가 화면에 뜨도록
-        // 2. 버튼을 클리갛면 그 버튼의 도시의 날씨가 화면에 뜨도록
+        //  1. 화면의 첫 렌더링 직후, 'Gwangju'의 날씨가 화면에 뜨도록
+        //  2. 버튼을 클릭하면 그 버튼의 도시의 날씨가 화면에 뜨도록
 
-        // 만들함수
-        // - fetchWeatherData : API를 연결해서 데이터를 가져오기(fetch)
-        // - handleCity : 버튼을 눌렀을 때, 도시 정보를 변경
+        // 만들 함수
+        //  - fetchWeatherData : API를 연결해서 데이터를 가져오기(fetch)
+        //  - handleCity : 버튼을 눌렀을 때, 도시 정보를 변경
 
-        // - 표시할 데이터 : city, temp, weather
+        //  - 표시할 데이터 : city, temp, weather
 
         // 1. fetchWeatherData 함수 호출 시, fetch함수를 이용해서
         //    날씨 데이터를 불러온다!
         // 2. 불러온 날씨 데이터에서 온도와 날씨를 가져온다.
-        //  - temp : main.temp
-        //  - weather : weather[0].description
+        //    - temp : main.temp
+        //    - weather : weather[0].description
         // 3. 도시 초기값 : Gwangju
         //    버튼을 클릭하면 버튼의 이름을 기반으로 도시 정보 변경
         //    fetchWeatherData 재실행
@@ -128,9 +131,9 @@
         // 날씨 정보 불러오는 함수
         const fetchWeatherData = async (cityName) => {
             // console.log("fetchWeatherData 실행");
-            const url = "http://api.openweathermap.org/data/2.5/weather";
-            const key = "2cffebcc01c6ad58435fad79d58b1836";
-            const units = "metric";
+            const url = 'https://api.openweathermap.org/data/2.5/weather';
+            const key = '2cffebcc01c6ad58435fad79d58b1836';
+            const units = 'metric';
             const lang = "kr";
 
             try {
@@ -138,8 +141,8 @@
                 const res = await fetch(`${url}?q=${cityName}&appid=${key}&units=${units}&lang=${lang}`);
                 const data = await res.json();
                 console.log(data);
-                
-                // 실습 : 불러온 정보를 html 요소의 innerText에 넣어주기!
+
+                // 실습 : 불러온 정보를 html 요소의 innerText에 넣어주기! (DOM)
                 const city = document.getElementById("city");
                 const temp = document.getElementById("temp");
                 const weather = document.getElementById("weather");
@@ -147,30 +150,26 @@
                 city.innerText = cityName;
                 temp.innerText = data.main.temp + "℃";
                 weather.innerText = data.weather[0].description;
-
             } catch (error) {
                 console.log(error);
             }
         }
-        
 
         // 도시를 변경하는 함수
-        const handleCity = async(e) => {
-            // console.log(("handleCity 실행"));
+        const handleCity = async (e) => {
+            // console.log("handleCity 실행");
 
-            //실습 : 도시 정보를 버튼으로부터 추출해서 fetchWeatherData함수에 전달
+            // 실습 : 도시 정보를 버튼으로부터 추출해서 fetchWeatherData함수에 전달 (이벤트)
             await fetchWeatherData(e.target.innerText);
         }
 
         // 버튼에 도시를 변경하는 함수 연결
         const buttons = document.getElementsByTagName("button");
         for(let i = 0; i < buttons.length; i++) {
-            buttons[i].addEventListener("click",handleCity);
+            buttons[i].addEventListener("click", handleCity);
         }
 
         fetchWeatherData("Gwangju");
-
-
     </script>
 </body>
 </html>
