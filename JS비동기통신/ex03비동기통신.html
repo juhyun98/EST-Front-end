@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>영화 정보 불러오기</h1>
+    <button id="btn">영화정보요청</button>
+    <div id="result">
+
+    </div>
+
+
+    <script>
+
+        // fetch 함수 : 브라우저 내장되어 있는 비동기 HTTP 통신 함수
+        // fetch(url, {옵션})
+        // - 기본적으로 GET요청
+        // - {옵션}에는 method, headers, body 등 작성 가능
+
+        // 요청 방식에 따라 서버에 데이터를 전달하거나 받아올 수 있다
+        // HTTP Method(요청 방식)
+        // - GET    : 서버로부터 데이터 조회
+        // - POST   : 서버에 새로운 데이터 추가
+        // - PUT    : 서버의 데이터 전체 수정
+        // - PATCH  : 서버의 데이터 일부 수정
+        // - DELETE : 서버의 데이터 삭제
+
+        // fetch함수는 Promise 객체를 반환
+        // 1). 비동기 방식 : Promise.then().catch() 체이닝 방식
+        // 2). 동기 방식 : async / await 사용
+
+        const fetchMovieData = () => {
+            const url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json"
+            const method = "GET";
+            const key = "09eb8cabd4d95c8b327be4f5f427d339";
+            const targetDt = "20260107";
+
+            fetch(`${url}?key=${key}&targetDt=${targetDt}`, {
+                method : method,
+            }).then((res) => {
+                console.log(res);
+                return res.json();
+            }).then((data) => {
+                console.log(data);
+
+                const result = document.getElementById("result");
+                const movieList = data.boxOfficeResult.dailyBoxOfficeList;
+                console.log(movieList);
+
+                let htmlString = `
+                    <table border="1">
+                        <tr>
+                            <th>순위</th>
+                            <th>영화 제목</th>
+                            <th>개봉일</th>
+                        </tr>
+                `;
+
+                for (let i = 0; i < movieList.length; i++) {
+                    htmlString += `
+                        <tr>
+                            <td>${movieList[i].rank}</td>
+                            <td>${movieList[i].movieNm}</td>
+                            <td>${movieList[i].openDt}</td>
+                        </tr>
+                    `;
+                }
+                htmlString += "</table>";
+                result.innerHTML = htmlString;
+                
+            }).catch((err) => {
+                console.log(err);
+            })
+        }
+
+        // async / await를 사용한 동기 방식
+        const fetchMovieAsync = async () => {
+            const url = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json"
+            const method = "GET";
+            const key = "09eb8cabd4d95c8b327be4f5f427d339";
+            const targetDt = "20260107";
+
+            try {
+                const res = await fetch(`${url}?key=${key}&targetDt=${targetDt}`, {
+                    method : method,
+                });
+
+                const data = await res.json();
+
+                console.log(data);
+                
+                const result = document.getElementById("result");
+                const movieList = data.boxOfficeResult.dailyBoxOfficeList;
+
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        const btn = document.getElementById("btn");
+        btn.addEventListener("click", fetchMovieData);
+
+    </script>
+
+</body>
+</html>
