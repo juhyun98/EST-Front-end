@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.13.2/dist/axios.min.js"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        #infoCard {
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            width: 300px;
+            margin: 20px auto;
+            background-color: #f8f8f8;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #errorMsg {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>포켓몬 정보 검색기</h1>
+    <input type="text" id="searchInput" placeholder="예: pikachu" />
+    <button id="searchBtn">검색</button>
+
+    <div id="infoCard" class="hidden">
+        <h2 id="pokeName"></h2>
+        <img id="pokeImage" alt="포켓몬 이미지" />
+        <p><strong>도감번호:</strong> <span id="pokeId"></span></p>
+        <p><strong>키:</strong> <span id="pokeHeight"></span> dm</p>
+        <p><strong>몸무게:</strong> <span id="pokeWeight"></span> kg</p>
+        <p><strong>기본 경험치:</strong> <span id="pokeExp"></span></p>
+        <p><strong>타입:</strong> <span id="pokeTypes"></span></p>
+    </div>
+
+    <p id="errorMsg" class="hidden"></p>
+
+    
+    <script>
+
+        // [실습 목표]
+        //  - fetch 혹은 axios를 사용해서 포켓몬 정보를 가져온다.
+        //  - 정상적으로 데이터를 가져왔을 경우, infoCard에 정보를 적는다.
+        //  - 정상적으로 데이터를 가져오지 못한 경우,
+        //    errorMsg에 에러 메세지를 띄운다!
+
+        // 1. 입력 요소와 출력 요소를 가져온다. (DOM)
+        // let searchInput = document.getElementById("searchInput").value;
+        // let searchBtn = document.getElementById("searchBtn");
+
+        // 2. 버튼 클릭 시 실행될 함수 만들기
+        //   - 입력값으로 포켓몬의 이름을 가져온다.
+        //   - fetch 혹은 axios를 사용해서 포켓몬 정보 가져온다.
+        //   - 응답 데이터를 infoCard에 띄운다.
+        //   - 성공 시, infoCard 보여줌 / errorMsg 숨김
+        //   - 실패 시, errorMsg 보여줌 / infoCard 숨김
+        //   - 요소를 숨기고, 보일 때는 hidden 클래스 사용하기
+
+        // searchBtn.addEventListener("click", () => {
+        //     let searchInput = document.getElementById("searchInput").value;
+        //     console.log(searchInput);
+        //     fetchPokemonData(searchInput);
+        // })
+
+
+        // const fetchPokemonData = async (searchInput) => {
+        //     const url = `https://pokeapi.co/api/v2/pokemon/${searchInput}/`;
+            
+        //     try {
+        //         const res = await axios.get(url);
+        //         console.log(res);
+
+
+        //         const pokeName = document.getElementById("pokeName")
+        //         const pokeImage = document.getElementById("pokeImage");
+        //         const pokeId = document.getElementById("pokeId");
+        //         const pokeHeight = document.getElementById("pokeHeight");
+        //         const pokeWeight = document.getElementById("pokeWeight");
+        //         const pokeExp = document.getElementById("pokeExp");
+        //         const pokeTypes = document.getElementById("pokeTypes");
+
+        //         pokeName.innerText = res.name;
+        //         pokeImage.src = res.sprites.front_default;
+        //         pokeId.innerText = res.id;
+        //         pokeHeight.innerText = res.height;
+        //         pokeWeight.innerText = res.weight;
+        //         pokeExp.innerText = res.base_experience;
+        //         pokeTypes.innerText = res.types;
+
+        //     } catch (error) {
+        //         console.log(error);
+        //         let errorMsg = document.getElementById("errorMsg");
+        //     }
+        // }
+
+
+        // 선생님 풀이
+        const searchInput = document.getElementById("searchInput");
+        const searchBtn = document.getElementById("searchBtn");
+
+        const infoCard = document.getElementById("infoCard");
+        const errorMsg = document.getElementById("errorMsg");
+
+        const pokeName = document.getElementById("pokeName")
+        const pokeImage = document.getElementById("pokeImage");
+        const pokeId = document.getElementById("pokeId");
+        const pokeHeight = document.getElementById("pokeHeight");
+        const pokeWeight = document.getElementById("pokeWeight");
+        const pokeExp = document.getElementById("pokeExp");
+        const pokeTypes = document.getElementById("pokeTypes");
+
+        const fetchPokemonData = async () => {
+
+            // 포켓몬 이름 가져오기
+            const pokeName = searchInput.value;
+
+            // url
+            const url = `https://pokeapi.co/api/v2/pokemon/${pokeName}/`;
+            
+            try {
+                // 비동기 통신(fetch)
+                const res = await fetch(url);
+                const data = await res.json();
+    
+                console.log(data);
+                
+                // 통신으로 가져온 데이터를 infoCard에 넣기
+                pokeName.innerText = data.name;
+                pokeImage.src = data.sprites.front_default;
+                pokeId.innerText = data.id;
+                pokeHeight.innerText = data.height;
+                pokeWeight.innerText = data.weight;
+                pokeExp.innerText = data.base_experience;
+                pokeTypes.innerText = data.types.map(e => e.type.name).join(' , ');
+
+                // infoCard 보이기
+                infoCard.classList.remove("hidden");
+                // errorMsg 숨기기
+                errorMsg.classList.add("hidden");
+                
+            } catch (error) {
+                console.log(error);
+                // errorMsg 보이기
+                errorMsg.classList.remove("hidden");
+                // infoCard 숨기기
+                infoCard.classList.add("hidden");
+
+                errorMsg.innerText = "포켓몬을 찾을 수 없습니다!";
+            }
+        }
+
+        searchBtn.addEventListener("click", fetchPokemonData);
+        
+    </script>
+
+</body>
+
+</html>
